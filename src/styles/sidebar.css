@@ -1,0 +1,24 @@
+nav.sidebar a {
+  border-radius: 0;
+}
+
+nav.sidebar .top-level > li > a > span:first-child::before,
+nav.sidebar .group-label .large::before {
+  content: "// ";
+  color: var(--sl-color-text-accent);
+  font-weight: 700;
+}
+
+nav.sidebar .top-level > li > a[aria-current="page"] > span:first-child::before {
+  color: inherit;
+}
+
+nav.sidebar .top-level > li > a {
+  padding-block: 0.2em;
+}
+
+@media (min-width: 50rem) {
+  nav.sidebar .large {
+    font-size: var(--sl-text-sm);
+  }
+}

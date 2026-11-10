@@ -1,0 +1,7 @@
+:focus {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 1px solid var(--sl-color-text-accent);
+}

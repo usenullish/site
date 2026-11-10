@@ -1,0 +1,59 @@
+---
+interface Props {
+  label: string;
+  title: string;
+  lead?: string;
+}
+
+const { label, title, lead } = Astro.props;
+---
+
+<section class="not-content">
+  <p class="label">
+    <span class="slashes">{"//"}</span> {label}
+  </p>
+
+  <h2>{title}</h2>
+
+  {lead && <p class="lead">{lead}</p>}
+
+  <slot />
+</section>
+
+<style>
+  section {
+    padding-block: 6rem 2rem;
+    line-height: 1.5;
+  }
+
+  .label {
+    margin: 0;
+    color: var(--sl-color-gray-3);
+    font-size: var(--sl-text-sm);
+  }
+
+  .label .slashes {
+    font-size: var(--sl-text-5xl);
+  }
+
+  section :global(.slashes) {
+    color: var(--sl-color-text-accent);
+    font-weight: 700;
+  }
+
+  h2 {
+    margin: 0.75rem 0 0;
+    color: var(--sl-color-white);
+    font-size: var(--sl-text-h2);
+    letter-spacing: -0.025em;
+    font-weight: 600;
+    line-height: var(--sl-line-height-headings);
+  }
+
+  .lead {
+    margin: 0.75rem 0 0;
+    max-width: 60ch;
+    color: var(--sl-color-gray-2);
+    font-size: var(--sl-text-lg);
+  }
+</style>

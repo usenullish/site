@@ -1,0 +1,94 @@
+{
+  "badge": "Alpha — on cherche des testeurs",
+  "video": {
+    "label": "Démo de l’assistant nullish",
+    "description": "Dans l’app nullish, on pose trois questions à l’assistant sur la compta de l’entreprise : combien un client a payé cette année, ce qu’il reste sur le compte bancaire et combien de TVA on doit pour 2026. À chaque fois, il répond avec des chiffres tirés de la comptabilité : les factures payées du client, le solde bancaire avec les entrées et les sorties depuis le début de l’année, et la TVA due selon la méthode des taux de la dette fiscale nette."
+  },
+  "boring": {
+    "label": "la partie ennuyeuse",
+    "title": "Ce que toute app de compta sait faire.",
+    "groups": [
+      {
+        "name": "Facturation",
+        "items": ["clients", "factures", "facture QR suisse", "payée, annulée, amortie"]
+      },
+      {
+        "name": "Banque",
+        "items": ["import", "rapprochement"]
+      },
+      {
+        "name": "Comptabilité",
+        "items": [
+          "journal",
+          "TVA, au taux de la dette fiscale nette ou effective",
+          "bilan",
+          "compte de résultat",
+          "bouclement annuel"
+        ]
+      },
+      {
+        "name": "Équipe",
+        "items": ["invite tes collègues", "une fiduciaire", "un reviewer"]
+      }
+    ]
+  },
+  "lessBoring": {
+    "label": "la partie moins ennuyeuse",
+    "title": "Et puis on s’est un peu laissé emporter.",
+    "cards": [
+      {
+        "title": "Pas de dashboard. Tu demandes, c’est tout.",
+        "text": "« Quelles factures sont encore ouvertes ? » Pose la question dans l’app ou depuis ton propre agent IA."
+      },
+      {
+        "title": "Des factures QR qui ne racontent rien.",
+        "text": "Les références de paiement sont aléatoires : tes clients ne peuvent pas deviner comment vont tes affaires."
+      },
+      {
+        "title": "Masque les montants.",
+        "text": "Floute les montants quand quelqu’un lit par-dessus ton épaule."
+      },
+      {
+        "title": "Des factures qui te ressemblent.",
+        "text": "Personnalise tout le modèle, pas juste un logo et une ligne de texte."
+      },
+      {
+        "title": "Crypto ? Bien sûr.",
+        "text": "Chaque monnaie a les décimales qu’il lui faut, même les 18 de l’Ether."
+      },
+      {
+        "title": "Open source.",
+        "text": "Audite chaque ligne, fais-le tourner sur tes propres serveurs, modifie ce dont tu as besoin."
+      }
+    ]
+  },
+  "swiss": [
+    {
+      "title": "Made in Züri",
+      "text": "nullish est conçu et développé à Zurich."
+    },
+    {
+      "title": "Hébergé en Suisse",
+      "text": "Tes données restent sur une infrastructure suisse."
+    },
+    {
+      "title": "L’IA aussi",
+      "text": "L’assistant tourne lui aussi en Suisse. Tes questions ne quittent jamais le pays."
+    }
+  ],
+  "footer": {
+    "product": "Produit",
+    "getStarted": "Commencer",
+    "becomeTester": "Devenir testeur",
+    "status": "Statut",
+    "migrate": "Migrer",
+    "docs": "Docs",
+    "assistant": "Assistant",
+    "billing": "Facturation",
+    "banking": "Banque",
+    "accounting": "Comptabilité",
+    "developers": "Développeurs",
+    "selfHosting": "Auto-hébergement",
+    "community": "Communauté"
+  }
+}

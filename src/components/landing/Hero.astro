@@ -1,0 +1,154 @@
+---
+import { LinkButton } from "@astrojs/starlight/components";
+import { i18n } from "../i18n/i18n.ts";
+
+const { data } = Astro.locals.starlightRoute.entry;
+const { title = data.title, tagline, actions = [] } = data.hero || {};
+const { badge } = i18n(Astro.locals.starlightRoute.locale);
+---
+
+<div class="hero not-content">
+  <div class="sl-flex stack">
+    <div class="banner">
+      <span class="banner-dot"></span>
+      <span>{badge}</span>
+    </div>
+
+    <h1 data-page-title set:html={title} />
+
+    {tagline && <p class="tagline" set:html={tagline} />}
+
+    {actions.length > 0 && (
+      <div class="sl-flex actions">
+        {actions.map(
+          ({ attrs: { class: className, ...attrs } = {}, icon, link: href, text, variant }) => (
+            <LinkButton {href} {variant} icon={icon?.name} class:list={[className]} {...attrs}>
+              {text}
+              {icon?.html && <Fragment set:html={icon.html} />}
+            </LinkButton>
+          ),
+        )}
+      </div>
+    )}
+  </div>
+</div>
+
+<style>
+  @layer starlight.core {
+    .hero {
+      padding-block: clamp(1rem, 4vw, 3rem);
+    }
+
+    .stack {
+      flex-direction: column;
+      gap: clamp(1.5rem, calc(1.5rem + 1vw), 1.5rem);
+    }
+
+    .banner {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      border: 1px solid var(--sl-color-gray-5);
+      border-radius: 999px;
+      font-size: var(--sl-text-xs);
+      color: var(--sl-color-gray-2);
+      background: var(--sl-color-bg);
+      width: fit-content;
+    }
+
+    .banner-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--sl-color-orange);
+      flex-shrink: 0;
+      position: relative;
+    }
+
+    .banner-dot::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      background: var(--sl-color-orange);
+      animation: ping 1.5s ease-out infinite;
+    }
+
+    @keyframes ping {
+      0% {
+        transform: scale(1);
+        opacity: 0.8;
+      }
+      100% {
+        transform: scale(2.5);
+        opacity: 0;
+      }
+    }
+
+    h1 {
+      font-size: var(--sl-text-h1);
+      line-height: var(--sl-line-height-headings);
+      font-weight: 600;
+      color: var(--sl-color-white);
+      max-width: 28ch;
+      margin: 1rem 0 0;
+      letter-spacing: -0.05em;
+    }
+
+    .tagline {
+      font-size: clamp(var(--sl-text-base), calc(0.0625rem + 2vw), var(--sl-text-xl));
+      color: var(--sl-color-gray-2);
+      max-width: 55ch;
+      line-height: 1.25;
+    }
+
+    .actions {
+      gap: 1rem;
+      margin: 1.5rem 0 0;
+    }
+  }
+
+  .actions :global(.sl-link-button) {
+    transition:
+      background-color 150ms,
+      border-color 150ms,
+      color 150ms;
+  }
+
+  .actions :global(.sl-link-button.primary:hover) {
+    background: color-mix(in oklch, var(--sl-color-text-accent) 80%, transparent);
+    border-color: transparent;
+  }
+
+  .actions :global(.sl-link-button.minimal:hover) {
+    color: var(--sl-color-text-accent);
+  }
+
+  .hero {
+    --hero-grid: color-mix(in oklch, var(--sl-color-hairline-shade) 50%, transparent);
+    position: relative;
+    isolation: isolate;
+  }
+
+  :global(:root[data-theme="light"]) .hero {
+    --hero-grid: color-mix(in oklch, var(--sl-color-gray-5) 50%, transparent);
+  }
+
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background-image:
+      linear-gradient(to right, var(--hero-grid) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--hero-grid) 1px, transparent 1px);
+    background-position: -1px -1px;
+    background-size: 56px 56px;
+    mask-image:
+      radial-gradient(70% 70% at 50% 40%, #000 20%, transparent 100%),
+      linear-gradient(to bottom, transparent, #000 15%);
+    mask-composite: intersect;
+  }
+</style>

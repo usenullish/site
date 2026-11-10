@@ -1,0 +1,70 @@
+---
+import Section from "./Section.astro";
+import { i18n } from "../i18n/i18n.ts";
+
+const { boring } = i18n(Astro.locals.starlightRoute.locale);
+const { groups } = boring;
+---
+
+<Section label={boring.label} title={boring.title}>
+  <dl class="groups">
+    {groups.map(({ name, items }) => (
+      <div class="group">
+        <dt>{name}</dt>
+        <dd>
+          {items.map((item, i) => (
+            <Fragment>
+              {i > 0 && (
+                <Fragment>
+                  {" "}
+                  <span class="slashes" aria-hidden="true">
+                    {"/"}
+                  </span>{" "}
+                </Fragment>
+              )}
+              <span class="item">{item}</span>
+            </Fragment>
+          ))}
+        </dd>
+      </div>
+    ))}
+  </dl>
+</Section>
+
+<style>
+  .groups {
+    display: grid;
+    gap: 1rem;
+    margin: 2rem 0 0;
+  }
+
+  .group {
+    display: grid;
+    gap: 0.25rem;
+  }
+
+  dt {
+    color: var(--sl-color-white);
+    font-weight: 600;
+  }
+
+  dd {
+    margin: 0;
+    color: var(--sl-color-gray-2);
+  }
+
+  .item {
+    white-space: nowrap;
+  }
+
+  @media (min-width: 50rem) {
+    .groups {
+      grid-template-columns: max-content 1fr;
+      gap: 1rem 2rem;
+    }
+
+    .group {
+      display: contents;
+    }
+  }
+</style>

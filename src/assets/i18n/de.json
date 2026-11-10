@@ -1,0 +1,99 @@
+{
+  "badge": "Frühe Alpha – Tester willkommen",
+  "video": {
+    "label": "Demo des nullish-Assistenten",
+    "description": "Der Assistent in der nullish-App bekommt drei Fragen zur Buchhaltung einer Firma: Wie viel hat ein Kunde dieses Jahr bezahlt? Was liegt noch auf dem Bankkonto? Wie viel MWST ist für 2026 geschuldet? Er antwortet jeweils mit Zahlen direkt aus der Buchhaltung: den bezahlten Rechnungen des Kunden, dem Banksaldo mit allen Ein- und Ausgängen seit Jahresbeginn und der geschuldeten MWST nach Saldosteuersatz."
+  },
+  "boring": {
+    "label": "der langweilige Teil",
+    "title": "Was jede Buchhaltungs-App kann.",
+    "groups": [
+      {
+        "name": "Rechnungsstellung",
+        "items": [
+          "Kunden",
+          "Rechnungen",
+          "Schweizer QR-Rechnung",
+          "bezahlt, storniert, abgeschrieben"
+        ]
+      },
+      {
+        "name": "Bank",
+        "items": ["Import", "Abgleich"]
+      },
+      {
+        "name": "Buchhaltung",
+        "items": [
+          "Journal",
+          "MWST, Saldosteuersatz oder effektiv",
+          "Bilanz",
+          "Erfolgsrechnung",
+          "Jahresabschluss"
+        ]
+      },
+      {
+        "name": "Team",
+        "items": ["Kollegen einladen", "einen Treuhänder", "einen Reviewer"]
+      }
+    ]
+  },
+  "lessBoring": {
+    "label": "der weniger langweilige Teil",
+    "title": "Dann sind wir etwas übermütig geworden.",
+    "cards": [
+      {
+        "title": "Kein Dashboard. Einfach fragen.",
+        "text": "«Welche Rechnungen sind noch offen?» Frag direkt in der App oder über deinen eigenen KI-Agenten."
+      },
+      {
+        "title": "QR-Rechnungen, die nichts verraten.",
+        "text": "Die Zahlungsreferenzen sind zufällig. So sieht kein Kunde, wie dein Geschäft läuft."
+      },
+      {
+        "title": "Beträge ausblenden.",
+        "text": "Schaut dir jemand über die Schulter? Ein Klick, und alle Beträge sind verschwommen."
+      },
+      {
+        "title": "Rechnungen, die zu dir passen.",
+        "text": "Gestalte die ganze Vorlage, nicht nur ein Logo und eine Textzeile."
+      },
+      {
+        "title": "Krypto? Klar.",
+        "text": "Jede Währung bekommt so viele Nachkommastellen, wie sie braucht. Bei Ether sind das 18."
+      },
+      {
+        "title": "Open Source.",
+        "text": "Schau dir jede Zeile an, betreib es auf deinen eigenen Servern, pass an, was du willst."
+      }
+    ]
+  },
+  "swiss": [
+    {
+      "title": "Entwickelt in Züri",
+      "text": "nullish ist in Zürich designt und gebaut."
+    },
+    {
+      "title": "Gehostet in der Schweiz",
+      "text": "Deine Daten liegen auf Schweizer Servern."
+    },
+    {
+      "title": "Die KI auch",
+      "text": "Auch der Assistent läuft in der Schweiz. Deine Fragen bleiben im Land."
+    }
+  ],
+  "footer": {
+    "product": "Produkt",
+    "getStarted": "Loslegen",
+    "becomeTester": "Tester werden",
+    "status": "Status",
+    "migrate": "Migrieren",
+    "docs": "Dokumentation",
+    "assistant": "Assistent",
+    "billing": "Rechnungsstellung",
+    "banking": "Bank",
+    "accounting": "Buchhaltung",
+    "developers": "Entwickler",
+    "selfHosting": "Self-Hosting",
+    "community": "Community"
+  }
+}

@@ -1,0 +1,27 @@
+header .social-icons a {
+  color: var(--sl-color-white);
+}
+
+header .social-icons a:hover {
+  color: var(--sl-color-text-accent);
+}
+
+header .social-icons::after {
+  display: none;
+}
+
+starlight-theme-select select,
+starlight-lang-select select {
+  width: auto;
+}
+
+site-search button[data-open-modal],
+site-search button > kbd,
+site-search dialog {
+  border-radius: 0;
+}
+
+#starlight__search {
+  --sl-search-corners: 0;
+  --pagefind-ui-border-radius: 0;
+}

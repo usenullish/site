@@ -1,0 +1,97 @@
+---
+import { i18n } from "../i18n/i18n.ts";
+import { getImage } from "astro:assets";
+import chatDarkMp4 from "../../assets/videos/chat-dark.mp4";
+import chatDarkWebm from "../../assets/videos/chat-dark.webm";
+import chatDarkPoster from "../../assets/videos/chat-dark-poster.png";
+import chatLightMp4 from "../../assets/videos/chat-light.mp4";
+import chatLightWebm from "../../assets/videos/chat-light.webm";
+import chatLightPoster from "../../assets/videos/chat-light-poster.png";
+
+const [darkPoster, lightPoster] = await Promise.all([
+  getImage({ src: chatDarkPoster, format: "webp" }),
+  getImage({ src: chatLightPoster, format: "webp" }),
+]);
+
+const sources = {
+  dark: { webm: chatDarkWebm, mp4: chatDarkMp4, poster: darkPoster.src },
+  light: { webm: chatLightWebm, mp4: chatLightMp4, poster: lightPoster.src },
+};
+
+const { video } = i18n(Astro.locals.starlightRoute.locale);
+---
+
+<figure class="demo not-content">
+  <video
+    autoplay
+    muted
+    loop
+    playsinline
+    preload="auto"
+    width="1440"
+    height="824"
+    aria-label={video.label}
+    aria-describedby="demo-description"
+    data-sources={JSON.stringify(sources)}
+  ></video>
+
+  <figcaption id="demo-description" class="sr-only">
+    {video.description}
+  </figcaption>
+</figure>
+
+<script>
+  type Sources = Record<"dark" | "light", { webm: string; mp4: string; poster: string }>;
+
+  const video = document.querySelector<HTMLVideoElement>("figure.demo video");
+
+  if (video !== null) {
+    const sources: Sources = JSON.parse(video.dataset.sources ?? "{}");
+    let current: string | undefined;
+
+    const apply = () => {
+      const theme = document.documentElement.dataset.theme === "light" ? "light" : "dark";
+
+      if (theme === current) {
+        return;
+      }
+
+      current = theme;
+
+      const { webm, mp4, poster } = sources[theme];
+
+      video.poster = poster;
+      video.innerHTML = `<source src="${webm}#t=7" type='video/webm; codecs="av01.0.08M.08"' /><source src="${mp4}#t=7" type="video/mp4" />`;
+      video.load();
+      video.play().catch(() => {});
+    };
+
+    apply();
+
+    const observer = new MutationObserver(apply);
+
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["data-theme"],
+    });
+
+    document.addEventListener("astro:before-swap", observer.disconnect, { once: true });
+  }
+</script>
+
+<style>
+  .demo {
+    margin: 0;
+  }
+
+  video {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 1px solid var(--sl-color-hairline-shade);
+  }
+
+  :global(:root[data-theme="dark"]) figure.demo video {
+    border: 1px solid var(--sl-color-text-accent);
+  }
+</style>

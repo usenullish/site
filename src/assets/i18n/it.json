@@ -1,0 +1,94 @@
+{
+  "badge": "Alpha — cerchiamo tester",
+  "video": {
+    "label": "Demo dell’assistente nullish",
+    "description": "Nell’app nullish facciamo tre domande all’assistente sulla contabilità dell’azienda: quanto ha pagato un cliente quest’anno, quanto c’è ancora sul conto in banca e quanta IVA va versata per il 2026. Ogni risposta arriva con le cifre prese dalla contabilità: le fatture pagate dal cliente, il saldo bancario con entrate e uscite da inizio anno e l’IVA dovuta con il metodo dell’aliquota saldo."
+  },
+  "boring": {
+    "label": "la parte noiosa",
+    "title": "Quello che ogni app di contabilità sa fare.",
+    "groups": [
+      {
+        "name": "Fatturazione",
+        "items": ["clienti", "fatture", "fattura QR", "pagata, annullata, ammortizzata"]
+      },
+      {
+        "name": "Banca",
+        "items": ["importazione", "riconciliazione"]
+      },
+      {
+        "name": "Contabilità",
+        "items": [
+          "giornale",
+          "IVA, aliquota saldo o metodo effettivo",
+          "bilancio",
+          "conto economico",
+          "chiusura annuale"
+        ]
+      },
+      {
+        "name": "Team",
+        "items": ["invita i colleghi", "un contabile", "un reviewer"]
+      }
+    ]
+  },
+  "lessBoring": {
+    "label": "la parte meno noiosa",
+    "title": "Poi ci siamo fatti prendere un po’ la mano.",
+    "cards": [
+      {
+        "title": "Niente dashboard. Chiedi.",
+        "text": "«Quali fatture sono ancora aperte?» Chiedilo nell’app o al tuo agente IA."
+      },
+      {
+        "title": "Fatture QR che non fanno pettegolezzi.",
+        "text": "I riferimenti di pagamento sono casuali: dai numeri i clienti non capiscono come ti vanno gli affari."
+      },
+      {
+        "title": "Nascondi gli importi.",
+        "text": "Sfoca gli importi quando qualcuno ti sbircia da dietro le spalle."
+      },
+      {
+        "title": "Fatture che ti somigliano.",
+        "text": "Personalizza tutto il modello, non solo il logo e una riga di testo."
+      },
+      {
+        "title": "Cripto? Ma certo.",
+        "text": "Ogni valuta ha i decimali che le servono, anche tutti i 18 dell’Ether."
+      },
+      {
+        "title": "Open source.",
+        "text": "Controlla ogni riga, fallo girare sui tuoi server, cambia quello che ti serve."
+      }
+    ]
+  },
+  "swiss": [
+    {
+      "title": "Sviluppato a Züri",
+      "text": "nullish è pensato e sviluppato a Zurigo."
+    },
+    {
+      "title": "Ospitato in Svizzera",
+      "text": "I tuoi dati restano su server in Svizzera."
+    },
+    {
+      "title": "Anche l’IA",
+      "text": "Anche l’assistente gira in Svizzera. Le tue domande non varcano il confine."
+    }
+  ],
+  "footer": {
+    "product": "Prodotto",
+    "getStarted": "Comincia",
+    "becomeTester": "Diventa tester",
+    "status": "Stato",
+    "migrate": "Migrare",
+    "docs": "Documentazione",
+    "assistant": "Assistente",
+    "billing": "Fatturazione",
+    "banking": "Banca",
+    "accounting": "Contabilità",
+    "developers": "Sviluppatori",
+    "selfHosting": "Self-hosting",
+    "community": "Community"
+  }
+}

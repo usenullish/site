@@ -1,0 +1,29 @@
+name: Sync docs
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Prepare
+        uses: ./.github/actions/prepare
+
+      - run: node scripts/sync-docs.ts
+
+      - name: Create PR
+        uses: ./.github/actions/create-pr
+        with:
+          title: "docs: sync"
+          body: Sync the docs from nullish and templates.
+          branch: "docs/sync-docs-${{ github.ref_name }}"

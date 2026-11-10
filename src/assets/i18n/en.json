@@ -1,0 +1,94 @@
+{
+  "badge": "Early alpha — open for testers",
+  "video": {
+    "label": "Demo of the nullish assistant",
+    "description": "In the nullish app, the assistant is asked three questions about the company's books: how much a client paid this year, what is left on the bank account, and how much VAT is owed for 2026. It answers each one with figures taken from the accounting: the client's paid invoices, the bank balance with money in and out since the start of the year, and the VAT due under the net rate method."
+  },
+  "boring": {
+    "label": "the boring part",
+    "title": "The stuff every accounting app has.",
+    "groups": [
+      {
+        "name": "Billing",
+        "items": ["clients", "invoices", "Swiss QR-bill", "paid, void, written off"]
+      },
+      {
+        "name": "Banking",
+        "items": ["import", "reconciliation"]
+      },
+      {
+        "name": "Accounting",
+        "items": [
+          "journal",
+          "VAT, net rate or effective",
+          "balance sheet",
+          "income statement",
+          "year-end closing"
+        ]
+      },
+      {
+        "name": "Team",
+        "items": ["invite your colleagues", "an accountant", "a reviewer"]
+      }
+    ]
+  },
+  "lessBoring": {
+    "label": "the less boring part",
+    "title": "Then we got a bit carried away.",
+    "cards": [
+      {
+        "title": "No dashboard. Just ask.",
+        "text": "“Which invoices are still open?” Ask in the app or from your own AI agent."
+      },
+      {
+        "title": "QR-bills that don’t gossip.",
+        "text": "Payment references are random, so your clients can’t read how business is going."
+      },
+      {
+        "title": "Hide the numbers.",
+        "text": "Blur the amounts when someone’s reading over your shoulder."
+      },
+      {
+        "title": "Invoices that look like you.",
+        "text": "Customize the whole template, not just a logo and a line of text."
+      },
+      {
+        "title": "Crypto? Sure.",
+        "text": "Every currency gets the decimals it needs, even all 18 of them for Ether."
+      },
+      {
+        "title": "Open source.",
+        "text": "Audit every line, run it on your own servers, change what you need."
+      }
+    ]
+  },
+  "swiss": [
+    {
+      "title": "Developed in Züri",
+      "text": "nullish is designed and built in Zürich."
+    },
+    {
+      "title": "Hosted in Switzerland",
+      "text": "Your data stays on Swiss infrastructure."
+    },
+    {
+      "title": "So is the AI",
+      "text": "The assistant runs in Switzerland too. Your questions never leave the country."
+    }
+  ],
+  "footer": {
+    "product": "Product",
+    "getStarted": "Get started",
+    "becomeTester": "Become a tester",
+    "status": "Status",
+    "migrate": "Migrate",
+    "docs": "Docs",
+    "assistant": "Assistant",
+    "billing": "Billing",
+    "banking": "Banking",
+    "accounting": "Accounting",
+    "developers": "Developers",
+    "selfHosting": "Self-hosting",
+    "community": "Community"
+  }
+}

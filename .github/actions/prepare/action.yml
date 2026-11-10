@@ -1,0 +1,20 @@
+name: Prepare
+
+description: Checkout and install dependencies
+
+runs:
+  using: composite
+  steps:
+    - name: Install pnpm
+      uses: pnpm/action-setup@0e279bb959325dab635dd2c09392533439d90093 # v6.0.8
+
+    - name: Setup node
+      uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+      with:
+        node-version-file: ".node-version"
+        registry-url: "https://registry.npmjs.org"
+        cache: pnpm
+
+    - name: Install dependencies
+      shell: bash
+      run: pnpm i --frozen-lockfile

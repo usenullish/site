@@ -1,0 +1,68 @@
+---
+import { i18n } from "../i18n/i18n.ts";
+
+const { swiss } = i18n(Astro.locals.starlightRoute.locale);
+
+const icons = [
+  '<path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" /><circle cx="12" cy="10" r="3" />',
+  '<rect width="20" height="8" x="2" y="2" rx="2" ry="2" /><rect width="20" height="8" x="2" y="14" rx="2" ry="2" /><line x1="6" x2="6.01" y1="6" y2="6" /><line x1="6" x2="6.01" y1="18" y2="18" />',
+  '<path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z" /><path d="M20 3v4" /><path d="M22 5h-4" /><path d="M4 17v2" /><path d="M5 18H3" />',
+];
+---
+
+<ul class="swiss not-content">
+  {swiss.map(({ title, text }, i) => (
+    <li>
+      <svg
+        class="icon"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+        set:html={icons[i]}
+      />
+      <h3>{title}</h3>
+      <p>{text}</p>
+    </li>
+  ))}
+</ul>
+
+<style>
+  .swiss {
+    display: grid;
+    gap: 2rem;
+    margin: 0;
+    padding: 6rem 0;
+    list-style: none;
+    line-height: 1.5;
+  }
+
+  .icon {
+    display: block;
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-block-end: 1rem;
+    color: var(--sl-color-text-accent);
+  }
+
+  h3 {
+    margin: 0;
+    color: var(--sl-color-white);
+    font-size: var(--sl-text-lg);
+    font-weight: 600;
+  }
+
+  p {
+    margin: 0.5rem 0 0;
+    color: var(--sl-color-gray-2);
+  }
+
+  @media (min-width: 50rem) {
+    .swiss {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+</style>
