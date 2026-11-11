@@ -1,3 +1,7 @@
+header .title-wrapper img {
+  height: calc(var(--sl-nav-height) / 3);
+}
+
 header .social-icons a {
   color: var(--sl-color-white);
 }
@@ -24,4 +28,8 @@ site-search dialog {
 #starlight__search {
   --sl-search-corners: 0;
   --pagefind-ui-border-radius: 0;
+}
+
+:root[data-has-hero] site-search {
+  display: none;
 }

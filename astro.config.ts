@@ -74,8 +74,8 @@ export default defineConfig({
       defaultLocale: "en",
       locales,
       logo: {
-        light: "./src/assets/logo-light.svg",
-        dark: "./src/assets/logo-dark.svg",
+        light: "./src/assets/logo-text-light.svg",
+        dark: "./src/assets/logo-text-dark.svg",
         replacesTitle: true,
       },
       lastUpdated: true,
