@@ -5,3 +5,9 @@
 .pagination-links a {
   border-radius: 0;
 }
+
+:root[data-theme="dark"] .sl-link-button.primary {
+  background: var(--sl-color-accent);
+  border-color: var(--sl-color-accent);
+  color: var(--sl-color-white);
+}
