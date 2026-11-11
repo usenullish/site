@@ -6,7 +6,7 @@
   },
   "boring": {
     "label": "the boring part",
-    "title": "The stuff every accounting app has.",
+    "title": "And of course, all the basics.",
     "groups": [
       {
         "name": "Billing",
@@ -33,12 +33,12 @@
     ]
   },
   "lessBoring": {
-    "label": "the less boring part",
-    "title": "Then we got a bit carried away.",
+    "label": "the fun part",
+    "title": "Accounting isn’t exactly exciting. So we added a few twists.",
     "cards": [
       {
         "title": "No dashboard. Just ask.",
-        "text": "“Which invoices are still open?” Ask in the app or from your own AI agent."
+        "text": "“Which invoices are still open?” or “Mark invoice 42 as paid.” In the app or from your own AI agent."
       },
       {
         "title": "QR-bills that don’t gossip.",
@@ -72,8 +72,8 @@
       "text": "Your data stays on Swiss infrastructure."
     },
     {
-      "title": "So is the AI",
-      "text": "The assistant runs in Switzerland too. Your questions never leave the country."
+      "title": "The AI lives in Switzerland too",
+      "text": "Your questions never leave the country."
     }
   ],
   "footer": {

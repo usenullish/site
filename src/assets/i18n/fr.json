@@ -6,7 +6,7 @@
   },
   "boring": {
     "label": "la partie ennuyeuse",
-    "title": "Ce que toute app de compta sait faire.",
+    "title": "Et bien sûr, tout l’essentiel.",
     "groups": [
       {
         "name": "Facturation",
@@ -33,12 +33,12 @@
     ]
   },
   "lessBoring": {
-    "label": "la partie moins ennuyeuse",
-    "title": "Et puis on s’est un peu laissé emporter.",
+    "label": "la partie fun",
+    "title": "La compta, ce n’est pas franchement passionnant. Alors on a ajouté quelques petits plus.",
     "cards": [
       {
         "title": "Pas de dashboard. Tu demandes, c’est tout.",
-        "text": "« Quelles factures sont encore ouvertes ? » Pose la question dans l’app ou depuis ton propre agent IA."
+        "text": "« Quelles factures sont encore ouvertes ? » ou « Marque la facture 42 comme payée. » Dans l’app ou depuis ton propre agent IA."
       },
       {
         "title": "Des factures QR qui ne racontent rien.",
@@ -72,8 +72,8 @@
       "text": "Tes données restent sur une infrastructure suisse."
     },
     {
-      "title": "L’IA aussi",
-      "text": "L’assistant tourne lui aussi en Suisse. Tes questions ne quittent jamais le pays."
+      "title": "L’IA habite aussi en Suisse",
+      "text": "Tes questions ne quittent jamais le pays."
     }
   ],
   "footer": {

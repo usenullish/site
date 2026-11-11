@@ -26,18 +26,18 @@ const { label, title, lead } = Astro.props;
     line-height: 1.5;
   }
 
+  section + section {
+    margin: 0;
+  }
+
   .label {
     margin: 0;
     color: var(--sl-color-gray-3);
     font-size: var(--sl-text-sm);
   }
 
-  .label .slashes {
-    font-size: var(--sl-text-5xl);
-  }
-
   section :global(.slashes) {
-    color: var(--sl-color-text-accent);
+    color: var(--sl-color-accent);
     font-weight: 700;
   }
 
