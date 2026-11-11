@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro build",
+    "build": "astro build && pnpm build:precompress",
+    "build:precompress": "node scripts/precompress.ts",
     "preview": "astro preview",
     "astro": "astro",
     "sync-docs": "node scripts/sync-docs.ts",
