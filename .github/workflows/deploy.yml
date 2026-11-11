@@ -25,12 +25,10 @@ jobs:
       - name: Upload
         env:
           SSH_KEY: ${{ secrets.NULLISH_SITE_SSH_KEY }}
-          KNOWN_HOSTS: ${{ vars.NULLISH_WEB_KNOWN_HOSTS }}
+          KNOWN_HOSTS: ${{ secrets.NULLISH_WEB_KNOWN_HOSTS }}
         run: |
           install -m 700 -d ~/.ssh
           printf '%s\n' "$SSH_KEY" > ~/.ssh/id_ed25519
           chmod 600 ~/.ssh/id_ed25519
           printf '%s\n' "$KNOWN_HOSTS" > ~/.ssh/known_hosts
-          cat ~/.ssh/known_hosts
-          ssh-keyscan -t ed25519 nullish.ch
           tar -czf - -C dist . | ssh website@nullish.ch
