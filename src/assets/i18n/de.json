@@ -1,5 +1,5 @@
 {
-  "badge": "Alpha – Tester willkommen",
+  "hero": { "label": "schweizer buchhaltung, fast ohne aufwand", "badge": "alpha" },
   "video": {
     "label": "Demo des nullish-Assistenten",
     "description": "Der Assistent in der nullish-App bekommt drei Fragen zur Buchhaltung einer Firma: Wie viel hat ein Kunde dieses Jahr bezahlt? Was liegt noch auf dem Bankkonto? Wie viel MWST ist für 2026 geschuldet? Er antwortet jeweils mit Zahlen direkt aus der Buchhaltung: den bezahlten Rechnungen des Kunden, dem Banksaldo mit allen Ein- und Ausgängen seit Jahresbeginn und der geschuldeten MWST nach Saldosteuersatz."

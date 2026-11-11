@@ -25,7 +25,7 @@ const locales = {
 
 const title = "nullish";
 const description =
-  "Invoicing, banking and accounting you can talk to. Open-source, self-hostable.";
+  "Invoicing, banking and accounting. With an AI assistant. Open-source, self-hostable.";
 
 export default defineConfig({
   site: "https://nullish.ch",

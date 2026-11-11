@@ -4,14 +4,20 @@ import { i18n } from "../i18n/i18n.ts";
 
 const { data } = Astro.locals.starlightRoute.entry;
 const { title = data.title, tagline, actions = [] } = data.hero || {};
-const { badge } = i18n(Astro.locals.starlightRoute.locale);
+const { hero } = i18n(Astro.locals.starlightRoute.locale);
 ---
 
 <div class="hero not-content">
   <div class="sl-flex stack">
-    <div class="banner">
-      <span class="banner-dot"></span>
-      <span>{badge}</span>
+    <div class="sl-flex top">
+      <p class="label">
+        <span class="slashes">{"//"}</span> {hero.label}
+      </p>
+
+      <div class="banner">
+        <span class="banner-dot"></span>
+        <span>{hero.badge}</span>
+      </div>
     </div>
 
     <h1 data-page-title set:html={title} />
@@ -44,13 +50,29 @@ const { badge } = i18n(Astro.locals.starlightRoute.locale);
       gap: clamp(1.5rem, calc(1.5rem + 1vw), 1.5rem);
     }
 
+    .top {
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .label {
+      margin: 0;
+      color: var(--sl-color-gray-3);
+      font-size: var(--sl-text-sm);
+    }
+
+    .slashes {
+      color: var(--sl-color-accent);
+      font-weight: 700;
+    }
+
     .banner {
       display: flex;
       align-items: center;
       gap: 8px;
       padding: 6px 14px;
       border: 1px solid var(--sl-color-gray-5);
-      border-radius: 999px;
       font-size: var(--sl-text-xs);
       color: var(--sl-color-gray-2);
       background: var(--sl-color-bg);
@@ -99,7 +121,6 @@ const { badge } = i18n(Astro.locals.starlightRoute.locale);
     .tagline {
       font-size: clamp(var(--sl-text-base), calc(0.0625rem + 2vw), var(--sl-text-xl));
       color: var(--sl-color-gray-2);
-      max-width: 55ch;
       line-height: 1.25;
     }
 
