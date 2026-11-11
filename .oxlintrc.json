@@ -16,7 +16,7 @@
         }
       }
     ],
-    "import/extensions": ["error", "never", { "astro": "always", "json": "always" }]
+    "import/extensions": ["error", "always", { "ignorePackages": true }]
   },
   "env": {
     "builtin": true
