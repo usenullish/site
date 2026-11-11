@@ -58,6 +58,18 @@ export default defineConfig({
           tag: "meta",
           attrs: { name: "twitter:image", content: "https://nullish.ch/social-image.jpg" },
         },
+        ...(process.env.NODE_ENV === "production"
+          ? [
+              {
+                tag: "script" as const,
+                attrs: {
+                  type: "module",
+                  async: true,
+                  src: "https://nullish.ch/static/yawa.js",
+                },
+              },
+            ]
+          : []),
       ],
       defaultLocale: "en",
       locales,
