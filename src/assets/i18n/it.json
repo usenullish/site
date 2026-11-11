@@ -6,7 +6,7 @@
   },
   "boring": {
     "label": "la parte noiosa",
-    "title": "Quello che ogni app di contabilità sa fare.",
+    "title": "E naturalmente, tutto l’essenziale.",
     "groups": [
       {
         "name": "Fatturazione",
@@ -33,12 +33,12 @@
     ]
   },
   "lessBoring": {
-    "label": "la parte meno noiosa",
-    "title": "Poi ci siamo fatti prendere un po’ la mano.",
+    "label": "la parte fun",
+    "title": "La contabilità non è proprio entusiasmante. Così abbiamo aggiunto qualche sorpresa.",
     "cards": [
       {
         "title": "Niente dashboard. Chiedi.",
-        "text": "«Quali fatture sono ancora aperte?» Chiedilo nell’app o al tuo agente IA."
+        "text": "«Quali fatture sono ancora aperte?» o «Segna la fattura 42 come pagata.» Nell’app o dal tuo agente IA."
       },
       {
         "title": "Fatture QR che non fanno pettegolezzi.",
@@ -72,8 +72,8 @@
       "text": "I tuoi dati restano su server in Svizzera."
     },
     {
-      "title": "Anche l’IA",
-      "text": "Anche l’assistente gira in Svizzera. Le tue domande non varcano il confine."
+      "title": "Anche l’IA abita in Svizzera",
+      "text": "Le tue domande non varcano il confine."
     }
   ],
   "footer": {

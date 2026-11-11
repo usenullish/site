@@ -6,7 +6,7 @@
   },
   "boring": {
     "label": "der langweilige Teil",
-    "title": "Was jede Buchhaltungs-App kann.",
+    "title": "Und natürlich alles, was dazugehört.",
     "groups": [
       {
         "name": "Rechnungsstellung",
@@ -38,12 +38,12 @@
     ]
   },
   "lessBoring": {
-    "label": "der weniger langweilige Teil",
-    "title": "Dann sind wir etwas übermütig geworden.",
+    "label": "der coole Teil",
+    "title": "Buchhaltung ist nicht gerade spannend. Darum haben wir ein paar Extras eingebaut.",
     "cards": [
       {
         "title": "Kein Dashboard. Einfach fragen.",
-        "text": "«Welche Rechnungen sind noch offen?» Frag direkt in der App oder über deinen eigenen KI-Agenten."
+        "text": "«Welche Rechnungen sind noch offen?» oder «Markiere Rechnung 42 als bezahlt.» Direkt in der App oder über deinen eigenen KI-Agenten."
       },
       {
         "title": "QR-Rechnungen, die nichts verraten.",
@@ -77,8 +77,8 @@
       "text": "Deine Daten liegen auf Schweizer Servern."
     },
     {
-      "title": "Die KI auch",
-      "text": "Auch der Assistent läuft in der Schweiz. Deine Fragen bleiben im Land."
+      "title": "Auch die KI wohnt in der Schweiz",
+      "text": "Deine Fragen bleiben im Land."
     }
   ],
   "footer": {
