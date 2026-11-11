@@ -3,7 +3,7 @@
  */
 import type { Languages } from "./languages.ts";
 
-export type I18nBadge = string;
+export type I18nHero = { label: string; badge: string };
 
 export type I18nVideo = { label: string; description: string };
 
@@ -39,7 +39,7 @@ export type I18nFooter = {
 
 export interface I18n {
   lang: Languages;
-  badge: I18nBadge;
+  hero: I18nHero;
   video: I18nVideo;
   boring: I18nBoring;
   lessBoring: I18nLessBoring;

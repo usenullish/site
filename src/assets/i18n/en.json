@@ -1,5 +1,5 @@
 {
-  "badge": "Alpha — open for testers",
+  "hero": { "label": "swiss accounting, almost effortless", "badge": "alpha" },
   "video": {
     "label": "Demo of the nullish assistant",
     "description": "In the nullish app, the assistant is asked three questions about the company's books: how much a client paid this year, what is left on the bank account, and how much VAT is owed for 2026. It answers each one with figures taken from the accounting: the client's paid invoices, the bank balance with money in and out since the start of the year, and the VAT due under the net rate method."
