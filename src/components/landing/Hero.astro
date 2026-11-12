@@ -5,7 +5,10 @@ import HeroAssistant from "./HeroAssistant.astro";
 
 const { data } = Astro.locals.starlightRoute.entry;
 const { tagline, actions = [] } = data.hero || {};
-const { hero } = i18n(Astro.locals.starlightRoute.locale);
+const { lang, hero } = i18n(Astro.locals.starlightRoute.locale);
+
+const formatAmount = (value: number): string =>
+  new Intl.NumberFormat(`${lang}-CH`, { minimumFractionDigits: 2 }).format(value);
 ---
 
 <div class="hero not-content">
@@ -56,13 +59,13 @@ const { hero } = i18n(Astro.locals.starlightRoute.locale);
 
     <div class="ledger" aria-hidden="true">
       <p>
-        {hero.ledger.debit} <span class="amount">48'210.35</span>
+        {hero.ledger.debit} <span class="amount">{formatAmount(48210.35)}</span>
       </p>
       <p>
-        {hero.ledger.credit} <span class="amount">48'210.35</span>
+        {hero.ledger.credit} <span class="amount">{formatAmount(48210.35)}</span>
       </p>
       <p class="balance">
-        {hero.ledger.balance} <span class="amount">0.00</span>
+        {hero.ledger.balance} <span class="amount">{formatAmount(0)}</span>
       </p>
     </div>
   </div>

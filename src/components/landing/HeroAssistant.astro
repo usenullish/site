@@ -2,8 +2,15 @@
 import { i18n } from "../i18n/i18n.ts";
 
 const {
+  lang,
   hero: { assistant },
 } = i18n(Astro.locals.starlightRoute.locale);
+
+const answer = new Intl.NumberFormat(`${lang}-CH`, {
+  style: "currency",
+  currency: "CHF",
+  maximumFractionDigits: 0,
+}).format(3345);
 ---
 
 <div class="assistant">
@@ -20,7 +27,7 @@ const {
     <span class="done">{assistant.thought}</span>
   </p>
   <div class="reveal">
-    <p class="answer">{assistant.answer}</p>
+    <p class="answer">{answer}</p>
     <p class="detail">{assistant.detail}</p>
   </div>
 </div>
