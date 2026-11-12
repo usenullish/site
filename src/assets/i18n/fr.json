@@ -2,7 +2,15 @@
   "hero": {
     "label": "avec un assistant IA",
     "title": ["Ta compta suisse", "presque sans effort"],
-    "badge": "Alpha"
+    "badge": "Alpha",
+    "ledger": { "debit": "débit", "credit": "crédit", "balance": "solde" },
+    "assistant": {
+      "question": "Combien de TVA je dois pour 2026 ?",
+      "thinking": "réfléchit…",
+      "thought": "réfléchi pendant 2 s",
+      "answer": "CHF 3'345",
+      "detail": "au taux de la dette fiscale nette, sur 41 factures"
+    }
   },
   "video": {
     "label": "Démo de l’assistant nullish",

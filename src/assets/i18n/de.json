@@ -2,7 +2,15 @@
   "hero": {
     "label": "mit KI-Assistent",
     "title": ["Schweizer Buchhaltung", "fast ohne Aufwand"],
-    "badge": "Alpha"
+    "badge": "Alpha",
+    "ledger": { "debit": "soll", "credit": "haben", "balance": "saldo" },
+    "assistant": {
+      "question": "Wie viel MWST schulde ich für 2026?",
+      "thinking": "denkt nach…",
+      "thought": "2 s nachgedacht",
+      "answer": "CHF 3'345",
+      "detail": "nach Saldosteuersatz, aus 41 Rechnungen"
+    }
   },
   "video": {
     "label": "Demo des nullish-Assistenten",

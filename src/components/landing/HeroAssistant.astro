@@ -1,0 +1,122 @@
+---
+import { i18n } from "../i18n/i18n.ts";
+
+const {
+  hero: { assistant },
+} = i18n(Astro.locals.starlightRoute.locale);
+---
+
+<div class="assistant">
+  <p class="question">
+    <span class="prompt" aria-hidden="true">
+      {">"}
+    </span>{" "}
+    {assistant.question}
+  </p>
+  <p class="thought">
+    <span class="thinking" aria-hidden="true">
+      {assistant.thinking}
+    </span>
+    <span class="done">{assistant.thought}</span>
+  </p>
+  <div class="reveal">
+    <p class="answer">{assistant.answer}</p>
+    <p class="detail">{assistant.detail}</p>
+  </div>
+</div>
+
+<style>
+  .assistant {
+    display: grid;
+    gap: 1rem;
+    padding: 1.5rem;
+    background: var(--sl-color-gray-6);
+    border: var(--layout-section-border);
+  }
+
+  .assistant p {
+    margin: 0;
+  }
+
+  .thought {
+    display: grid;
+    color: var(--sl-color-gray-3);
+    font-size: var(--sl-text-sm);
+  }
+
+  .thought > span {
+    grid-area: 1 / 1;
+  }
+
+  .thinking {
+    animation:
+      pulse 0.8s ease-in-out 2 alternate,
+      fade-out 0.2s 1.6s forwards;
+  }
+
+  .done {
+    opacity: 0;
+    animation: fade-in 0.3s 1.6s forwards;
+  }
+
+  .reveal {
+    opacity: 0;
+    translate: 0 0.25rem;
+    animation: fade-in 0.4s 1.8s forwards;
+  }
+
+  @keyframes pulse {
+    to {
+      opacity: 0.4;
+    }
+  }
+
+  @keyframes fade-out {
+    to {
+      opacity: 0;
+    }
+  }
+
+  @keyframes fade-in {
+    to {
+      opacity: 1;
+      translate: 0 0;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .thinking {
+      display: none;
+    }
+
+    .done,
+    .reveal {
+      opacity: 1;
+      translate: none;
+      animation: none;
+    }
+  }
+
+  .question {
+    color: var(--sl-color-white);
+  }
+
+  .prompt {
+    color: var(--sl-color-accent);
+    font-weight: 700;
+  }
+
+  .answer {
+    color: var(--sl-color-white);
+    font-size: var(--sl-text-3xl);
+    font-weight: 600;
+    line-height: 1.1;
+    letter-spacing: -0.025em;
+  }
+
+  .assistant .detail {
+    margin-block-start: 0.25rem;
+    color: var(--sl-color-gray-2);
+    font-size: var(--sl-text-sm);
+  }
+</style>

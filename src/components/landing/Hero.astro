@@ -1,6 +1,7 @@
 ---
 import { LinkButton } from "@astrojs/starlight/components";
 import { i18n } from "../i18n/i18n.ts";
+import HeroAssistant from "./HeroAssistant.astro";
 
 const { data } = Astro.locals.starlightRoute.entry;
 const { tagline, actions = [] } = data.hero || {};
@@ -23,29 +24,47 @@ const { hero } = i18n(Astro.locals.starlightRoute.locale);
       </div>
     </div>
 
-    <h1 data-page-title>
-      {hero.title.map((line, i) => (
-        <Fragment>
-          {i > 0 && <br />}
-          {line}
-        </Fragment>
-      ))}
-    </h1>
+    <div class="main">
+      <div class="sl-flex stack">
+        <h1 data-page-title>
+          {hero.title.map((line, i) => (
+            <Fragment>
+              {i > 0 && <br />}
+              {line}
+            </Fragment>
+          ))}
+        </h1>
 
-    {tagline && <p class="tagline" set:html={tagline} />}
+        {tagline && <p class="tagline" set:html={tagline} />}
 
-    {actions.length > 0 && (
-      <div class="sl-flex actions">
-        {actions.map(
-          ({ attrs: { class: className, ...attrs } = {}, icon, link: href, text, variant }) => (
-            <LinkButton {href} {variant} icon={icon?.name} class:list={[className]} {...attrs}>
-              {text}
-              {icon?.html && <Fragment set:html={icon.html} />}
-            </LinkButton>
-          ),
+        {actions.length > 0 && (
+          <div class="sl-flex actions">
+            {actions.map(
+              ({ attrs: { class: className, ...attrs } = {}, icon, link: href, text, variant }) => (
+                <LinkButton {href} {variant} icon={icon?.name} class:list={[className]} {...attrs}>
+                  {text}
+                  {icon?.html && <Fragment set:html={icon.html} />}
+                </LinkButton>
+              ),
+            )}
+          </div>
         )}
       </div>
-    )}
+
+      <HeroAssistant />
+    </div>
+
+    <div class="ledger" aria-hidden="true">
+      <p>
+        {hero.ledger.debit} <span class="amount">48'210.35</span>
+      </p>
+      <p>
+        {hero.ledger.credit} <span class="amount">48'210.35</span>
+      </p>
+      <p class="balance">
+        {hero.ledger.balance} <span class="amount">0.00</span>
+      </p>
+    </div>
   </div>
 </div>
 
@@ -55,9 +74,62 @@ const { hero } = i18n(Astro.locals.starlightRoute.locale);
       padding-block: clamp(1rem, 4vw, 3rem);
     }
 
+    @media (max-width: 49.99rem) {
+      .hero {
+        padding-block-end: 0;
+      }
+    }
+
     .stack {
       flex-direction: column;
       gap: clamp(1.5rem, calc(1.5rem + 1vw), 1.5rem);
+    }
+
+    .main {
+      display: grid;
+      gap: 2.5rem;
+    }
+
+    @media (min-width: 50rem) {
+      .main {
+        grid-template-columns: 1fr minmax(0, 26rem);
+        align-items: center;
+      }
+    }
+
+    .ledger {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-block-start: 2rem;
+      padding-block-start: 1rem;
+      border-block-start: var(--layout-section-border);
+      color: var(--sl-color-gray-3);
+      font-size: var(--sl-text-sm);
+    }
+
+    .ledger p {
+      margin: 0;
+    }
+
+    @media (max-width: 49.99rem) {
+      .ledger {
+        display: none;
+      }
+    }
+
+    .ledger p:nth-child(2) {
+      justify-self: center;
+    }
+
+    .ledger .balance {
+      justify-self: end;
+    }
+
+    .ledger .balance .amount {
+      display: inline-block;
+      padding-block-end: 0.15rem;
+      border-block-end: 3px double var(--sl-color-accent);
     }
 
     .top {

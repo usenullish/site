@@ -49,7 +49,13 @@ const { video } = i18n(Astro.locals.starlightRoute.locale);
     const sources: Sources = JSON.parse(video.dataset.sources ?? "{}");
     let current: string | undefined;
 
+    const wide = window.matchMedia("(min-width: 50rem)");
+
     const apply = () => {
+      if (!wide.matches) {
+        return;
+      }
+
       const theme = document.documentElement.dataset.theme === "light" ? "light" : "dark";
 
       if (theme === current) {
@@ -68,6 +74,8 @@ const { video } = i18n(Astro.locals.starlightRoute.locale);
 
     apply();
 
+    wide.addEventListener("change", apply);
+
     const observer = new MutationObserver(apply);
 
     observer.observe(document.documentElement, {
@@ -82,6 +90,12 @@ const { video } = i18n(Astro.locals.starlightRoute.locale);
 <style>
   .demo {
     margin: 0;
+  }
+
+  @media (max-width: 49.99rem) {
+    .demo {
+      display: none;
+    }
   }
 
   video {
