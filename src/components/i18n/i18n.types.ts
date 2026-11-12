@@ -8,13 +8,7 @@ export type I18nHero = {
   title: string[];
   badge: string;
   ledger: { debit: string; credit: string; balance: string };
-  assistant: {
-    question: string;
-    thinking: string;
-    thought: string;
-    answer: string;
-    detail: string;
-  };
+  assistant: { question: string; thinking: string; thought: string; detail: string };
 };
 
 export type I18nVideo = { label: string; description: string };
