@@ -10,6 +10,13 @@ const { hero } = i18n(Astro.locals.starlightRoute.locale);
 <div class="hero not-content">
   <div class="sl-flex stack">
     <div class="sl-flex top">
+      <p class="label">
+        <span class="slashes" aria-hidden="true">
+          {"//"}
+        </span>{" "}
+        {hero.label}
+      </p>
+
       <div class="banner">
         <span class="banner-dot"></span>
         <span>{hero.badge}</span>
@@ -17,10 +24,12 @@ const { hero } = i18n(Astro.locals.starlightRoute.locale);
     </div>
 
     <h1 data-page-title>
-      <span class="slashes" aria-hidden="true">
-        {"//"}
-      </span>{" "}
-      {hero.label}
+      {hero.title.map((line, i) => (
+        <Fragment>
+          {i > 0 && <br />}
+          {line}
+        </Fragment>
+      ))}
     </h1>
 
     {tagline && <p class="tagline" set:html={tagline} />}
@@ -52,7 +61,15 @@ const { hero } = i18n(Astro.locals.starlightRoute.locale);
     }
 
     .top {
-      justify-content: flex-end;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .label {
+      margin: 0;
+      color: var(--sl-color-gray-3);
+      font-size: var(--sl-text-sm);
     }
 
     .slashes {
