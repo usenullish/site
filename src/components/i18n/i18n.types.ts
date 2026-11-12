@@ -3,7 +3,19 @@
  */
 import type { Languages } from "./languages.ts";
 
-export type I18nHero = { label: string; title: string[]; badge: string };
+export type I18nHero = {
+  label: string;
+  title: string[];
+  badge: string;
+  ledger: { debit: string; credit: string; balance: string };
+  assistant: {
+    question: string;
+    thinking: string;
+    thought: string;
+    answer: string;
+    detail: string;
+  };
+};
 
 export type I18nVideo = { label: string; description: string };
 

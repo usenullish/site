@@ -2,7 +2,15 @@
   "hero": {
     "label": "with an AI assistant",
     "title": ["Swiss accounting", "almost effortless"],
-    "badge": "Alpha"
+    "badge": "Alpha",
+    "ledger": { "debit": "debit", "credit": "credit", "balance": "balance" },
+    "assistant": {
+      "question": "How much VAT do I owe for 2026?",
+      "thinking": "thinking…",
+      "thought": "thought for 2s",
+      "answer": "CHF 3'345",
+      "detail": "net tax rate, from 41 invoices"
+    }
   },
   "video": {
     "label": "Demo of the nullish assistant",
