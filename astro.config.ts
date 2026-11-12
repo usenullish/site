@@ -164,6 +164,7 @@ export default defineConfig({
         Hero: "./src/components/landing/Hero.astro",
         Footer: "./src/components/landing/Footer.astro",
         ThemeSelect: "./src/components/ThemeSelect.astro",
+        LanguageSelect: "./src/components/LanguageSelect.astro",
       },
     }),
   ],

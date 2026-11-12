@@ -1,0 +1,46 @@
+---
+import Default from "@astrojs/starlight/components/LanguageSelect.astro";
+
+const code = (Astro.locals.starlightRoute.locale ?? "en").toUpperCase();
+---
+
+<div class="lang">
+  <span class="code" aria-hidden="true">
+    {code}
+  </span>
+  <Default />
+</div>
+
+<style>
+  .lang {
+    position: relative;
+    display: flex;
+    align-items: center;
+    color: var(--sl-color-white);
+  }
+
+  .lang:hover {
+    color: var(--sl-color-text-accent);
+  }
+
+  .lang :global(label) {
+    color: inherit;
+  }
+
+  .code {
+    position: absolute;
+    inset-inline-start: 0;
+    font-size: var(--sl-text-sm);
+    pointer-events: none;
+  }
+
+  .lang :global(select) {
+    width: calc(2ch + var(--sl-caret-size) + var(--sl-inline-padding) * 2 + 0.25rem);
+    color: transparent;
+  }
+
+  .lang :global(option) {
+    color: var(--sl-color-white);
+    background-color: var(--sl-color-bg-nav);
+  }
+</style>
