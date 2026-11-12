@@ -97,16 +97,18 @@ const answer = new Intl.NumberFormat(`${lang}-CH`, {
   }
 
   .question {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: 1ch;
     color: var(--sl-color-white);
   }
-
   .prompt {
     color: var(--sl-color-accent);
     font-weight: 700;
   }
 
   .field {
-    display: inline-grid;
+    display: grid;
   }
 
   .field > span {
