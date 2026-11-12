@@ -1,5 +1,9 @@
 {
-  "hero": { "label": "Contabilità svizzera, quasi senza fatica", "badge": "alpha" },
+  "hero": {
+    "label": "con un assistente IA",
+    "title": ["Contabilità svizzera", "quasi senza fatica"],
+    "badge": "Alpha"
+  },
   "video": {
     "label": "Demo dell’assistente nullish",
     "description": "Nell’app nullish facciamo tre domande all’assistente sulla contabilità dell’azienda: quanto ha pagato un cliente quest’anno, quanto c’è ancora sul conto in banca e quanta IVA va versata per il 2026. Ogni risposta arriva con le cifre prese dalla contabilità: le fatture pagate dal cliente, il saldo bancario con entrate e uscite da inizio anno e l’IVA dovuta con il metodo dell’aliquota saldo."

@@ -1,5 +1,9 @@
 {
-  "hero": { "label": "Ta compta suisse, presque sans effort", "badge": "alpha" },
+  "hero": {
+    "label": "avec un assistant IA",
+    "title": ["Ta compta suisse", "presque sans effort"],
+    "badge": "Alpha"
+  },
   "video": {
     "label": "Démo de l’assistant nullish",
     "description": "Dans l’app nullish, on pose trois questions à l’assistant sur la compta de l’entreprise : combien un client a payé cette année, ce qu’il reste sur le compte bancaire et combien de TVA on doit pour 2026. À chaque fois, il répond avec des chiffres tirés de la comptabilité : les factures payées du client, le solde bancaire avec les entrées et les sorties depuis le début de l’année, et la TVA due selon la méthode des taux de la dette fiscale nette."
