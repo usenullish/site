@@ -2,11 +2,13 @@ header .title-wrapper img {
   height: calc(var(--sl-nav-height) / 3);
 }
 
-header .social-icons a {
+header .social-icons a,
+.mobile-preferences .social-icons a {
   color: var(--sl-color-white);
 }
 
-header .social-icons a:hover {
+header .social-icons a:hover,
+.mobile-preferences .social-icons a:hover {
   color: var(--sl-color-text-accent);
 }
 
@@ -40,4 +42,30 @@ starlight-lang-select .label-icon {
 
 starlight-lang-select select {
   padding-inline-start: var(--sl-inline-padding);
+}
+
+.mobile-preferences {
+  align-items: center;
+}
+
+@media (max-width: 49.99rem) {
+  :root[data-has-hero] header .right-group {
+    display: flex;
+  }
+}
+
+.sl-menu-button {
+  background-color: transparent;
+  box-shadow: none;
+  color: var(--sl-color-white);
+}
+
+.sl-menu-button:hover {
+  color: var(--sl-color-text-accent);
+}
+
+@media (max-width: 49.99rem) {
+  site-search button[data-open-modal] {
+    font-size: var(--sl-text-base);
+  }
 }
