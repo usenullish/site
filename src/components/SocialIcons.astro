@@ -1,0 +1,27 @@
+---
+import Default from "@astrojs/starlight/components/SocialIcons.astro";
+import { i18n } from "./i18n/i18n.ts";
+
+const isLanding = Astro.locals.starlightRoute.entry.data.hero !== undefined;
+
+const { lang, nav } = i18n(Astro.locals.starlightRoute.locale);
+---
+
+{isLanding && (
+  <a class="docs" href={`/${lang}/getting-started/`}>
+    {nav.docs}
+  </a>
+)}
+<Default />
+
+<style>
+  .docs {
+    color: var(--sl-color-white);
+    font-size: var(--sl-text-sm);
+    text-decoration: none;
+  }
+
+  .docs:hover {
+    color: var(--sl-color-text-accent);
+  }
+</style>
