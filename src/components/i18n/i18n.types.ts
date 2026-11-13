@@ -3,6 +3,8 @@
  */
 import type { Languages } from "./languages.ts";
 
+export type I18nNav = { docs: string };
+
 export type I18nHero = {
   label: string;
   title: string[];
@@ -45,6 +47,7 @@ export type I18nFooter = {
 
 export interface I18n {
   lang: Languages;
+  nav: I18nNav;
   hero: I18nHero;
   video: I18nVideo;
   boring: I18nBoring;

@@ -13,7 +13,13 @@ header .social-icons a:hover,
 }
 
 header .social-icons::after {
-  display: none;
+  height: 1rem;
+}
+
+@media (max-width: 49.99rem) {
+  header .social-icons::after {
+    display: none;
+  }
 }
 
 starlight-theme-select select,

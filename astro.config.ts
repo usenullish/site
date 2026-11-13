@@ -165,6 +165,7 @@ export default defineConfig({
         Footer: "./src/components/landing/Footer.astro",
         ThemeSelect: "./src/components/ThemeSelect.astro",
         LanguageSelect: "./src/components/LanguageSelect.astro",
+        SocialIcons: "./src/components/SocialIcons.astro",
       },
     }),
   ],
