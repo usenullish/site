@@ -1,0 +1,61 @@
+---
+title: E-Mail-Vorlagen
+description: Passe die E-Mails an, die deine nullish-Instanz verschickt.
+---
+
+nullish verschickt selbst ein paar E-Mails: um eine E-Mail-Adresse zu bestätigen, um ein Passwort zurückzusetzen und um jemanden in eine Organisation einzuladen. Es gibt sie auf Englisch, Deutsch, Französisch und Italienisch.
+
+Diese E-Mails sind Teil von nullish, deshalb kann sie nur ändern, wer nullish selbst hostet. Sie entstehen mit dem Projekt [nullish email templates](https://github.com/usenullish/email-templates). Es zeigt eine Live-Vorschau jeder E-Mail mit Beispieldaten, so siehst du jede Änderung sofort.
+
+## Das Projekt holen
+
+{% steps %}
+
+1. Forke [usenullish/email-templates](https://github.com/usenullish/email-templates) auf GitHub, wenn du deine Änderungen in deinem eigenen Repository behalten willst, und klone es dann:
+
+   ```sh
+   git clone https://github.com/usenullish/email-templates.git
+   cd email-templates
+   npm install
+   ```
+
+2. Starte die Vorschau und öffne [localhost:3000](http://localhost:3000):
+
+   ```sh
+   npm run dev
+   ```
+
+{% /steps %}
+
+## Mit einer KI anpassen
+
+Öffne das Projekt in einem Coding-Assistenten wie Claude Code, Cursor oder Copilot und beschreibe, was du willst:
+
+- «Verwende unser Logo aus `logo.svg` und unsere Markenfarbe `#1d4ed8` für den Button.»
+- «Kürze die Einladungs-E-Mail auf zwei Sätze.»
+- «Füge unsere Support-Adresse in die Fusszeile ein.»
+
+Das Projekt beschreibt die Daten jeder E-Mail, so weiss der Assistent, was er verwenden kann. Lass die Vorschau daneben offen und bitte um Anpassungen, bis es passt.
+
+## Oder selbst bearbeiten
+
+Jede E-Mail hat ihren eigenen Ordner in `emails/_templates/`, z. B. `emails/_templates/invitation/`:
+
+- `invitation.tsx` ist die E-Mail: welche Texte und Daten sie zeigt.
+- `i18n.json` enthält die Texte auf Englisch, Deutsch, Französisch und Italienisch.
+
+Die E-Mails teilen sich ein Layout, `emails/_templates/link-email/link-email.tsx`. Sie sind mit [React Email](https://react.email) geschrieben und mit Inline-Styles gestaltet. Das [README des Projekts](https://github.com/usenullish/email-templates#readme) listet die Daten jeder E-Mail und die Syntax der Vorlagen auf.
+
+{% aside %}
+E-Mails können nichts von anderswo laden. Bette Bilder wie das Logo als Inline-SVG ein.
+{% /aside %}
+
+## Exportieren
+
+```sh
+npm run export
+```
+
+Du erhältst pro E-Mail und Sprache eine HTML- und eine Textdatei, z. B. `templates/invitation/html/de.html` und `templates/invitation/text/de.txt`, sowie eine `subject.json` mit dem Betreff in jeder Sprache.
+
+nullish liefert die exportierten Vorlagen jedes [Releases](https://github.com/usenullish/email-templates/releases) mit, angehängt als `templates.tar.gz`. Um deine eigenen zu verschicken, bindest du deinen Ordner `templates` in den Server ein und gibst ihn mit `NULLISH_MAIL_TEMPLATES_DIR` an, siehe [Deine eigenen Vorlagen](/de/developers/self-hosting/#deine-eigenen-vorlagen). Fehlt deine Vorlage für die Sprache einer E-Mail oder ist sie leer, nimmt die E-Mail die eingebaute.
