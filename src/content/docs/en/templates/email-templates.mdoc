@@ -1,0 +1,61 @@
+---
+title: Email templates
+description: Change the emails your nullish instance sends.
+---
+
+nullish sends a few emails itself: to verify an email address, to reset a password and to invite someone to an organization. They come in English, German, French and Italian.
+
+These emails are part of nullish, so only those who self-host it can change them. They're made with the [nullish email templates](https://github.com/usenullish/email-templates) project. It shows a live preview of each email with sample data, so you see every change right away.
+
+## Get the project
+
+{% steps %}
+
+1. Fork [usenullish/email-templates](https://github.com/usenullish/email-templates) on GitHub if you want to keep your changes in your own repository, then clone it:
+
+   ```sh
+   git clone https://github.com/usenullish/email-templates.git
+   cd email-templates
+   npm install
+   ```
+
+2. Start the preview and open [localhost:3000](http://localhost:3000):
+
+   ```sh
+   npm run dev
+   ```
+
+{% /steps %}
+
+## Change them with an AI
+
+Open the project in a coding assistant such as Claude Code, Cursor or Copilot, and describe what you want:
+
+- "Use our logo from `logo.svg` and our brand color `#1d4ed8` for the button."
+- "Shorten the invitation email to two sentences."
+- "Add our support address to the footer."
+
+The project describes the data of each email, so the assistant knows what it can use. Keep the preview open next to it and ask for adjustments until it looks right.
+
+## Or edit them yourself
+
+Each email has its own folder in `emails/_templates/`, e.g. `emails/_templates/invitation/`:
+
+- `invitation.tsx` is the email: which texts and data it shows.
+- `i18n.json` holds the texts in English, German, French and Italian.
+
+The emails share one layout, `emails/_templates/link-email/link-email.tsx`. They're written with [React Email](https://react.email) and styled with inline styles. The [project's README](https://github.com/usenullish/email-templates#readme) lists the data of each email and the template syntax.
+
+{% aside %}
+Emails can't load anything from elsewhere. Embed images, like the logo, as inline SVG.
+{% /aside %}
+
+## Export them
+
+```sh
+npm run export
+```
+
+You get one HTML and one plain-text file per email and language, e.g. `templates/invitation/html/fr.html` and `templates/invitation/text/fr.txt`, and a `subject.json` with the subject in each language.
+
+nullish ships the exported templates of each [release](https://github.com/usenullish/email-templates/releases), attached as `templates.tar.gz`. To send your own, mount your `templates` folder in the server and point `NULLISH_MAIL_TEMPLATES_DIR` to it, see [Your own templates](/en/developers/self-hosting/#your-own-templates). An email falls back to the built-in template when yours is missing or empty for its language.
