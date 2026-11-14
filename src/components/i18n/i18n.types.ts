@@ -38,6 +38,7 @@ export type I18nFooter = {
   docs: string;
   assistant: string;
   billing: string;
+  templates: string;
   banking: string;
   accounting: string;
   developers: string;

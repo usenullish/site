@@ -101,11 +101,7 @@ export default defineConfig({
           label: "Billing",
           translations: { de: "Rechnungsstellung", fr: "Facturation", it: "Fatturazione" },
           collapsed: true,
-          items: [
-            { slug: "billing/clients" },
-            { slug: "billing/invoices" },
-            { slug: "billing/templates" },
-          ],
+          items: [{ slug: "billing/clients" }, { slug: "billing/invoices" }],
         },
         {
           label: "Banking",
@@ -135,6 +131,12 @@ export default defineConfig({
           translations: { de: "Einstellungen", fr: "Paramètres", it: "Impostazioni" },
           collapsed: true,
           items: [{ slug: "organization" }, { slug: "account" }],
+        },
+        {
+          label: "Templates",
+          translations: { de: "Vorlagen", fr: "Modèles", it: "Modelli" },
+          collapsed: true,
+          items: [{ slug: "templates/document-templates" }],
         },
         {
           label: "Migration",
