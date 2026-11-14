@@ -2,7 +2,10 @@ import { spawn, type SpawnOptions } from "node:child_process";
 import { glob, mkdir, rm } from "node:fs/promises";
 
 const cleanExistingFiles = async () => {
-  for await (const file of glob("src/content/docs/**/*.mdoc")) {
+  for await (const file of glob("src/content/docs/**/*.mdoc", {
+    // We exclude index.mdoc because templates is synced against two different repo
+    exclude: ["src/content/docs/*/templates/index.mdoc"],
+  })) {
     await rm(file);
   }
 };
