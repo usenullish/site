@@ -27,7 +27,7 @@ const invoke = ({ cmd, args, opts }: { cmd: string; args: string[]; opts: SpawnO
 };
 
 const TMP = "tmp";
-const REPOSITORIES = ["nullish", "templates"];
+const REPOSITORIES = ["nullish", "document-templates", "email-templates"];
 
 const cloneAndCopy = async () => {
   for (const repo of REPOSITORIES) {
