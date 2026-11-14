@@ -40,7 +40,7 @@ Les images sont sur Docker Hub pour `linux/amd64` et `linux/arm64`, avec le tag 
 
    # openssl rand -base64 32
    NULLISH_AUTH_SECRET=
-   NULLISH_AUTH_URL=https://nullish.example.com/api
+   NULLISH_APP_URL=https://nullish.example.com
    NULLISH_AUTH_SIGN_UP=invite_only
    ```
 
@@ -82,7 +82,7 @@ Les images sont sur Docker Hub pour `linux/amd64` et `linux/arm64`, avec le tag 
          NULLISH_DB_USERNAME: ${NULLISH_DB_USERNAME}
          NULLISH_DB_PASSWORD: ${NULLISH_DB_PASSWORD}
          NULLISH_AUTH_SECRET: ${NULLISH_AUTH_SECRET}
-         NULLISH_AUTH_URL: ${NULLISH_AUTH_URL}
+         NULLISH_APP_URL: ${NULLISH_APP_URL}
          NULLISH_AUTH_SIGN_UP: ${NULLISH_AUTH_SIGN_UP}
        volumes:
          - nullish-data:/data
@@ -156,7 +156,7 @@ Les images sont sur Docker Hub pour `linux/amd64` et `linux/arm64`, avec le tag 
 | Variable               | Requis | Description                                                                                                                           |
 | ---------------------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------- |
 | `NULLISH_AUTH_SECRET`  | oui    | Au moins 32 caractères. Génère-le avec `openssl rand -base64 32`.                                                                     |
-| `NULLISH_AUTH_URL`     | oui    | URL publique de l'API.                                                                                                                |
+| `NULLISH_APP_URL`      | oui    | URL publique de l'app, p. ex. `https://nullish.example.com`. Sert aussi aux liens dans les e-mails.                                   |
 | `NULLISH_AUTH_SIGN_UP` | non    | `true` (tout le monde), `false` (personne) ou `invite_only` (avec une invitation à rejoindre une organisation). Défaut `invite_only`. |
 
 ## Activer l'assistant
@@ -195,6 +195,77 @@ Puis redémarre avec `docker compose up -d`. L'assistant s'active dès que les t
 Le modèle a besoin d'un contexte assez grand pour les instructions et les outils de l'assistant. Avec Ollama,
 32k tokens, c'est un bon début.
 {% /aside %}
+
+## Envoyer des e-mails
+
+nullish envoie des e-mails pour confirmer l'adresse des nouveaux comptes, réinitialiser les mots de passe oubliés et transmettre les invitations. Il lui faut un serveur SMTP ou Amazon SES. Sans, nullish tourne très bien : les nouveaux comptes ne confirment pas leur adresse, les mots de passe ne se changent qu'une fois connecté, et tu partages toi-même les liens d'invitation.
+
+Ajoute les réglages à ton `.env` :
+
+```sh title=".env"
+NULLISH_MAIL_FROM=hello@nullish.example.com
+NULLISH_MAIL_FROM_NAME=nullish
+NULLISH_MAIL_SMTP_URL=smtps://user:password@smtp.example.com:465
+```
+
+Passe-les au serveur dans `docker-compose.yml` :
+
+```yaml title="docker-compose.yml"
+server:
+  environment:
+    NULLISH_MAIL_FROM: ${NULLISH_MAIL_FROM}
+    NULLISH_MAIL_FROM_NAME: ${NULLISH_MAIL_FROM_NAME}
+    NULLISH_MAIL_SMTP_URL: ${NULLISH_MAIL_SMTP_URL}
+```
+
+Puis redémarre avec `docker compose up -d`. Les e-mails s'activent dès que l'expéditeur et un serveur SMTP ou Amazon SES sont définis.
+
+Pour envoyer avec Amazon SES, laisse `NULLISH_MAIL_SMTP_URL` de côté et définis les trois variables `NULLISH_MAIL_SES_*`. Si tu définis les deux, le serveur ne démarre pas.
+
+| Variable                             | Requis           | Description                                                             |
+| ------------------------------------ | ---------------- | ----------------------------------------------------------------------- |
+| `NULLISH_MAIL_FROM`                  | pour les e-mails | Adresse de l'expéditeur, p. ex. `hello@nullish.example.com`.            |
+| `NULLISH_MAIL_FROM_NAME`             | non              | Nom de l'expéditeur, p. ex. `nullish`.                                  |
+| `NULLISH_MAIL_SMTP_URL`              | pour SMTP        | Serveur SMTP, `smtp://` ou `smtps://`, avec ses identifiants si besoin. |
+| `NULLISH_MAIL_SES_REGION`            | pour Amazon SES  | Région d'Amazon SES, p. ex. `eu-central-2`.                             |
+| `NULLISH_MAIL_SES_ACCESS_KEY_ID`     | pour Amazon SES  | ID de clé d'accès d'un utilisateur IAM autorisé à envoyer des e-mails.  |
+| `NULLISH_MAIL_SES_SECRET_ACCESS_KEY` | pour Amazon SES  | Sa clé d'accès secrète.                                                 |
+| `NULLISH_MAIL_TEMPLATES_DIR`         | non              | Dossier de tes propres modèles d'e-mails, voir plus bas.                |
+
+{% aside %}
+Une fois les e-mails activés, les nouveaux comptes confirment leur adresse avant de pouvoir se
+connecter.
+{% /aside %}
+
+### Langues
+
+Les e-mails existent en anglais, français, allemand et italien. Les e-mails d'un compte partent dans la langue du navigateur de la personne, en anglais si ce n'est aucune des quatre. Une invitation part dans la langue choisie en invitant.
+
+### Tes propres modèles
+
+Les e-mails sont construits à partir de modèles. Pour utiliser les tiens, monte un dossier dans le serveur et indique-le avec `NULLISH_MAIL_TEMPLATES_DIR` :
+
+```yaml title="docker-compose.yml"
+server:
+  environment:
+    NULLISH_MAIL_TEMPLATES_DIR: /templates
+  volumes:
+    - ./templates:/templates:ro
+```
+
+Le dossier contient un sous-dossier par e-mail, chacun avec son objet par langue et ses versions HTML et texte par langue :
+
+```txt
+templates/
+  invitation/
+    subject.json
+    html/fr.html
+    text/fr.txt
+  reset-password/
+  verify-email/
+```
+
+Les modèles intégrés, un bon point de départ, se trouvent dans `packages/templates/emails` du dépôt nullish. Un e-mail utilise les tiens quand son objet, son HTML et son texte existent pour sa langue et ne sont pas vides. Sinon, il reprend le modèle intégré et note pourquoi dans les logs. Les changements s'appliquent au prochain e-mail, sans redémarrage.
 
 ## Exploitation
 

@@ -1,0 +1,61 @@
+---
+title: Modelli di e-mail
+description: Modifica le e-mail che invia la tua istanza nullish.
+---
+
+nullish invia alcune e-mail da solo: per confermare un indirizzo e-mail, per reimpostare una password e per invitare qualcuno in un'organizzazione. Sono disponibili in inglese, tedesco, francese e italiano.
+
+Queste e-mail fanno parte di nullish: solo chi lo ospita in proprio può modificarle. Si creano con il progetto [nullish email templates](https://github.com/usenullish/email-templates). Mostra un'anteprima dal vivo di ogni e-mail con dati di esempio, così vedi subito ogni modifica.
+
+## Scaricare il progetto
+
+{% steps %}
+
+1. Fai un fork di [usenullish/email-templates](https://github.com/usenullish/email-templates) su GitHub se vuoi tenere le tue modifiche nel tuo repository, poi clonalo:
+
+   ```sh
+   git clone https://github.com/usenullish/email-templates.git
+   cd email-templates
+   npm install
+   ```
+
+2. Avvia l'anteprima e apri [localhost:3000](http://localhost:3000):
+
+   ```sh
+   npm run dev
+   ```
+
+{% /steps %}
+
+## Modificarle con l'IA
+
+Apri il progetto in un assistente di programmazione come Claude Code, Cursor o Copilot e descrivi cosa vuoi:
+
+- "Usa il nostro logo da `logo.svg` e il nostro colore `#1d4ed8` per il pulsante."
+- "Accorcia l'e-mail di invito a due frasi."
+- "Aggiungi il nostro indirizzo di supporto nel piè di pagina."
+
+Il progetto descrive i dati di ogni e-mail, così l'assistente sa cosa può usare. Tieni l'anteprima aperta accanto e chiedi modifiche finché il risultato è giusto.
+
+## Oppure fallo tu
+
+Ogni e-mail ha la sua cartella in `emails/_templates/`, p. es. `emails/_templates/invitation/`:
+
+- `invitation.tsx` è l'e-mail: quali testi e dati mostra.
+- `i18n.json` contiene i testi in inglese, tedesco, francese e italiano.
+
+Le e-mail condividono un layout, `emails/_templates/link-email/link-email.tsx`. Sono scritte con [React Email](https://react.email) e stilizzate con stili in linea. Il [README del progetto](https://github.com/usenullish/email-templates#readme) elenca i dati di ogni e-mail e la sintassi dei modelli.
+
+{% aside %}
+Le e-mail non possono caricare nulla da altrove. Incorpora le immagini, come il logo, in SVG in linea.
+{% /aside %}
+
+## Esportarle
+
+```sh
+npm run export
+```
+
+Ottieni un file HTML e un file di testo per e-mail e lingua, p. es. `templates/invitation/html/it.html` e `templates/invitation/text/it.txt`, più un `subject.json` con l'oggetto in ogni lingua.
+
+nullish include i modelli esportati di ogni [release](https://github.com/usenullish/email-templates/releases), allegati come `templates.tar.gz`. Per inviare i tuoi, monta la tua cartella `templates` nel server e indicala con `NULLISH_MAIL_TEMPLATES_DIR`, vedi [I tuoi modelli](/it/developers/self-hosting/#i-tuoi-modelli). Se il tuo modello manca o è vuoto per la lingua di un'e-mail, questa usa quello integrato.
