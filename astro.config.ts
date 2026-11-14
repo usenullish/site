@@ -136,7 +136,7 @@ export default defineConfig({
           label: "Templates",
           translations: { de: "Vorlagen", fr: "Modèles", it: "Modelli" },
           collapsed: true,
-          items: [{ slug: "templates/document-templates" }],
+          items: [{ slug: "templates/document-templates" }, { slug: "templates/email-templates" }],
         },
         {
           label: "Migration",
