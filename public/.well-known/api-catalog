@@ -1,0 +1,25 @@
+{
+  "linkset": [
+    {
+      "anchor": "https://api.nullish.ch",
+      "service-desc": [
+        {
+          "href": "https://api.nullish.ch/doc",
+          "type": "application/vnd.oai.openapi+json"
+        }
+      ],
+      "service-doc": [
+        {
+          "href": "https://nullish.ch/en/developers/api/",
+          "type": "text/html"
+        }
+      ],
+      "status": [
+        {
+          "href": "https://nullishstatus.com/",
+          "type": "text/html"
+        }
+      ]
+    }
+  ]
+}
