@@ -2,7 +2,7 @@
 import Section from "./Section.astro";
 import { i18n } from "../i18n/i18n.ts";
 
-const { lessBoring } = i18n(Astro.locals.starlightRoute.locale);
+const { lessBoring } = i18n(Astro.currentLocale);
 const { cards } = lessBoring;
 ---
 

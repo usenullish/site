@@ -18,7 +18,7 @@ const sources = {
   light: { webm: chatLightWebm, mp4: chatLightMp4, poster: lightPoster.src },
 };
 
-const { video } = i18n(Astro.locals.starlightRoute.locale);
+const { video } = i18n(Astro.currentLocale);
 ---
 
 <figure class="demo not-content">

@@ -3,6 +3,7 @@ import starlight from "@astrojs/starlight";
 import markdoc from "@astrojs/markdoc";
 import type { StarlightUserConfig } from "@astrojs/starlight/types";
 import sitemap from "@astrojs/sitemap";
+import starlightLlmsTxt from "starlight-llms-txt";
 
 const locales = {
   en: {
@@ -71,6 +72,7 @@ export default defineConfig({
             ]
           : []),
       ],
+      plugins: [starlightLlmsTxt({ customSelectors: { all: [".sl-anchor-link"] } })],
       routeMiddleware: ["./src/x-default.middleware.ts"],
       defaultLocale: "en",
       locales,
