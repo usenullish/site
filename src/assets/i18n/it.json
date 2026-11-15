@@ -104,5 +104,17 @@
     "developers": "Sviluppatori",
     "selfHosting": "Self-hosting",
     "resources": "Risorse"
+  },
+  "structuredData": {
+    "keywords": [
+      "contabilità svizzera",
+      "fatturazione",
+      "fattura QR",
+      "IVA",
+      "riconciliazione bancaria",
+      "assistente IA",
+      "open source",
+      "self-hosting"
+    ]
   }
 }

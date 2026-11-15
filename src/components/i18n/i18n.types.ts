@@ -47,6 +47,8 @@ export type I18nFooter = {
   resources: string;
 };
 
+export type I18nStructuredData = { keywords: string[] };
+
 export interface I18n {
   lang: Languages;
   nav: I18nNav;
@@ -56,4 +58,5 @@ export interface I18n {
   lessBoring: I18nLessBoring;
   swiss: I18nSwiss;
   footer: I18nFooter;
+  structuredData: I18nStructuredData;
 }

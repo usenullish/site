@@ -104,5 +104,17 @@
     "developers": "Développeurs",
     "selfHosting": "Auto-hébergement",
     "resources": "Ressources"
+  },
+  "structuredData": {
+    "keywords": [
+      "comptabilité suisse",
+      "facturation",
+      "facture QR",
+      "TVA",
+      "rapprochement bancaire",
+      "assistant IA",
+      "open source",
+      "auto-hébergement"
+    ]
   }
 }

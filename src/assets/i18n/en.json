@@ -104,5 +104,17 @@
     "developers": "Developers",
     "selfHosting": "Self-hosting",
     "resources": "Resources"
+  },
+  "structuredData": {
+    "keywords": [
+      "Swiss accounting",
+      "invoicing",
+      "QR-bill",
+      "VAT",
+      "bank reconciliation",
+      "AI assistant",
+      "open source",
+      "self-hosting"
+    ]
   }
 }
