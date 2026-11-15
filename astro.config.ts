@@ -73,7 +73,11 @@ export default defineConfig({
           : []),
       ],
       plugins: [starlightLlmsTxt({ customSelectors: { all: [".sl-anchor-link"] } })],
-      routeMiddleware: ["./src/x-default.middleware.ts", "./src/alternate.middleware.ts"],
+      routeMiddleware: [
+        "./src/x-default.middleware.ts",
+        "./src/alternate.middleware.ts",
+        "./src/json-ld.middleware.ts",
+      ],
       defaultLocale: "en",
       locales,
       logo: {

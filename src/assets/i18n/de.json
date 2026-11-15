@@ -109,5 +109,17 @@
     "developers": "Entwickler",
     "selfHosting": "Self-Hosting",
     "resources": "Ressourcen"
+  },
+  "structuredData": {
+    "keywords": [
+      "Schweizer Buchhaltung",
+      "Rechnungen",
+      "QR-Rechnung",
+      "MWST",
+      "Bankabgleich",
+      "KI-Assistent",
+      "Open Source",
+      "Self-Hosting"
+    ]
   }
 }
