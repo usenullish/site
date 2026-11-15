@@ -182,6 +182,9 @@ importers:
       '@astrojs/starlight-markdoc':
         specifier: ^0.7.0
         version: 0.7.0(@astrojs/markdoc@2.1.3(astro@7.4.7(@types/node@24.19.2)(yaml@2.9.1)))(@astrojs/starlight@0.42.10(astro@7.4.7(@types/node@24.19.2)(yaml@2.9.1)))
+      '@types/turndown':
+        specifier: ^5.0.6
+        version: 5.0.6
       astro:
         specifier: ^7.4.7
         version: 7.4.7(@types/node@24.19.2)(yaml@2.9.1)
@@ -197,6 +200,9 @@ importers:
       starlight-llms-txt:
         specifier: ^0.12.0
         version: 0.12.0(@astrojs/markdown-satteri@0.4.7)(@astrojs/starlight@0.42.10(astro@7.4.7(@types/node@24.19.2)(yaml@2.9.1)))(astro@7.4.7(@types/node@24.19.2)(yaml@2.9.1))
+      turndown:
+        specifier: ^7.2.5
+        version: 7.2.5
 
 packages:
 
@@ -679,6 +685,9 @@ packages:
         optional: true
       react:
         optional: true
+
+  '@mixmark-io/domino@2.2.0':
+    resolution: {integrity: sha512-Y28PR25bHXUg88kCV7nivXrP2Nj2RueZ3/l/jdx6J9f8J4nsEGcgX0Qe6lt7Pa+J79+kPiJU3LguR6O/6zrLOw==}
 
   '@napi-rs/wasm-runtime@1.2.6':
     resolution: {integrity: sha512-mRyDmEw9/fCDXCGfL1sbgIw/GUK0PVxRW4YwgPN61F3LQ+fSyoBFarJVzgGyhF6kRzEQZ0FejDqm4WLXSeqQmw==}
@@ -1251,6 +1260,9 @@ packages:
 
   '@types/sax@1.2.7':
     resolution: {integrity: sha512-rO73L89PJxeYM3s3pPPjiPgVVcymqU490g0YO5n5By0k2Erzj6tay/4lr1CHAAU4JyOWd1rpQ8bCf6cZfHU96A==}
+
+  '@types/turndown@5.0.6':
+    resolution: {integrity: sha512-ru00MoyeeouE5BX4gRL+6m/BsDfbRayOskWqUvh7CLGW+UXxHQItqALa38kKnOiZPqJrtzJUgAC2+F0rL1S4Pg==}
 
   '@types/unist@2.0.11':
     resolution: {integrity: sha512-CmBKiL6NNo/OqgmMn95Fk9Whlp2mtvIv+KNpQKN2F4SjvrEesubTRWGYSg+BnWZOnlCaSTU1sMpsBOzgbYhnsA==}
@@ -2170,6 +2182,10 @@ packages:
   tslib@2.9.1:
     resolution: {integrity: sha512-a4Ux9VKuIMHsOS7ENbEq6hK2ZGYIT27Rtl0E4eD9KqwxhKiQeMZE/9xb3IdYwWaSOyIBQLExhQgXDTYoiCxnWA==}
 
+  turndown@7.2.5:
+    resolution: {integrity: sha512-EKZvCCFHh8sWttpAMs10U6niZFJ2cpz8LkCPlylxoG4JcHF50J7EHnnBW3AY1qXtUMu7kDjCp7dnggB1sIbqEQ==}
+    engines: {node: '>=18', npm: '>=9'}
+
   ufo@1.6.4:
     resolution: {integrity: sha512-JFNbkD1Svwe0KvGi8GOeLcP4kAWQ609twvCdcHxq1oSL8svv39ZuSvajcD8B+5D0eL4+s1Is2D/O6KN3qcTeRA==}
 
@@ -2798,6 +2814,8 @@ snapshots:
 
   '@markdoc/markdoc@0.5.11': {}
 
+  '@mixmark-io/domino@2.2.0': {}
+
   '@napi-rs/wasm-runtime@1.2.6(@emnapi/core@2.0.0-beta.2)(@emnapi/runtime@2.0.0-beta.2)':
     dependencies:
       '@emnapi/core': 2.0.0-beta.2
@@ -3143,6 +3161,8 @@ snapshots:
   '@types/sax@1.2.7':
     dependencies:
       '@types/node': 24.19.2
+
+  '@types/turndown@5.0.6': {}
 
   '@types/unist@2.0.11': {}
 
@@ -4496,6 +4516,10 @@ snapshots:
 
   tslib@2.9.1:
     optional: true
+
+  turndown@7.2.5:
+    dependencies:
+      '@mixmark-io/domino': 2.2.0
 
   ufo@1.6.4: {}
 
