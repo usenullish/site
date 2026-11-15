@@ -3,9 +3,13 @@ import { LinkButton } from "@astrojs/starlight/components";
 import { i18n } from "../i18n/i18n.ts";
 import HeroAssistant from "./HeroAssistant.astro";
 
-const { data } = Astro.locals.starlightRoute.entry;
+const { id, data } = Astro.locals.starlightRoute.entry;
 const { tagline, actions = [] } = data.hero || {};
 const { lang, hero } = i18n(Astro.locals.starlightRoute.locale);
+
+const isNotFound = id === "404";
+const label = isNotFound ? "404" : hero.label;
+const title = isNotFound ? [data.title] : hero.title;
 
 const formatAmount = (value: number): string =>
   new Intl.NumberFormat(`${lang}-CH`, { minimumFractionDigits: 2 }).format(value);
@@ -18,19 +22,21 @@ const formatAmount = (value: number): string =>
         <span class="slashes" aria-hidden="true">
           {"//"}
         </span>{" "}
-        {hero.label}
+        {label}
       </p>
 
-      <div class="banner">
-        <span class="banner-dot"></span>
-        <span>{hero.badge}</span>
-      </div>
+      {!isNotFound && (
+        <div class="banner">
+          <span class="banner-dot"></span>
+          <span>{hero.badge}</span>
+        </div>
+      )}
     </div>
 
     <div class="main">
       <div class="sl-flex stack">
         <h1 data-page-title>
-          {hero.title.map((line, i) => (
+          {title.map((line, i) => (
             <Fragment>
               {i > 0 && <br />}
               {line}
@@ -54,20 +60,22 @@ const formatAmount = (value: number): string =>
         )}
       </div>
 
-      <HeroAssistant />
+      {!isNotFound && <HeroAssistant />}
     </div>
 
-    <div class="ledger" aria-hidden="true">
-      <p>
-        {hero.ledger.debit} <span class="amount">{formatAmount(48210.35)}</span>
-      </p>
-      <p>
-        {hero.ledger.credit} <span class="amount">{formatAmount(48210.35)}</span>
-      </p>
-      <p class="balance">
-        {hero.ledger.balance} <span class="amount">{formatAmount(0)}</span>
-      </p>
-    </div>
+    {!isNotFound && (
+      <div class="ledger" aria-hidden="true">
+        <p>
+          {hero.ledger.debit} <span class="amount">{formatAmount(48210.35)}</span>
+        </p>
+        <p>
+          {hero.ledger.credit} <span class="amount">{formatAmount(48210.35)}</span>
+        </p>
+        <p class="balance">
+          {hero.ledger.balance} <span class="amount">{formatAmount(0)}</span>
+        </p>
+      </div>
+    )}
   </div>
 </div>
 
