@@ -44,7 +44,7 @@ export type I18nFooter = {
   accounting: string;
   developers: string;
   selfHosting: string;
-  community: string;
+  resources: string;
 };
 
 export interface I18n {
