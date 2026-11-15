@@ -33,6 +33,7 @@ export type I18nFooter = {
   product: string;
   getStarted: string;
   becomeTester: string;
+  data: string;
   status: string;
   migrate: string;
   docs: string;
