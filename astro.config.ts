@@ -71,6 +71,7 @@ export default defineConfig({
             ]
           : []),
       ],
+      routeMiddleware: ["./src/x-default.middleware.ts"],
       defaultLocale: "en",
       locales,
       logo: {
