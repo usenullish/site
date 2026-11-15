@@ -12,8 +12,26 @@ export const onRequest = defineRouteMiddleware((context) => {
   const { lang, structuredData } = i18n(locale);
   const tagline = entry.data.hero?.tagline?.replace(/<br\s*\/?>/g, " ");
 
-  const jsonLd = {
-    "@context": "https://schema.org",
+  const organization = {
+    "@type": "Organization",
+    "@id": "https://fluster.ch",
+    name: "Fluster GmbH",
+    url: "https://fluster.ch",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Zürich",
+      addressCountry: "CH",
+    },
+    contactPoint: {
+      "@type": "ContactPoint",
+      contactType: "customer support",
+      email: "hi@nullish.ch",
+      url: new URL(`/${lang}/contact/`, site).href,
+      availableLanguage: ["en", "de", "fr", "it"],
+    },
+  };
+
+  const application = {
     "@type": "SoftwareApplication",
     name: "nullish",
     url: new URL(url.pathname, site).href,
@@ -23,6 +41,12 @@ export const onRequest = defineRouteMiddleware((context) => {
     inLanguage: lang,
     keywords: structuredData.keywords.join(", "),
     sameAs: ["https://github.com/usenullish"],
+    publisher: { "@id": organization["@id"] },
+  };
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [organization, application],
   };
 
   head.push({
