@@ -1,0 +1,42 @@
+---
+title: Où vivent tes données
+description: Où tourne nullish, où sont stockées tes données et qui s'en occupe.
+sidebar:
+  label: Hébergement
+---
+
+Tes données comptables sont stockées et traitées en Suisse.
+
+## Serveur
+
+nullish tourne sur son propre serveur chez [Infomaniak](https://infomaniak.com), en Suisse.
+
+## Chiffrement
+
+Le disque du serveur est chiffré, et tout le trafic passe par HTTPS.
+
+## Sauvegardes
+
+Une sauvegarde est faite chaque nuit, chiffrée avant de quitter le serveur, puis stockée en Suisse chez un autre fournisseur. Un problème chez une entreprise ne peut donc jamais toucher à la fois l'app et ses sauvegardes.
+
+## E-mail
+
+Les notifications, comme la vérification à la connexion, partent via Amazon Web Services ([SES](https://aws.amazon.com/ses/)), depuis sa région de Zurich (`eu-central-2`).
+
+## Assistant IA
+
+Le modèle d'IA tourne chez Infomaniak, en Suisse. Tes questions, et la compta que l'assistant lit pour y répondre, restent dans le pays.
+
+## Site web
+
+Le site tourne sur un serveur séparé. Ses [statistiques](https://yetanotherwebanalytics.dev/) sont auto-hébergées sur la même machine et anonymisées.
+
+## Accès
+
+Seule l'équipe nullish peut accéder aux serveurs, et uniquement avec une clé de sécurité physique.
+
+Les comptes chez nos fournisseurs sont protégés par une authentification à deux facteurs.
+
+## Statut
+
+Pour savoir si nullish fonctionne et voir les incidents passés, rends-toi sur [nullishstatus.com](https://nullishstatus.com).

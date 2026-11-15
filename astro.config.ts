@@ -151,6 +151,7 @@ export default defineConfig({
             },
           ],
         },
+        { slug: "data" },
         {
           label: "Developers",
           translations: { de: "Entwickler", fr: "Développeurs", it: "Sviluppatori" },

@@ -1,0 +1,42 @@
+---
+title: Wo deine Daten liegen
+description: Wo nullish läuft, wo deine Daten gespeichert werden und wer damit zu tun hat.
+sidebar:
+  label: Hosting
+---
+
+Deine Buchhaltungsdaten werden in der Schweiz gespeichert und verarbeitet.
+
+## Server
+
+nullish läuft auf einem eigenen Server bei [Infomaniak](https://infomaniak.com) in der Schweiz.
+
+## Verschlüsselung
+
+Die Festplatte des Servers ist verschlüsselt, und der gesamte Datenverkehr läuft über HTTPS.
+
+## Backups
+
+Jede Nacht wird ein Backup erstellt, verschlüsselt, bevor es den Server verlässt, und bei einem anderen Anbieter in der Schweiz abgelegt. Ein Problem bei einer Firma kann so nie gleichzeitig die App und ihre Backups treffen.
+
+## E-Mail
+
+Benachrichtigungen, etwa zur Bestätigung beim Anmelden, verschicken wir über Amazon Web Services ([SES](https://aws.amazon.com/ses/)), aus der Region Zürich (`eu-central-2`).
+
+## KI-Assistent
+
+Das KI-Modell läuft bei Infomaniak in der Schweiz. Deine Fragen und die Buchhaltung, die der Assistent dafür liest, bleiben im Land.
+
+## Website
+
+Die Website läuft auf einem separaten Server. Ihre [Statistiken](https://yetanotherwebanalytics.dev/) werden auf derselben Maschine selbst gehostet und anonymisiert.
+
+## Zugriff
+
+Nur das nullish-Team hat Zugriff auf die Server, und nur mit einem Hardware-Sicherheitsschlüssel.
+
+Die Konten bei unseren Anbietern sind mit Zwei-Faktor-Authentifizierung geschützt.
+
+## Status
+
+Ob nullish läuft und welche Störungen es gab, siehst du auf [nullishstatus.com](https://nullishstatus.com).
