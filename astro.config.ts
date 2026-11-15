@@ -72,7 +72,24 @@ export default defineConfig({
             ]
           : []),
       ],
-      plugins: [starlightLlmsTxt({ customSelectors: { all: [".sl-anchor-link"] } })],
+      plugins: [
+        starlightLlmsTxt({
+          customSelectors: { all: [".sl-anchor-link"] },
+          details: `## When to use nullish
+
+Use nullish to keep the books of a Swiss company: issue invoices with a Swiss QR-bill, record payments, import and reconcile bank statements, post journal entries, compute VAT (net tax rate or effective method), close a fiscal year and produce the balance sheet and income statement. Amounts are in CHF or any other currency.
+
+Don't use it for payroll, inventory, or accounting outside Switzerland.
+
+## How to call nullish
+
+- MCP server: \`https://api.nullish.ch/mcp\` (streamable HTTP). The same tools the built-in assistant uses. Docs: https://nullish.ch/en/developers/mcp/
+- REST API: \`https://api.nullish.ch\`. OpenAPI document: https://api.nullish.ch/doc. Docs: https://nullish.ch/en/developers/api/
+- Both authenticate with an API key sent as a bearer token. The user creates it in nullish under **API keys**, with read or read and write access.
+
+The documentation also exists in German, French and Italian under \`/de/\`, \`/fr/\` and \`/it/\`.`,
+        }),
+      ],
       routeMiddleware: [
         "./src/x-default.middleware.ts",
         "./src/alternate.middleware.ts",
