@@ -186,6 +186,7 @@ The documentation also exists in German, French and Italian under \`/de/\`, \`/f
             { slug: "security" },
           ],
         },
+        { slug: "contact" },
       ],
       components: {
         Hero: "./src/components/landing/Hero.astro",

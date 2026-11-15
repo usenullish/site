@@ -45,6 +45,7 @@ export type I18nFooter = {
   developers: string;
   selfHosting: string;
   resources: string;
+  contact: string;
 };
 
 export type I18nStructuredData = { keywords: string[] };
