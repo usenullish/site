@@ -24,6 +24,7 @@ export type I18nBoring = {
 export type I18nLessBoring = {
   label: string;
   title: string;
+  prompt: string;
   cards: { title: string; text: string }[];
 };
 

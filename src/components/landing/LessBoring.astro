@@ -3,15 +3,114 @@ import Section from "./Section.astro";
 import { i18n } from "../i18n/i18n.ts";
 
 const { lessBoring } = i18n(Astro.currentLocale);
-const { cards } = lessBoring;
+const { cards, prompt } = lessBoring;
+
+const sketches = ["ask", "qr", "hide", "template", "crypto", "code"] as const;
+
+const amounts = ["0.01 CHF", "0.00000001 BTC", "0.000000001 SOL", "0.000000000000000001 ETH"];
+
+const size = 21;
+
+const isFinder = (x: number, y: number) =>
+  [
+    [0, 0],
+    [size - 7, 0],
+    [0, size - 7],
+  ].some(([fx, fy]) => x >= fx && x < fx + 7 && y >= fy && y < fy + 7);
+
+const finder = (x: number, y: number) => {
+  const dx = Math.min(x % (size - 7), 6);
+  const dy = Math.min(y % (size - 7), 6);
+  const ring = Math.min(dx, dy, 6 - dx, 6 - dy);
+  return ring !== 1;
+};
+
+const isCross = (x: number, y: number) => Math.abs(x - 10) <= 3 && Math.abs(y - 10) <= 3;
+
+const modules = Array.from({ length: size * size }, (_, i) => {
+  const x = i % size;
+  const y = Math.floor(i / size);
+
+  if (isCross(x, y)) {
+    return null;
+  }
+
+  const filled = isFinder(x, y) ? finder(x, y) : (x * 7 + y * 13 + x * y * 3) % 5 < 2;
+
+  return filled ? { x, y } : null;
+}).filter((module) => module !== null);
 ---
 
 <Section label={lessBoring.label} title={lessBoring.title}>
   <ul class="cards">
-    {cards.map(({ title, text }) => (
+    {cards.map(({ title, text }, index) => (
       <li class="card">
         <h3>{title}</h3>
         <p>{text}</p>
+
+        <div class="sketch" aria-hidden="true">
+          {sketches[index] === "ask" && (
+            <p class="ask" style={`--chars: ${prompt.length}`}>
+              <span class="typed">{prompt}</span>
+            </p>
+          )}
+
+          {sketches[index] === "qr" && (
+            <div class="qr">
+              <svg viewBox={`0 0 ${size} ${size}`} shape-rendering="crispEdges">
+                {modules.map(({ x, y }) => (
+                  <rect x={x} y={y} width="1" height="1" />
+                ))}
+                <rect class="cross-bg" x="8" y="8" width="5" height="5" />
+                <rect class="cross" x="10.25" y="8.9" width="0.5" height="3.2" />
+                <rect class="cross" x="8.9" y="10.25" width="3.2" height="0.5" />
+              </svg>
+              <code class="reference">
+                RF<span>47</span> 9X2K <span>81</span>QZ <span>T0</span>7M
+              </code>
+            </div>
+          )}
+
+          {sketches[index] === "hide" && (
+            <p class="hide">
+              <span class="currency">CHF</span> <span class="amount">12’480.00</span>
+            </p>
+          )}
+
+          {sketches[index] === "template" && (
+            <svg class="template" viewBox="0 0 180 96">
+              <g transform="translate(1 1)">
+                <rect class="page" width="60" height="80" />
+                <rect class="fill" x="6" y="6" width="14" height="6" />
+                <path d="M6 22h48M6 30h32M6 50h48M6 56h48M6 62h48" />
+              </g>
+              <g transform="translate(60 8)">
+                <rect class="page" width="60" height="80" />
+                <rect class="accent" width="60" height="10" />
+                <path d="M6 20h24M6 26h18M6 46h48M6 52h48M30 64h24" />
+              </g>
+              <g transform="translate(119 15)">
+                <rect class="page" width="60" height="80" />
+                <circle class="fill" cx="30" cy="12" r="5" />
+                <path d="M16 24h28M6 42h48M6 48h48M6 54h48M6 68h20" />
+              </g>
+            </svg>
+          )}
+
+          {sketches[index] === "crypto" && (
+            <p class="crypto" style={`--count: ${amounts.length}`}>
+              {amounts.map((amount, i) => (
+                <code style={`--i: ${i}; --chars: ${amount.length}`}>{amount}</code>
+              ))}
+            </p>
+          )}
+
+          {sketches[index] === "code" && (
+            <code class="code">
+              <span class="dollar">$</span> git clone https://github.com/usenullish/nullish
+            </code>
+          )}
+        </div>
       </li>
     ))}
   </ul>
@@ -30,6 +129,8 @@ const { cards } = lessBoring;
 
   .card {
     position: relative;
+    display: flex;
+    flex-direction: column;
     padding: 1.5rem;
     border-block-end: var(--layout-section-border);
     border-inline-end: var(--layout-section-border);
@@ -78,6 +179,217 @@ const { cards } = lessBoring;
   p {
     margin: 0.5rem 0 0;
     color: var(--sl-color-gray-2);
+  }
+
+  .sketch {
+    display: grid;
+    flex: auto;
+    place-items: end start;
+    min-height: 8rem;
+    padding-block-start: 2rem;
+    color: var(--sl-color-gray-3);
+  }
+
+  .sketch p {
+    margin: 0;
+  }
+
+  code {
+    background: none;
+    padding: 0;
+    font-family: var(--__sl-font-mono);
+    font-size: var(--sl-text-xs);
+  }
+
+  .ask {
+    width: 100%;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid var(--sl-color-gray-5);
+    font-family: var(--__sl-font-mono);
+    font-size: var(--sl-text-xs);
+    color: var(--sl-color-white);
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  .typed {
+    display: inline-block;
+    max-width: calc(var(--chars) * 1ch);
+    overflow: hidden;
+    vertical-align: bottom;
+  }
+
+  .ask::after {
+    content: "";
+    display: inline-block;
+    width: 0.5em;
+    height: 1em;
+    margin-inline-start: 0.125rem;
+    vertical-align: text-bottom;
+    background: var(--sl-color-accent);
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .typed {
+      animation: type 5s steps(var(--chars)) infinite;
+    }
+
+    .ask::after {
+      animation: blink 1s steps(1) infinite;
+    }
+  }
+
+  @keyframes type {
+    0% {
+      max-width: 0;
+    }
+
+    60%,
+    100% {
+      max-width: calc(var(--chars) * 1ch);
+    }
+  }
+
+  @keyframes blink {
+    50% {
+      opacity: 0;
+    }
+  }
+
+  .qr {
+    display: flex;
+    align-items: flex-end;
+    gap: 1rem;
+  }
+
+  .qr svg {
+    width: 5rem;
+    height: 5rem;
+    fill: var(--sl-color-gray-3);
+  }
+
+  .qr .cross-bg {
+    fill: var(--sl-color-white);
+  }
+
+  .qr .cross {
+    fill: var(--sl-color-bg);
+  }
+
+  .reference span {
+    color: var(--sl-color-text-accent);
+  }
+
+  .hide {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    color: var(--sl-color-white);
+  }
+
+  .hide .currency {
+    font-size: var(--sl-text-sm);
+    color: var(--sl-color-gray-3);
+  }
+
+  .hide .amount {
+    font-size: var(--sl-text-4xl);
+    font-weight: 600;
+    letter-spacing: -0.025em;
+    line-height: 1;
+    filter: blur(0.4rem);
+    transition: filter 0.3s ease;
+  }
+
+  .card:hover .hide .amount {
+    filter: none;
+  }
+
+  .template {
+    width: 100%;
+    max-width: 12rem;
+    fill: none;
+    stroke: var(--sl-color-gray-4);
+    stroke-width: 1px;
+    vector-effect: non-scaling-stroke;
+  }
+
+  .template .page {
+    fill: var(--sl-color-bg);
+    stroke: var(--sl-color-gray-3);
+  }
+
+  .template .fill {
+    fill: var(--sl-color-gray-3);
+    stroke: none;
+  }
+
+  .template .accent {
+    fill: var(--sl-color-accent);
+    stroke: none;
+  }
+
+  .crypto {
+    display: grid;
+  }
+
+  .crypto code {
+    grid-area: 1 / 1;
+    justify-self: start;
+    overflow: hidden;
+    white-space: nowrap;
+    color: var(--sl-color-white);
+    font-size: var(--sl-text-sm);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .crypto code:not(:last-child) {
+      visibility: hidden;
+    }
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .crypto code {
+      box-sizing: content-box;
+      width: 0;
+      border-inline-end: 0.5em solid var(--sl-color-accent);
+      opacity: 0;
+      animation: typewriter calc(var(--count) * 3s) steps(var(--chars)) infinite;
+      animation-delay: calc(var(--i) * 3s);
+    }
+  }
+
+  @keyframes typewriter {
+    0% {
+      width: 0;
+      opacity: 1;
+    }
+
+    15%,
+    22% {
+      width: calc(var(--chars) * 1ch);
+      opacity: 1;
+    }
+
+    25% {
+      width: 0;
+      opacity: 1;
+    }
+
+    25.01%,
+    100% {
+      width: 0;
+      opacity: 0;
+    }
+  }
+
+  .code {
+    color: var(--sl-color-gray-2);
+    word-break: break-all;
+  }
+
+  .dollar {
+    color: var(--sl-color-text-accent);
   }
 
   @media (min-width: 50rem) {
