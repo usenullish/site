@@ -100,7 +100,9 @@ const modules = Array.from({ length: size * size }, (_, i) => {
           {sketches[index] === "crypto" && (
             <p class="crypto" style={`--count: ${amounts.length}`}>
               {amounts.map((amount, i) => (
-                <code style={`--i: ${i}; --chars: ${amount.length}`}>{amount}</code>
+                <code style={`--i: ${i}`}>
+                  {amount.split(" ")[0]} <span class="currency">{amount.split(" ")[1]}</span>
+                </code>
               ))}
             </p>
           )}
@@ -335,11 +337,13 @@ const modules = Array.from({ length: size * size }, (_, i) => {
 
   .crypto code {
     grid-area: 1 / 1;
-    justify-self: start;
-    overflow: hidden;
     white-space: nowrap;
     color: var(--sl-color-white);
     font-size: var(--sl-text-sm);
+  }
+
+  .crypto .currency {
+    color: var(--sl-color-text-accent);
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -350,36 +354,28 @@ const modules = Array.from({ length: size * size }, (_, i) => {
 
   @media (prefers-reduced-motion: no-preference) {
     .crypto code {
-      box-sizing: content-box;
-      width: 0;
-      border-inline-end: 0.5em solid var(--sl-color-accent);
       opacity: 0;
-      animation: typewriter calc(var(--count) * 3s) steps(var(--chars)) infinite;
-      animation-delay: calc(var(--i) * 3s);
+      animation: cycle calc(var(--count) * 2.5s) ease infinite;
+      animation-delay: calc(var(--i) * 2.5s);
     }
   }
 
-  @keyframes typewriter {
+  @keyframes cycle {
     0% {
-      width: 0;
-      opacity: 1;
-    }
-
-    15%,
-    22% {
-      width: calc(var(--chars) * 1ch);
-      opacity: 1;
-    }
-
-    25% {
-      width: 0;
-      opacity: 1;
-    }
-
-    25.01%,
-    100% {
-      width: 0;
       opacity: 0;
+      translate: 0 0.5rem;
+    }
+
+    5%,
+    20% {
+      opacity: 1;
+      translate: 0;
+    }
+
+    25%,
+    100% {
+      opacity: 0;
+      translate: 0 -0.5rem;
     }
   }
 
