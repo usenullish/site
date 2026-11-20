@@ -46,7 +46,8 @@
   },
   "lessBoring": {
     "label": "la partie fun",
-    "title": "La compta, ce n’est pas franchement passionnant. Alors on a ajouté quelques petits plus.",
+    "title": "La compta, c’est pas franchement passionnant.",
+    "punchline": "Alors on a ajouté quelques petits plus.",
     "prompt": "Marque la facture 42 comme payée",
     "cards": [
       {

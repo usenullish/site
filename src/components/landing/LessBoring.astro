@@ -41,7 +41,7 @@ const modules = Array.from({ length: size * size }, (_, i) => {
 }).filter((module) => module !== null);
 ---
 
-<Section label={lessBoring.label} title={lessBoring.title}>
+<Section label={lessBoring.label} title={lessBoring.title} punchline={lessBoring.punchline}>
   <ul class="cards">
     {cards.map(({ title, text }, index) => (
       <li class="card">

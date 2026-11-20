@@ -51,7 +51,8 @@
   },
   "lessBoring": {
     "label": "der übermütige Teil",
-    "title": "Buchhaltung ist nicht gerade spannend. Darum haben wir ein paar Extras eingebaut.",
+    "title": "Buchhaltung ist nicht gerade spannend.",
+    "punchline": "Darum haben wir ein paar Extras eingebaut.",
     "prompt": "Markiere Rechnung 42 als bezahlt",
     "cards": [
       {

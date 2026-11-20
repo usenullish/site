@@ -46,7 +46,8 @@
   },
   "lessBoring": {
     "label": "the fun part",
-    "title": "Accounting isn’t exactly exciting. So we added a few twists.",
+    "title": "Accounting isn’t exactly exciting.",
+    "punchline": "So we added a few twists.",
     "prompt": "Mark invoice 42 as paid",
     "cards": [
       {

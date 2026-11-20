@@ -46,7 +46,8 @@
   },
   "lessBoring": {
     "label": "la parte fun",
-    "title": "La contabilità non è proprio entusiasmante. Così abbiamo aggiunto qualche sorpresa.",
+    "title": "La contabilità non è proprio entusiasmante.",
+    "punchline": "Così abbiamo aggiunto qualche sorpresa.",
     "prompt": "Segna la fattura 42 come pagata",
     "cards": [
       {
