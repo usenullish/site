@@ -2,10 +2,11 @@
 interface Props {
   label: string;
   title: string;
+  punchline?: string;
   lead?: string;
 }
 
-const { label, title, lead } = Astro.props;
+const { label, title, punchline, lead } = Astro.props;
 ---
 
 <section class="not-content">
@@ -13,7 +14,10 @@ const { label, title, lead } = Astro.props;
     <span class="slashes">{"//"}</span> {label}
   </p>
 
-  <h2>{title}</h2>
+  <h2>
+    {title}
+    {punchline && <span class="punchline"> {punchline}</span>}
+  </h2>
 
   {lead && <p class="lead">{lead}</p>}
 
@@ -48,6 +52,11 @@ const { label, title, lead } = Astro.props;
     letter-spacing: -0.025em;
     font-weight: 600;
     line-height: var(--sl-line-height-headings);
+  }
+
+  .punchline {
+    display: block;
+    color: var(--sl-color-gray-3);
   }
 
   .lead {
