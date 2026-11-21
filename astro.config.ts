@@ -49,7 +49,7 @@ export default defineConfig({
         { tag: "meta", attrs: { property: "og:description", content: description } },
         {
           tag: "meta",
-          attrs: { property: "og:image", content: "https://nullish.ch/social-image.jpg" },
+          attrs: { property: "og:image", content: "https://nullish.ch/social-image.png" },
         },
         { tag: "meta", attrs: { property: "og:type", content: "website" } },
         { tag: "meta", attrs: { name: "twitter:card", content: "summary_large_image" } },
@@ -57,7 +57,7 @@ export default defineConfig({
         { tag: "meta", attrs: { name: "twitter:description", content: description } },
         {
           tag: "meta",
-          attrs: { name: "twitter:image", content: "https://nullish.ch/social-image.jpg" },
+          attrs: { name: "twitter:image", content: "https://nullish.ch/social-image.png" },
         },
         ...(process.env.NODE_ENV === "production"
           ? [
