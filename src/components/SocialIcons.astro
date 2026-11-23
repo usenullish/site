@@ -8,20 +8,25 @@ const { lang, nav } = i18n(Astro.locals.starlightRoute.locale);
 ---
 
 {isLanding && (
-  <a class="docs" href={`/${lang}/getting-started/`}>
-    {nav.docs}
-  </a>
+  <Fragment>
+    <a class="nav" href={`/${lang}/pricing/`}>
+      {nav.pricing}
+    </a>
+    <a class="nav" href={`/${lang}/getting-started/`}>
+      {nav.docs}
+    </a>
+  </Fragment>
 )}
 <Default />
 
 <style>
-  .docs {
+  .nav {
     color: var(--sl-color-white);
     font-size: var(--sl-text-sm);
     text-decoration: none;
   }
 
-  .docs:hover {
+  .nav:hover {
     color: var(--sl-color-text-accent);
   }
 </style>

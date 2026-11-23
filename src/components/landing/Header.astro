@@ -1,0 +1,138 @@
+---
+interface Props {
+  label: string;
+  title: string[];
+  tagline?: string;
+}
+
+const { label, title, tagline } = Astro.props;
+---
+
+<div class="hero not-content">
+  <div class="sl-flex stack">
+    <div class="sl-flex top">
+      <p class="label">
+        <span class="slashes" aria-hidden="true">
+          {"//"}
+        </span>{" "}
+        {label}
+      </p>
+
+      <slot name="badge" />
+    </div>
+
+    <div class="main">
+      <div class="sl-flex stack">
+        <h1 data-page-title>
+          {title.map((line, i) => (
+            <Fragment>
+              {i > 0 && <br />}
+              {line}
+            </Fragment>
+          ))}
+        </h1>
+
+        {tagline && <p class="tagline" set:html={tagline} />}
+
+        <slot />
+      </div>
+
+      <slot name="aside" />
+    </div>
+
+    <slot name="footer" />
+  </div>
+</div>
+
+<style>
+  @layer starlight.core {
+    .hero {
+      --header-badge-height: 2rem;
+      padding-block: clamp(1rem, 4vw, 3rem);
+    }
+
+    @media (max-width: 49.99rem) {
+      .hero {
+        padding-block-end: 0;
+      }
+    }
+
+    .stack {
+      flex-direction: column;
+      gap: clamp(1.5rem, calc(1.5rem + 1vw), 1.5rem);
+    }
+
+    .main {
+      display: grid;
+      gap: 2.5rem;
+    }
+
+    @media (min-width: 50rem) {
+      .main {
+        grid-template-columns: 1fr minmax(0, 26rem);
+        align-items: center;
+      }
+    }
+
+    .top {
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      min-height: var(--header-badge-height);
+    }
+
+    .label {
+      margin: 0;
+      color: var(--sl-color-gray-3);
+      font-size: var(--sl-text-sm);
+    }
+
+    .slashes {
+      color: var(--sl-color-accent);
+      font-weight: 700;
+    }
+
+    h1 {
+      font-size: var(--sl-text-h1);
+      line-height: var(--sl-line-height-headings);
+      font-weight: 600;
+      color: var(--sl-color-white);
+      max-width: 28ch;
+      margin: 1rem 0 0;
+      letter-spacing: -0.05em;
+    }
+
+    .tagline {
+      font-size: clamp(var(--sl-text-base), calc(0.0625rem + 2vw), var(--sl-text-xl));
+      color: var(--sl-color-gray-2);
+      line-height: 1.25;
+    }
+  }
+
+  .hero {
+    --hero-grid: color-mix(in oklch, var(--sl-color-hairline-shade) 50%, transparent);
+    position: relative;
+    isolation: isolate;
+  }
+
+  :global(:root[data-theme="light"]) .hero {
+    --hero-grid: color-mix(in oklch, var(--sl-color-gray-5) 50%, transparent);
+  }
+
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background-image:
+      linear-gradient(to right, var(--hero-grid) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--hero-grid) 1px, transparent 1px);
+    background-position: -1px -1px;
+    background-size: 56px 56px;
+    mask-image:
+      radial-gradient(70% 70% at 50% 40%, #000 20%, transparent 100%),
+      linear-gradient(to bottom, transparent, #000 15%);
+    mask-composite: intersect;
+  }
+</style>

@@ -1,10 +1,17 @@
 {
-  "nav": { "docs": "Docs" },
+  "nav": {
+    "docs": "Docs",
+    "pricing": "Tarifs"
+  },
   "hero": {
     "label": "avec un assistant IA",
     "title": ["Ta compta suisse", "presque sans effort"],
     "badge": "Alpha",
-    "ledger": { "debit": "débit", "credit": "crédit", "balance": "solde" },
+    "ledger": {
+      "debit": "débit",
+      "credit": "crédit",
+      "balance": "solde"
+    },
     "assistant": {
       "question": "Combien de TVA je dois pour 2026 ?",
       "thinking": "réfléchit…",
@@ -90,9 +97,58 @@
       "text": "Tes questions ne quittent jamais le pays."
     }
   ],
+  "pricing": {
+    "billing": {
+      "label": "Facturation",
+      "year": "Annuel",
+      "month": "Mensuel"
+    },
+    "perMonth": "/ mois",
+    "perMonthBilledYearly": "/ mois, facturé annuellement",
+    "customPricing": "Tarif sur mesure",
+    "vatExcluded": "Prix hors TVA.",
+    "cloud": {
+      "description": "Tout ce qu’il te faut, hébergé par nos soins.",
+      "features": [
+        "Comptabilité",
+        "Factures",
+        "Banque",
+        "TVA",
+        "Assistant IA",
+        "MCP + API",
+        "1 organisation",
+        "3 utilisateurs"
+      ],
+      "action": "Commencer"
+    },
+    "instance": {
+      "description": "Pour plus de souveraineté et de performance.",
+      "features": [
+        "Tout ce qu’offre Cloud",
+        "Ton propre serveur en Suisse",
+        "Domaine personnalisé",
+        "Support prioritaire",
+        "Jusqu’à 10 organisations",
+        "Jusqu’à 100 utilisateurs"
+      ],
+      "action": "Demander mon instance"
+    },
+    "onPrem": {
+      "description": "Pour tenir ta compta en interne.",
+      "features": [
+        "Tout ce qu’offre Cloud",
+        "L’infrastructure de ton entreprise",
+        "Installation et configuration",
+        "Mises à jour et maintenance",
+        "Développements sur mesure"
+      ],
+      "action": "Écris-nous"
+    }
+  },
   "footer": {
     "product": "Produit",
     "getStarted": "Commencer",
+    "pricing": "Tarifs",
     "becomeTester": "Devenir testeur",
     "data": "Hébergement",
     "status": "Statut",

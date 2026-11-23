@@ -3,7 +3,17 @@ import { join } from "node:path";
 import TurndownService from "turndown";
 
 const DIST = join(process.cwd(), "dist");
-const PAGES = ["en/index", "de/index", "fr/index", "it/index", "404"];
+const PAGES = [
+  "en/index",
+  "de/index",
+  "fr/index",
+  "it/index",
+  "en/pricing/index",
+  "de/pricing/index",
+  "fr/pricing/index",
+  "it/pricing/index",
+  "404",
+];
 
 const turndownService = new TurndownService({
   headingStyle: "atx",
