@@ -1,10 +1,16 @@
 {
-  "nav": { "docs": "Docs" },
+  "nav": {
+    "docs": "Docs"
+  },
   "hero": {
     "label": "with an AI assistant",
     "title": ["Swiss accounting", "almost effortless"],
     "badge": "Alpha",
-    "ledger": { "debit": "debit", "credit": "credit", "balance": "balance" },
+    "ledger": {
+      "debit": "debit",
+      "credit": "credit",
+      "balance": "balance"
+    },
     "assistant": {
       "question": "How much VAT do I owe for 2026?",
       "thinking": "thinking…",
@@ -106,7 +112,11 @@
     "developers": "Developers",
     "selfHosting": "Self-hosting",
     "resources": "Resources",
-    "contact": "Contact"
+    "contact": "Contact",
+    "legal": "Legal",
+    "terms": "Terms",
+    "privacy": "Privacy",
+    "impressum": "Impressum"
   },
   "structuredData": {
     "keywords": [

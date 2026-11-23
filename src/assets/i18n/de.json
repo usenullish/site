@@ -1,10 +1,16 @@
 {
-  "nav": { "docs": "Doku" },
+  "nav": {
+    "docs": "Doku"
+  },
   "hero": {
     "label": "mit KI-Assistent",
     "title": ["Schweizer Buchhaltung", "fast ohne Aufwand"],
     "badge": "Alpha",
-    "ledger": { "debit": "soll", "credit": "haben", "balance": "saldo" },
+    "ledger": {
+      "debit": "soll",
+      "credit": "haben",
+      "balance": "saldo"
+    },
     "assistant": {
       "question": "Wie viel MWST schulde ich für 2026?",
       "thinking": "denkt nach…",
@@ -111,7 +117,11 @@
     "developers": "Entwickler",
     "selfHosting": "Self-Hosting",
     "resources": "Ressourcen",
-    "contact": "Kontakt"
+    "contact": "Kontakt",
+    "legal": "Rechtliches",
+    "terms": "AGB",
+    "privacy": "Datenschutz",
+    "impressum": "Impressum"
   },
   "structuredData": {
     "keywords": [

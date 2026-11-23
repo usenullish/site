@@ -48,6 +48,10 @@ export type I18nFooter = {
   selfHosting: string;
   resources: string;
   contact: string;
+  legal: string;
+  terms: string;
+  privacy: string;
+  impressum: string;
 };
 
 export type I18nStructuredData = { keywords: string[] };

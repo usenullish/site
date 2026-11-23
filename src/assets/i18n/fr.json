@@ -1,10 +1,16 @@
 {
-  "nav": { "docs": "Docs" },
+  "nav": {
+    "docs": "Docs"
+  },
   "hero": {
     "label": "avec un assistant IA",
     "title": ["Ta compta suisse", "presque sans effort"],
     "badge": "Alpha",
-    "ledger": { "debit": "débit", "credit": "crédit", "balance": "solde" },
+    "ledger": {
+      "debit": "débit",
+      "credit": "crédit",
+      "balance": "solde"
+    },
     "assistant": {
       "question": "Combien de TVA je dois pour 2026 ?",
       "thinking": "réfléchit…",
@@ -106,7 +112,11 @@
     "developers": "Développeurs",
     "selfHosting": "Auto-hébergement",
     "resources": "Ressources",
-    "contact": "Contact"
+    "contact": "Contact",
+    "legal": "Juridique",
+    "terms": "Conditions générales",
+    "privacy": "Confidentialité",
+    "impressum": "Mentions légales"
   },
   "structuredData": {
     "keywords": [

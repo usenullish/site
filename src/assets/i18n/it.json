@@ -1,10 +1,16 @@
 {
-  "nav": { "docs": "Docs" },
+  "nav": {
+    "docs": "Docs"
+  },
   "hero": {
     "label": "con un assistente IA",
     "title": ["Contabilità svizzera", "quasi senza fatica"],
     "badge": "Alpha",
-    "ledger": { "debit": "dare", "credit": "avere", "balance": "saldo" },
+    "ledger": {
+      "debit": "dare",
+      "credit": "avere",
+      "balance": "saldo"
+    },
     "assistant": {
       "question": "Quanta IVA devo per il 2026?",
       "thinking": "sta ragionando…",
@@ -106,7 +112,11 @@
     "developers": "Sviluppatori",
     "selfHosting": "Self-hosting",
     "resources": "Risorse",
-    "contact": "Contatti"
+    "contact": "Contatti",
+    "legal": "Legale",
+    "terms": "Condizioni generali",
+    "privacy": "Privacy",
+    "impressum": "Note legali"
   },
   "structuredData": {
     "keywords": [
