@@ -46,7 +46,7 @@ jobs:
       push: true
       platforms: linux/amd64
       file: ./Dockerfile.server
-      meta-images: ghcr.io/usenullish/nullish-site-server
+      meta-images: ghcr.io/usenullish/site-server
       meta-tags: |
         type=raw,value=latest
         type=sha,format=long
