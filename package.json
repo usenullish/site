@@ -10,9 +10,14 @@
     "lint": "oxlint .",
     "lint:fix": "oxlint . --fix",
     "fmt": "oxfmt",
-    "fmt:check": "oxfmt --check"
+    "fmt:check": "oxfmt --check",
+    "e2e": "NODE_ENV=development playwright test",
+    "e2e:ci": "playwright test --reporter=html",
+    "e2e:report": "playwright show-report",
+    "e2e:playwright:install": "playwright install chromium --with-deps"
   },
   "devDependencies": {
+    "@playwright/test": "^1.65.1",
     "oxfmt": "^0.77.0",
     "oxlint": "^1.92.0"
   },
