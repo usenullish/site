@@ -1,0 +1,88 @@
+import { createRoute, type RouteHandler, z } from "@hono/zod-openapi";
+import { createTransport } from "nodemailer";
+
+const ContactRequestSchema = z.object({
+  name: z.string().trim().min(1).max(200),
+  email: z.string().trim().max(320).pipe(z.email()),
+  company: z.string().trim().max(200).default(""),
+  plan: z.enum(["tester", "instance", "on-prem"]),
+  message: z.string().trim().max(5000).default(""),
+  website: z.string().optional(),
+});
+
+const ContactResponseSchema = z.object({
+  status: z.enum(["sent", "error"]),
+});
+
+type Contact = z.infer<typeof ContactRequestSchema>;
+
+export const contactRoute = createRoute({
+  method: "post",
+  path: "/api/contact",
+  request: {
+    body: {
+      content: {
+        "application/x-www-form-urlencoded": { schema: ContactRequestSchema },
+        "multipart/form-data": { schema: ContactRequestSchema },
+      },
+      required: true,
+    },
+  },
+  responses: {
+    200: {
+      content: { "application/json": { schema: ContactResponseSchema } },
+      description: "The contact request was sent",
+    },
+    400: {
+      content: { "application/json": { schema: ContactResponseSchema } },
+      description: "The contact request is invalid",
+    },
+    500: {
+      content: { "application/json": { schema: ContactResponseSchema } },
+      description: "The contact request could not be sent",
+    },
+  },
+});
+
+const send = async ({ name, email, company, plan, message }: Contact): Promise<void> => {
+  const mailAddress = process.env.NULLISH_SITE_MAIL_ADDRESS;
+  const smtpUrl = process.env.NULLISH_SITE_MAIL_SMTP_URL;
+
+  if (mailAddress === undefined || mailAddress === "" || smtpUrl === undefined || smtpUrl === "") {
+    throw new Error("NULLISH_SITE_MAIL_ADDRESS and NULLISH_SITE_MAIL_SMTP_URL must be set.");
+  }
+
+  const text = [
+    `Plan: ${plan}`,
+    `Name: ${name}`,
+    `Email: ${email}`,
+    `Company: ${company}`,
+    "",
+    message,
+  ].join("\n");
+
+  await createTransport(smtpUrl).sendMail({
+    from: mailAddress,
+    to: mailAddress,
+    replyTo: email,
+    subject: `[nullish] ${plan}: ${name}`,
+    text,
+  });
+};
+
+export const contactHandler: RouteHandler<typeof contactRoute> = async (c) => {
+  const body = c.req.valid("form");
+
+  if (body.website !== undefined && body.website !== "") {
+    return c.json({ status: "sent" as const }, 200);
+  }
+
+  try {
+    await send(body);
+  } catch (err: unknown) {
+    console.error(err);
+    return c.json({ status: "error" as const }, 500);
+  }
+
+  return c.json({ status: "sent" as const }, 200);
+};
