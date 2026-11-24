@@ -33,6 +33,12 @@ export type I18nSwiss = { title: string; text: string }[];
 
 export type I18nFeatures = { groups: { name: string; items: { title: string; text: string }[] }[] };
 
+export type I18nContact = {
+  label: { name: string; email: string; company: string; message: string };
+  action: { send: string };
+  status: { sent: string; error: string; limit: string };
+};
+
 export type I18nFooter = {
   product: string;
   getStarted: string;
@@ -68,6 +74,7 @@ export interface I18n {
   lessBoring: I18nLessBoring;
   swiss: I18nSwiss;
   features: I18nFeatures;
+  contact: I18nContact;
   footer: I18nFooter;
   structuredData: I18nStructuredData;
 }

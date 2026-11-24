@@ -207,6 +207,22 @@
       }
     ]
   },
+  "contact": {
+    "label": {
+      "name": "Name",
+      "email": "E-Mail",
+      "company": "Firma (optional)",
+      "message": "Nachricht"
+    },
+    "action": {
+      "send": "Senden"
+    },
+    "status": {
+      "sent": "Danke, deine Nachricht ist unterwegs. Wir melden uns bald.",
+      "error": "Deine Nachricht konnte nicht gesendet werden. Versuch es bitte nochmal.",
+      "limit": "Zu viele Nachrichten in kurzer Zeit. Versuch es später nochmal."
+    }
+  },
   "footer": {
     "product": "Produkt",
     "getStarted": "Loslegen",

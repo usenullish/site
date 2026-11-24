@@ -202,6 +202,22 @@
       }
     ]
   },
+  "contact": {
+    "label": {
+      "name": "Name",
+      "email": "Email",
+      "company": "Company (optional)",
+      "message": "Message"
+    },
+    "action": {
+      "send": "Send"
+    },
+    "status": {
+      "sent": "Thanks, your message is on its way. We'll get back to you soon.",
+      "error": "Your message couldn't be sent. Please try again.",
+      "limit": "Too many messages in a short time. Please try again later."
+    }
+  },
   "footer": {
     "product": "Product",
     "getStarted": "Get started",
