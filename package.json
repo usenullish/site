@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "pnpm --recursive --parallel run dev",
+    "env:dev": "./env.run.sh dev",
     "build": "pnpm --recursive run build",
     "lint": "oxlint .",
     "lint:fix": "oxlint . --fix",
