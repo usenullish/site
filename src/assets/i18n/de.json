@@ -42,13 +42,7 @@
       },
       {
         "name": "Buchhaltung",
-        "items": [
-          "Journal",
-          "MWST, Saldosteuersatz oder effektiv",
-          "Bilanz",
-          "Erfolgsrechnung",
-          "Jahresabschluss"
-        ]
+        "items": ["Journal", "MWST", "Bilanz", "Erfolgsrechnung", "Jahresabschluss"]
       },
       {
         "name": "Team",

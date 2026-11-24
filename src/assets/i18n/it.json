@@ -37,13 +37,7 @@
       },
       {
         "name": "Contabilità",
-        "items": [
-          "giornale",
-          "IVA, aliquota saldo o metodo effettivo",
-          "bilancio",
-          "conto economico",
-          "chiusura annuale"
-        ]
+        "items": ["giornale", "IVA", "bilancio", "conto economico", "chiusura annuale"]
       },
       {
         "name": "Team",
