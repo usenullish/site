@@ -1,10 +1,17 @@
 {
-  "nav": { "docs": "Doku" },
+  "nav": {
+    "features": "Funktionen",
+    "docs": "Doku"
+  },
   "hero": {
     "label": "mit KI-Assistent",
     "title": ["Schweizer Buchhaltung", "fast ohne Aufwand"],
     "badge": "Alpha",
-    "ledger": { "debit": "soll", "credit": "haben", "balance": "saldo" },
+    "ledger": {
+      "debit": "soll",
+      "credit": "haben",
+      "balance": "saldo"
+    },
     "assistant": {
       "question": "Wie viel MWST schulde ich für 2026?",
       "thinking": "denkt nach…",
@@ -95,9 +102,121 @@
       "text": "Deine Fragen bleiben im Land."
     }
   ],
+  "features": {
+    "groups": [
+      {
+        "name": "Rechnungsstellung",
+        "items": [
+          {
+            "title": "Kunden und Kontakte",
+            "text": "Behalte den Überblick, wem du Rechnungen stellst und mit wem du zu tun hast."
+          },
+          {
+            "title": "Rechnungen",
+            "text": "In Franken oder jeder anderen Währung, vom Entwurf bis bezahlt."
+          },
+          {
+            "title": "Schweizer QR-Rechnung",
+            "text": "Auf deinen Rechnungen gedruckt, mit einer zufälligen Referenz, die nichts verrät."
+          }
+        ]
+      },
+      {
+        "name": "Bank",
+        "items": [
+          {
+            "title": "Import von Kontoauszügen",
+            "text": "Lade deine Kontoauszüge herunter und importiere sie, von jeder Schweizer Bank."
+          },
+          {
+            "title": "Abgleich",
+            "text": "Zahlungen per QR-Rechnung werden automatisch der passenden Rechnung zugeordnet."
+          }
+        ]
+      },
+      {
+        "name": "Buchhaltung",
+        "items": [
+          {
+            "title": "Journal",
+            "text": "Buche von Hand oder dupliziere wiederkehrende Buchungen wie die Miete."
+          },
+          {
+            "title": "Jahresabschluss",
+            "text": "Schliesse das Jahr ab, die Saldi werden ins nächste übertragen."
+          },
+          {
+            "title": "Berichte",
+            "text": "Bilanz, Erfolgsrechnung und Kontoblatt."
+          },
+          {
+            "title": "Währungen",
+            "text": "Nutze jede Fiat- oder Kryptowährung, ohne an Genauigkeit zu verlieren."
+          }
+        ]
+      },
+      {
+        "name": "MWST",
+        "items": [
+          {
+            "title": "Methoden",
+            "text": "Vereinbart oder vereinnahmt, effektiv oder Saldosteuersatz."
+          },
+          {
+            "title": "MWST-Abrechnung",
+            "text": "Pro MWST-Periode vorbereitet, aus deinen Rechnungen und Buchungen."
+          }
+        ]
+      },
+      {
+        "name": "Assistent",
+        "items": [
+          {
+            "title": "Fragen",
+            "text": "Schreib einen Prompt zu deinen Rechnungen, Bankkonten oder der MWST und erhalte Antworten aus deinen eigenen Zahlen."
+          },
+          {
+            "title": "Lesen oder schreiben",
+            "text": "Standardmässig antwortet er nur. Schalte auf Schreiben, wenn du ihm Änderungen zutraust."
+          }
+        ]
+      },
+      {
+        "name": "Anpassung",
+        "items": [
+          {
+            "title": "Vorlagen",
+            "text": "Gestalte das ganze Layout deiner Dokumente, etwa Rechnungen, und pass sie an dein Branding an."
+          },
+          {
+            "title": "Beträge ausblenden",
+            "text": "Verwische die Beträge, wenn dir jemand über die Schulter schaut."
+          }
+        ]
+      },
+      {
+        "name": "Entwickler",
+        "items": [
+          {
+            "title": "REST-API",
+            "text": "Integriere nullish in deine eigenen Tools und Abläufe."
+          },
+          {
+            "title": "MCP-Server",
+            "text": "Verbinde Claude, ChatGPT oder deinen eigenen Agenten, mit denselben Werkzeugen wie der Assistent."
+          },
+          {
+            "title": "Self-Hosting",
+            "text": "Betreibe nullish selbst. Es ist Open Source."
+          }
+        ]
+      }
+    ]
+  },
   "footer": {
     "product": "Produkt",
     "getStarted": "Loslegen",
+    "features": "Funktionen",
     "becomeTester": "Tester werden",
     "data": "Hosting",
     "status": "Status",
