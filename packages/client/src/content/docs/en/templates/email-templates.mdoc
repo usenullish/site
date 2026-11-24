@@ -3,7 +3,14 @@ title: Email templates
 description: Change the emails your nullish instance sends.
 ---
 
-nullish sends a few emails itself: to verify an email address, to reset a password and to invite someone to an organization. They come in English, German, French and Italian.
+nullish sends emails. They come in English, German, French and Italian.
+
+| Email          | Sent when                                                    | Folder                                          |
+| -------------- | ------------------------------------------------------------ | ----------------------------------------------- |
+| Verify email   | Someone signs up, or signs in before verifying their address | `emails/_templates/verify-email`                |
+| Reset password | Someone asks to reset their password                         | `emails/_templates/reset-password`              |
+| Invitation     | A member of an organization invites someone to join it       | `emails/_templates/invitation`                  |
+| Trial reminder | An organization's trial ends in a few days                   | `emails/_templates/subscription-trial-reminder` |
 
 These emails are part of nullish, so only those who self-host it can change them. They're made with the [nullish email templates](https://github.com/usenullish/email-templates) project. It shows a live preview of each email with sample data, so you see every change right away.
 

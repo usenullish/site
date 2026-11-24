@@ -3,7 +3,14 @@ title: Modelli di e-mail
 description: Modifica le e-mail che invia la tua istanza nullish.
 ---
 
-nullish invia alcune e-mail da solo: per confermare un indirizzo e-mail, per reimpostare una password e per invitare qualcuno in un'organizzazione. Sono disponibili in inglese, tedesco, francese e italiano.
+nullish invia e-mail. Sono disponibili in inglese, tedesco, francese e italiano.
+
+| E-mail                        | Inviata quando                                                      | Cartella                                        |
+| ----------------------------- | ------------------------------------------------------------------- | ----------------------------------------------- |
+| Conferma dell'indirizzo       | qualcuno si registra, o accede prima di aver confermato l'indirizzo | `emails/_templates/verify-email`                |
+| Reimpostazione della password | qualcuno chiede di reimpostare la password                          | `emails/_templates/reset-password`              |
+| Invito                        | un membro di un'organizzazione invita qualcuno                      | `emails/_templates/invitation`                  |
+| Promemoria della prova        | la prova di un'organizzazione finisce tra pochi giorni              | `emails/_templates/subscription-trial-reminder` |
 
 Queste e-mail fanno parte di nullish: solo chi lo ospita in proprio può modificarle. Si creano con il progetto [nullish email templates](https://github.com/usenullish/email-templates). Mostra un'anteprima dal vivo di ogni e-mail con dati di esempio, così vedi subito ogni modifica.
 

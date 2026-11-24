@@ -3,7 +3,14 @@ title: E-Mail-Vorlagen
 description: Passe die E-Mails an, die deine nullish-Instanz verschickt.
 ---
 
-nullish verschickt selbst ein paar E-Mails: um eine E-Mail-Adresse zu bestätigen, um ein Passwort zurückzusetzen und um jemanden in eine Organisation einzuladen. Es gibt sie auf Englisch, Deutsch, Französisch und Italienisch.
+nullish verschickt E-Mails. Es gibt sie auf Englisch, Deutsch, Französisch und Italienisch.
+
+| E-Mail                      | Gesendet, wenn                                                         | Ordner                                          |
+| --------------------------- | ---------------------------------------------------------------------- | ----------------------------------------------- |
+| E-Mail bestätigen           | sich jemand registriert oder anmeldet, bevor die Adresse bestätigt ist | `emails/_templates/verify-email`                |
+| Passwort zurücksetzen       | jemand das eigene Passwort zurücksetzen will                           | `emails/_templates/reset-password`              |
+| Einladung                   | ein Mitglied einer Organisation jemanden einlädt                       | `emails/_templates/invitation`                  |
+| Erinnerung an die Testphase | die Testphase einer Organisation in ein paar Tagen endet               | `emails/_templates/subscription-trial-reminder` |
 
 Diese E-Mails sind Teil von nullish, deshalb kann sie nur ändern, wer nullish selbst hostet. Sie entstehen mit dem Projekt [nullish email templates](https://github.com/usenullish/email-templates). Es zeigt eine Live-Vorschau jeder E-Mail mit Beispieldaten, so siehst du jede Änderung sofort.
 

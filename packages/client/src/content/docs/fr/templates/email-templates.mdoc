@@ -3,7 +3,14 @@ title: Modèles d'e-mails
 description: Modifie les e-mails qu'envoie ton instance nullish.
 ---
 
-nullish envoie lui-même quelques e-mails : pour confirmer une adresse e-mail, pour réinitialiser un mot de passe et pour inviter quelqu'un dans une organisation. Ils existent en anglais, allemand, français et italien.
+nullish envoie des e-mails. Ils existent en anglais, allemand, français et italien.
+
+| E-mail                        | Envoyé quand                                                           | Dossier                                         |
+| ----------------------------- | ---------------------------------------------------------------------- | ----------------------------------------------- |
+| Confirmer l'adresse           | quelqu'un s'inscrit, ou se connecte avant d'avoir confirmé son adresse | `emails/_templates/verify-email`                |
+| Réinitialiser le mot de passe | quelqu'un demande à réinitialiser son mot de passe                     | `emails/_templates/reset-password`              |
+| Invitation                    | un membre d'une organisation y invite quelqu'un                        | `emails/_templates/invitation`                  |
+| Rappel de l'essai             | l'essai d'une organisation se termine dans quelques jours              | `emails/_templates/subscription-trial-reminder` |
 
 Ces e-mails font partie de nullish : seuls ceux qui l'hébergent eux-mêmes peuvent les modifier. Ils se font avec le projet [nullish email templates](https://github.com/usenullish/email-templates). Il affiche un aperçu en direct de chaque e-mail avec des données d'exemple : tu vois chaque changement tout de suite.
 
