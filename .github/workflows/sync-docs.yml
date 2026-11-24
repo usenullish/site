@@ -20,6 +20,7 @@ jobs:
         uses: ./.github/actions/prepare
 
       - run: node scripts/sync-docs.ts
+        working-directory: packages/client
 
       - name: Create PR
         uses: ./.github/actions/create-pr
