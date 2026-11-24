@@ -9,8 +9,6 @@ concurrency: deploy
 
 jobs:
   client:
-    # The server watches the client on the server to auto-update
-    needs: server
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -58,3 +56,18 @@ jobs:
         - registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
+
+  update-server:
+    needs: server
+    runs-on: ubuntu-latest
+    steps:
+      - name: Update server
+        env:
+          SSH_KEY: ${{ secrets.NULLISH_SITE_SSH_KEY }}
+          KNOWN_HOSTS: ${{ secrets.NULLISH_WEB_KNOWN_HOSTS }}
+        run: |
+          install -m 700 -d ~/.ssh
+          printf '%s\n' "$SSH_KEY" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          printf '%s\n' "$KNOWN_HOSTS" > ~/.ssh/known_hosts
+          ssh -T website-server@nullish.ch
