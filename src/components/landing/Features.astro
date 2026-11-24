@@ -1,0 +1,76 @@
+---
+import { i18n } from "../i18n/i18n.ts";
+
+const { features } = i18n(Astro.currentLocale);
+---
+
+<div class="features not-content">
+  {features.groups.map(({ name, items }) => (
+    <section class="group">
+      <h2>
+        <span class="slashes" aria-hidden="true">
+          {"//"}
+        </span>{" "}
+        {name}
+      </h2>
+
+      <ul>
+        {items.map(({ title, text }) => (
+          <li>
+            <h3>{title}</h3>
+            <p>{text}</p>
+          </li>
+        ))}
+      </ul>
+    </section>
+  ))}
+</div>
+
+<style>
+  .features {
+    display: grid;
+    gap: 3rem;
+    padding-block: 2rem 6rem;
+    line-height: 1.5;
+  }
+
+  h2 {
+    margin: 0;
+    color: var(--sl-color-gray-3);
+    font-size: var(--sl-text-sm);
+    font-weight: 400;
+  }
+
+  .slashes {
+    color: var(--sl-color-accent);
+    font-weight: 700;
+  }
+
+  ul {
+    display: grid;
+    gap: 1.5rem;
+    margin: 1rem 0 0;
+    padding: 1.5rem 0 0;
+    border-block-start: var(--layout-section-border);
+    list-style: none;
+  }
+
+  h3 {
+    margin: 0;
+    color: var(--sl-color-white);
+    font-size: var(--sl-text-base);
+    font-weight: 600;
+  }
+
+  li p {
+    margin: 0.25rem 0 0;
+    color: var(--sl-color-gray-2);
+  }
+
+  @media (min-width: 50rem) {
+    ul {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+  }
+</style>

@@ -1,5 +1,6 @@
 {
   "nav": {
+    "features": "Features",
     "docs": "Docs"
   },
   "hero": {
@@ -36,13 +37,7 @@
       },
       {
         "name": "Accounting",
-        "items": [
-          "journal",
-          "VAT, net rate or effective",
-          "balance sheet",
-          "income statement",
-          "year-end closing"
-        ]
+        "items": ["journal", "VAT", "balance sheet", "income statement", "year-end closing"]
       },
       {
         "name": "Team",
@@ -96,9 +91,121 @@
       "text": "Your questions never leave the country."
     }
   ],
+  "features": {
+    "groups": [
+      {
+        "name": "Billing",
+        "items": [
+          {
+            "title": "Clients and contacts",
+            "text": "Keep track of who you bill and the people you deal with."
+          },
+          {
+            "title": "Invoices",
+            "text": "In CHF or any other currency, from draft to paid."
+          },
+          {
+            "title": "Swiss QR-bill",
+            "text": "Printed on your invoices, with a random reference that reveals nothing."
+          }
+        ]
+      },
+      {
+        "name": "Banking",
+        "items": [
+          {
+            "title": "Statement import",
+            "text": "Download and import your bank statements, from any Swiss bank."
+          },
+          {
+            "title": "Reconciliation",
+            "text": "QR-bill payments are matched automatically with their invoice."
+          }
+        ]
+      },
+      {
+        "name": "Accounting",
+        "items": [
+          {
+            "title": "Journal",
+            "text": "Book entries by hand, or duplicate recurring ones like the rent."
+          },
+          {
+            "title": "Year-end closing",
+            "text": "Close the year, and the balances carry over to the next one."
+          },
+          {
+            "title": "Reports",
+            "text": "Balance sheet, income statement and account ledger."
+          },
+          {
+            "title": "Currencies",
+            "text": "Use any fiat or crypto currency without losing precision."
+          }
+        ]
+      },
+      {
+        "name": "VAT",
+        "items": [
+          {
+            "title": "Methods",
+            "text": "Agreed or received, effective or net tax rate."
+          },
+          {
+            "title": "VAT declaration",
+            "text": "Prepared per VAT period, from your invoices and entries."
+          }
+        ]
+      },
+      {
+        "name": "Assistant",
+        "items": [
+          {
+            "title": "Ask",
+            "text": "Prompt the assistant about your invoices, bank accounts or VAT, and get answers from your own figures."
+          },
+          {
+            "title": "Read or write",
+            "text": "By default it only answers. Switch to write when you feel confident letting it make changes."
+          }
+        ]
+      },
+      {
+        "name": "Customization",
+        "items": [
+          {
+            "title": "Templates",
+            "text": "Change the whole layout of your documents, like invoices, and customize them with your branding."
+          },
+          {
+            "title": "Hide amounts",
+            "text": "Blur the amounts when someone's reading over your shoulder."
+          }
+        ]
+      },
+      {
+        "name": "Developers",
+        "items": [
+          {
+            "title": "REST API",
+            "text": "Integrate nullish into your own tools and workflows."
+          },
+          {
+            "title": "MCP server",
+            "text": "Connect Claude, ChatGPT or your own agent, with the same tools as the assistant."
+          },
+          {
+            "title": "Self-hosting",
+            "text": "Run nullish yourself. It's open source."
+          }
+        ]
+      }
+    ]
+  },
   "footer": {
     "product": "Product",
     "getStarted": "Get started",
+    "features": "Features",
     "becomeTester": "Become a tester",
     "data": "Hosting",
     "status": "Status",

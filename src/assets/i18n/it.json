@@ -1,5 +1,6 @@
 {
   "nav": {
+    "features": "Funzionalità",
     "docs": "Docs"
   },
   "hero": {
@@ -36,13 +37,7 @@
       },
       {
         "name": "Contabilità",
-        "items": [
-          "giornale",
-          "IVA, aliquota saldo o metodo effettivo",
-          "bilancio",
-          "conto economico",
-          "chiusura annuale"
-        ]
+        "items": ["giornale", "IVA", "bilancio", "conto economico", "chiusura annuale"]
       },
       {
         "name": "Team",
@@ -96,9 +91,121 @@
       "text": "Le tue domande non varcano il confine."
     }
   ],
+  "features": {
+    "groups": [
+      {
+        "name": "Fatturazione",
+        "items": [
+          {
+            "title": "Clienti e contatti",
+            "text": "Tieni traccia di chi fatturi e delle persone con cui hai a che fare."
+          },
+          {
+            "title": "Fatture",
+            "text": "In CHF o in qualsiasi altra valuta, dalla bozza al pagamento."
+          },
+          {
+            "title": "QR-fattura svizzera",
+            "text": "Stampata sulle tue fatture, con un riferimento casuale che non rivela nulla."
+          }
+        ]
+      },
+      {
+        "name": "Banca",
+        "items": [
+          {
+            "title": "Importazione degli estratti",
+            "text": "Scarica e importa i tuoi estratti conto, da qualsiasi banca svizzera."
+          },
+          {
+            "title": "Riconciliazione",
+            "text": "I pagamenti con QR-fattura sono abbinati automaticamente alla loro fattura."
+          }
+        ]
+      },
+      {
+        "name": "Contabilità",
+        "items": [
+          {
+            "title": "Giornale",
+            "text": "Registra a mano, o duplica le registrazioni ricorrenti come l’affitto."
+          },
+          {
+            "title": "Chiusura annuale",
+            "text": "Chiudi l’anno, i saldi vengono riportati al successivo."
+          },
+          {
+            "title": "Rapporti",
+            "text": "Bilancio, conto economico e mastrino."
+          },
+          {
+            "title": "Valute",
+            "text": "Usa qualsiasi valuta, fiat o cripto, senza perdere precisione."
+          }
+        ]
+      },
+      {
+        "name": "IVA",
+        "items": [
+          {
+            "title": "Metodi",
+            "text": "Convenuto o ricevuto, effettivo o aliquota saldo."
+          },
+          {
+            "title": "Rendiconto IVA",
+            "text": "Preparato per periodo IVA, dalle tue fatture e registrazioni."
+          }
+        ]
+      },
+      {
+        "name": "Assistente",
+        "items": [
+          {
+            "title": "Chiedi",
+            "text": "Scrivi un prompt sulle tue fatture, sui conti bancari o sull’IVA e ottieni risposte dai tuoi dati."
+          },
+          {
+            "title": "Lettura o scrittura",
+            "text": "Di default risponde soltanto. Passa alla scrittura quando ti senti pronto a lasciargli fare modifiche."
+          }
+        ]
+      },
+      {
+        "name": "Personalizzazione",
+        "items": [
+          {
+            "title": "Modelli",
+            "text": "Modifica l’intero layout dei tuoi documenti, come le fatture, e personalizzali con il tuo branding."
+          },
+          {
+            "title": "Nascondi gli importi",
+            "text": "Sfoca gli importi quando qualcuno legge da sopra la tua spalla."
+          }
+        ]
+      },
+      {
+        "name": "Sviluppatori",
+        "items": [
+          {
+            "title": "API REST",
+            "text": "Integra nullish nei tuoi strumenti e flussi di lavoro."
+          },
+          {
+            "title": "Server MCP",
+            "text": "Collega Claude, ChatGPT o il tuo agente, con gli stessi strumenti dell’assistente."
+          },
+          {
+            "title": "Self-hosting",
+            "text": "Gestisci nullish da solo. È open source."
+          }
+        ]
+      }
+    ]
+  },
   "footer": {
     "product": "Prodotto",
     "getStarted": "Comincia",
+    "features": "Funzionalità",
     "becomeTester": "Diventa tester",
     "data": "Hosting",
     "status": "Stato",
