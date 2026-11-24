@@ -2,7 +2,7 @@ import { readdir, readFile, writeFile } from "node:fs/promises";
 import { join } from "node:path";
 import { brotliCompressSync, constants } from "node:zlib";
 
-const DIST = join(process.cwd(), "dist");
+const DIST = join(process.cwd(), "dist", "client");
 
 const precompress = async () => {
   const entries = await readdir(DIST, { recursive: true, withFileTypes: true });

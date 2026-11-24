@@ -202,6 +202,22 @@
       }
     ]
   },
+  "contact": {
+    "label": {
+      "name": "Nom",
+      "email": "E-mail",
+      "company": "Entreprise (facultatif)",
+      "message": "Message"
+    },
+    "action": {
+      "send": "Envoyer"
+    },
+    "status": {
+      "sent": "Merci, ton message est parti. On te répond bientôt.",
+      "error": "Ton message n’a pas pu être envoyé. Réessaie, s’il te plaît.",
+      "limit": "Trop de messages en peu de temps. Réessaie plus tard."
+    }
+  },
   "footer": {
     "product": "Produit",
     "getStarted": "Commencer",

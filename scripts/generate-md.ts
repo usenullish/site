@@ -2,7 +2,7 @@ import { readFile, writeFile } from "node:fs/promises";
 import { join } from "node:path";
 import TurndownService from "turndown";
 
-const DIST = join(process.cwd(), "dist");
+const DIST = join(process.cwd(), "dist", "client");
 const PAGES = [
   "en/index",
   "de/index",

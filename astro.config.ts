@@ -1,9 +1,10 @@
-import { defineConfig } from "astro/config";
+import { defineConfig, envField } from "astro/config";
 import starlight from "@astrojs/starlight";
 import markdoc from "@astrojs/markdoc";
 import type { StarlightUserConfig } from "@astrojs/starlight/types";
 import sitemap from "@astrojs/sitemap";
 import starlightLlmsTxt from "starlight-llms-txt";
+import node from "@astrojs/node";
 
 const locales = {
   en: {
@@ -31,6 +32,23 @@ const description =
 export default defineConfig({
   site: "https://nullish.ch",
   output: "static",
+  adapter: node({
+    mode: "standalone",
+  }),
+  env: {
+    schema: {
+      NULLISH_SITE_MAIL_ADDRESS: envField.string({
+        context: "server",
+        access: "secret",
+        optional: true,
+      }),
+      NULLISH_SITE_MAIL_SMTP_URL: envField.string({
+        context: "server",
+        access: "secret",
+        optional: true,
+      }),
+    },
+  },
   outDir: "dist",
   redirects: {
     "/": "/en/",
@@ -91,9 +109,9 @@ The documentation also exists in German, French and Italian under \`/de/\`, \`/f
         }),
       ],
       routeMiddleware: [
-        "./src/x-default.middleware.ts",
-        "./src/alternate.middleware.ts",
-        "./src/json-ld.middleware.ts",
+        "./src/middlewares/x-default.middleware.ts",
+        "./src/middlewares/alternate.middleware.ts",
+        "./src/middlewares/json-ld.middleware.ts",
       ],
       defaultLocale: "en",
       locales,

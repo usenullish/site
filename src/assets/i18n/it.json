@@ -202,6 +202,22 @@
       }
     ]
   },
+  "contact": {
+    "label": {
+      "name": "Nome",
+      "email": "E-mail",
+      "company": "Azienda (facoltativo)",
+      "message": "Messaggio"
+    },
+    "action": {
+      "send": "Invia"
+    },
+    "status": {
+      "sent": "Grazie, il tuo messaggio è partito. Ti risponderemo presto.",
+      "error": "Non è stato possibile inviare il tuo messaggio. Riprova.",
+      "limit": "Troppi messaggi in poco tempo. Riprova più tardi."
+    }
+  },
   "footer": {
     "product": "Prodotto",
     "getStarted": "Comincia",
