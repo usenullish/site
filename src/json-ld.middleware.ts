@@ -1,5 +1,5 @@
 import { defineRouteMiddleware } from "@astrojs/starlight/route-data";
-import { i18n } from "../components/i18n/i18n.ts";
+import { i18n } from "./components/i18n/i18n.ts";
 
 export const onRequest = defineRouteMiddleware((context) => {
   const { site, url } = context;
