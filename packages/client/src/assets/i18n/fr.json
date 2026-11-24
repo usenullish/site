@@ -1,0 +1,306 @@
+{
+  "nav": {
+    "features": "Fonctionnalités",
+    "pricing": "Tarifs",
+    "docs": "Docs"
+  },
+  "hero": {
+    "label": "avec un assistant IA",
+    "title": ["Ta compta suisse", "presque sans effort"],
+    "badge": "Alpha",
+    "ledger": {
+      "debit": "débit",
+      "credit": "crédit",
+      "balance": "solde"
+    },
+    "assistant": {
+      "question": "Combien de TVA je dois pour 2026 ?",
+      "thinking": "réfléchit…",
+      "thought": "réfléchi pendant 2 s",
+      "detail": "au taux de la dette fiscale nette, sur 41 factures"
+    }
+  },
+  "video": {
+    "label": "Démo de l’assistant nullish",
+    "description": "Dans l’app nullish, on pose trois questions à l’assistant sur la compta de l’entreprise : combien un client a payé cette année, ce qu’il reste sur le compte bancaire et combien de TVA on doit pour 2026. À chaque fois, il répond avec des chiffres tirés de la comptabilité : les factures payées du client, le solde bancaire avec les entrées et les sorties depuis le début de l’année, et la TVA due selon la méthode des taux de la dette fiscale nette."
+  },
+  "boring": {
+    "label": "la partie ennuyeuse",
+    "title": "Et bien sûr, tout l’essentiel.",
+    "groups": [
+      {
+        "name": "Facturation",
+        "items": ["clients", "factures", "facture QR suisse", "payée, annulée, amortie"]
+      },
+      {
+        "name": "Banque",
+        "items": ["import", "rapprochement"]
+      },
+      {
+        "name": "Comptabilité",
+        "items": ["journal", "TVA", "bilan", "compte de résultat", "bouclement annuel"]
+      },
+      {
+        "name": "Équipe",
+        "items": ["invite tes collègues", "une fiduciaire", "un reviewer"]
+      }
+    ]
+  },
+  "lessBoring": {
+    "label": "la partie fun",
+    "title": "La compta, c’est pas franchement passionnant.",
+    "punchline": "Alors on a ajouté quelques petits plus.",
+    "prompt": "Marque la facture 42 comme payée",
+    "cards": [
+      {
+        "title": "Pas de dashboard. Tu demandes, c’est tout.",
+        "text": "« Quelles factures sont encore ouvertes ? » ou « Marque la facture 42 comme payée. » Dans l’app ou depuis ton propre agent IA."
+      },
+      {
+        "title": "Des factures QR qui ne racontent rien.",
+        "text": "Les références de paiement sont aléatoires : tes clients ne peuvent pas deviner comment vont tes affaires."
+      },
+      {
+        "title": "Masque les montants.",
+        "text": "Floute les montants quand quelqu’un lit par-dessus ton épaule."
+      },
+      {
+        "title": "Des factures qui te ressemblent.",
+        "text": "Personnalise tout le modèle, pas juste un logo et une ligne de texte."
+      },
+      {
+        "title": "Crypto ? Bien sûr.",
+        "text": "Chaque monnaie a les décimales qu’il lui faut, même les 18 de l’Ether."
+      },
+      {
+        "title": "Open source.",
+        "text": "Audite chaque ligne, fais-le tourner sur tes propres serveurs, modifie ce dont tu as besoin."
+      }
+    ]
+  },
+  "swiss": [
+    {
+      "title": "Made in Züri",
+      "text": "nullish est conçu et développé à Zurich."
+    },
+    {
+      "title": "Hébergé en Suisse",
+      "text": "Tes données restent sur une infrastructure suisse."
+    },
+    {
+      "title": "L’IA habite aussi en Suisse",
+      "text": "Tes questions ne quittent jamais le pays."
+    }
+  ],
+  "features": {
+    "groups": [
+      {
+        "name": "Facturation",
+        "items": [
+          {
+            "title": "Clients et contacts",
+            "text": "Garde une trace de qui tu factures et des personnes avec qui tu traites."
+          },
+          {
+            "title": "Factures",
+            "text": "En CHF ou dans n’importe quelle autre devise, du brouillon au paiement."
+          },
+          {
+            "title": "QR-facture suisse",
+            "text": "Imprimée sur tes factures, avec une référence aléatoire qui ne révèle rien."
+          }
+        ]
+      },
+      {
+        "name": "Banque",
+        "items": [
+          {
+            "title": "Import de relevés",
+            "text": "Télécharge et importe tes relevés bancaires, de n’importe quelle banque suisse."
+          },
+          {
+            "title": "Rapprochement",
+            "text": "Les paiements par QR-facture sont automatiquement associés à leur facture."
+          }
+        ]
+      },
+      {
+        "name": "Comptabilité",
+        "items": [
+          {
+            "title": "Journal",
+            "text": "Saisis des écritures à la main, ou duplique celles qui reviennent, comme le loyer."
+          },
+          {
+            "title": "Clôture annuelle",
+            "text": "Clôture l’année, les soldes sont reportés sur la suivante."
+          },
+          {
+            "title": "Rapports",
+            "text": "Bilan, compte de résultat et grand livre."
+          },
+          {
+            "title": "Devises",
+            "text": "Utilise n’importe quelle devise, fiat ou crypto, sans perte de précision."
+          }
+        ]
+      },
+      {
+        "name": "TVA",
+        "items": [
+          {
+            "title": "Méthodes",
+            "text": "Convenue ou encaissée, effective ou taux de la dette fiscale nette."
+          },
+          {
+            "title": "Décompte TVA",
+            "text": "Préparé par période TVA, à partir de tes factures et écritures."
+          }
+        ]
+      },
+      {
+        "name": "Assistant",
+        "items": [
+          {
+            "title": "Demande",
+            "text": "Écris un prompt sur tes factures, tes comptes bancaires ou la TVA, et obtiens des réponses tirées de tes propres chiffres."
+          },
+          {
+            "title": "Lecture ou écriture",
+            "text": "Par défaut, il ne fait que répondre. Passe en écriture quand tu es prêt à le laisser faire des modifications."
+          }
+        ]
+      },
+      {
+        "name": "Personnalisation",
+        "items": [
+          {
+            "title": "Modèles",
+            "text": "Modifie toute la mise en page de tes documents, comme les factures, et adapte-les à ton image de marque."
+          },
+          {
+            "title": "Masquer les montants",
+            "text": "Floute les montants quand quelqu’un lit par-dessus ton épaule."
+          }
+        ]
+      },
+      {
+        "name": "Développeurs",
+        "items": [
+          {
+            "title": "API REST",
+            "text": "Intègre nullish à tes propres outils et processus."
+          },
+          {
+            "title": "Serveur MCP",
+            "text": "Connecte Claude, ChatGPT ou ton propre agent, avec les mêmes outils que l’assistant."
+          },
+          {
+            "title": "Auto-hébergement",
+            "text": "Héberge nullish toi-même. C’est open source."
+          }
+        ]
+      }
+    ]
+  },
+  "contact": {
+    "label": {
+      "name": "Nom",
+      "email": "E-mail",
+      "company": "Entreprise (facultatif)",
+      "message": "Message"
+    },
+    "action": {
+      "send": "Envoyer"
+    },
+    "status": {
+      "sent": "Merci, ton message est parti. On te répond bientôt.",
+      "error": "Ton message n’a pas pu être envoyé. Réessaie, s’il te plaît.",
+      "limit": "Trop de messages en peu de temps. Réessaie plus tard."
+    }
+  },
+  "pricing": {
+    "billing": {
+      "label": "Facturation",
+      "year": "Annuel",
+      "month": "Mensuel"
+    },
+    "perMonth": "/ mois",
+    "perMonthBilledYearly": "/ mois, facturé annuellement",
+    "customPricing": "Tarif sur mesure",
+    "vatExcluded": "Prix hors TVA.",
+    "cloud": {
+      "description": "Tout ce qu’il te faut, hébergé par nos soins.",
+      "features": [
+        "Comptabilité",
+        "Factures",
+        "Banque",
+        "TVA",
+        "Assistant IA",
+        "MCP + API",
+        "1 organisation",
+        "3 utilisateurs"
+      ],
+      "action": "Commencer"
+    },
+    "instance": {
+      "description": "Pour plus de souveraineté et de performance.",
+      "features": [
+        "Tout ce qu’offre Cloud",
+        "Ton propre serveur en Suisse",
+        "Domaine personnalisé",
+        "Support prioritaire",
+        "Jusqu’à 10 organisations",
+        "Jusqu’à 100 utilisateurs"
+      ],
+      "action": "Demander mon instance"
+    },
+    "onPrem": {
+      "description": "Pour tenir ta compta en interne.",
+      "features": [
+        "Tout ce qu’offre Cloud",
+        "L’infrastructure de ton entreprise",
+        "Installation et configuration",
+        "Mises à jour et maintenance",
+        "Développements sur mesure"
+      ],
+      "action": "Écris-nous"
+    }
+  },
+  "footer": {
+    "product": "Produit",
+    "getStarted": "Commencer",
+    "features": "Fonctionnalités",
+    "pricing": "Tarifs",
+    "becomeTester": "Devenir testeur",
+    "data": "Hébergement",
+    "status": "Statut",
+    "migrate": "Migrer",
+    "docs": "Docs",
+    "assistant": "Assistant",
+    "billing": "Facturation",
+    "templates": "Modèles",
+    "banking": "Banque",
+    "accounting": "Comptabilité",
+    "developers": "Développeurs",
+    "selfHosting": "Auto-hébergement",
+    "resources": "Ressources",
+    "contact": "Contact",
+    "legal": "Juridique",
+    "terms": "Conditions générales",
+    "privacy": "Confidentialité",
+    "impressum": "Mentions légales"
+  },
+  "structuredData": {
+    "keywords": [
+      "comptabilité suisse",
+      "facturation",
+      "facture QR",
+      "TVA",
+      "rapprochement bancaire",
+      "assistant IA",
+      "open source",
+      "auto-hébergement"
+    ]
+  }
+}
