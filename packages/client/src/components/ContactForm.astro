@@ -50,7 +50,7 @@ const { lang, contact } = i18n(Astro.currentLocale);
     <p class="error" data-status="error" hidden>
       {contact.status.error}
     </p>
-    <p class="error" data-status="limit" hidden>
+    <p class="error" data-status="limited" hidden>
       {contact.status.limit}
     </p>
   </div>
@@ -95,9 +95,9 @@ const { lang, contact } = i18n(Astro.currentLocale);
         headers: { Accept: "application/json" },
       });
 
-      const { status } = (await response.json()) as { status: string };
+      const { status } = (await response.json()) as { status?: string };
 
-      show(status);
+      show(status ?? "error");
 
       if (status === "sent") {
         form.reset();
