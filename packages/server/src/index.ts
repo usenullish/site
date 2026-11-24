@@ -1,6 +1,7 @@
 import { serve } from "@hono/node-server";
 import { OpenAPIHono } from "@hono/zod-openapi";
 import { contactHandler, contactRoute } from "./_contact.ts";
+import { rateLimitMiddleware } from "./middlewares/rate-limit.ts";
 import pkg from "../package.json" with { type: "json" };
 import rootPkg from "../../../package.json" with { type: "json" };
 
@@ -9,6 +10,7 @@ const { version } = rootPkg;
 
 const app = new OpenAPIHono();
 
+app.use(contactRoute.path, rateLimitMiddleware);
 app.openapi(contactRoute, contactHandler);
 
 app.doc("/api/doc", {
