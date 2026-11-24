@@ -19,18 +19,16 @@ const format = (amount: number): string =>
 const monthly = ({ prices, period }: { prices: Record<Period, number>; period: Period }) =>
   period === "year" ? Math.round(prices.year / 12) : prices.month;
 
-const contactUrl = `/${lang}/contact/`;
-
 const priced = [
   {
     ...plans.cloud,
     ...pricing.cloud,
-    href: `/${lang}/getting-started/`,
+    href: `/${lang}/contact/become-a-tester/`,
   },
   {
     ...plans.instance,
     ...pricing.instance,
-    href: contactUrl,
+    href: `/${lang}/contact/instance/`,
   },
 ];
 
@@ -89,7 +87,7 @@ const onPrem = { ...plans.onPrem, ...pricing.onPrem };
         ))}
       </ul>
 
-      <LinkButton href={contactUrl} variant="secondary" class="action">
+      <LinkButton href={`/${lang}/contact/on-prem/`} variant="secondary" class="action">
         {onPrem.action}
       </LinkButton>
     </article>
