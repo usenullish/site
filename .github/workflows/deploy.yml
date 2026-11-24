@@ -9,6 +9,8 @@ concurrency: deploy
 
 jobs:
   client:
+    # The server watches the client on the server to auto-update
+    needs: server
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
