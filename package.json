@@ -15,5 +15,12 @@
     "oxfmt": "^0.77.0",
     "oxlint": "^1.92.0"
   },
+  "devEngines": {
+    "runtime": {
+      "name": "node",
+      "version": "26.13.1",
+      "onFail": "download"
+    }
+  },
   "packageManager": "pnpm@12.5.1"
 }
