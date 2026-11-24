@@ -219,7 +219,11 @@
     "developers": "Sviluppatori",
     "selfHosting": "Self-hosting",
     "resources": "Risorse",
-    "contact": "Contatti"
+    "contact": "Contatti",
+    "legal": "Legale",
+    "terms": "Condizioni generali",
+    "privacy": "Privacy",
+    "impressum": "Note legali"
   },
   "structuredData": {
     "keywords": [

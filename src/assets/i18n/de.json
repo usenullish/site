@@ -224,7 +224,11 @@
     "developers": "Entwickler",
     "selfHosting": "Self-Hosting",
     "resources": "Ressourcen",
-    "contact": "Kontakt"
+    "contact": "Kontakt",
+    "legal": "Rechtliches",
+    "terms": "AGB",
+    "privacy": "Datenschutz",
+    "impressum": "Impressum"
   },
   "structuredData": {
     "keywords": [

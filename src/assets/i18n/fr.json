@@ -219,7 +219,11 @@
     "developers": "Développeurs",
     "selfHosting": "Auto-hébergement",
     "resources": "Ressources",
-    "contact": "Contact"
+    "contact": "Contact",
+    "legal": "Juridique",
+    "terms": "Conditions générales",
+    "privacy": "Confidentialité",
+    "impressum": "Mentions légales"
   },
   "structuredData": {
     "keywords": [
