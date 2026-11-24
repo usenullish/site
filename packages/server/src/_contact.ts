@@ -1,7 +1,7 @@
 import { createRoute, type RouteHandler, z } from "@hono/zod-openapi";
 import { createTransport } from "nodemailer";
 
-const ContactRequestSchema = z.object({
+const ContactRequestSchema = z.strictObject({
   name: z.string().trim().min(1).max(200),
   email: z.string().trim().max(320).pipe(z.email()),
   company: z.string().trim().max(200).default(""),
@@ -10,8 +10,12 @@ const ContactRequestSchema = z.object({
   website: z.string().optional(),
 });
 
-const ContactResponseSchema = z.object({
+const ContactResponseSchema = z.strictObject({
   status: z.enum(["sent", "error"]),
+});
+
+const LimitedResponseSchema = z.strictObject({
+  status: z.literal("limited"),
 });
 
 type Contact = z.infer<typeof ContactRequestSchema>;
@@ -36,6 +40,10 @@ export const contactRoute = createRoute({
     400: {
       content: { "application/json": { schema: ContactResponseSchema } },
       description: "The contact request is invalid",
+    },
+    429: {
+      content: { "application/json": { schema: LimitedResponseSchema } },
+      description: "Too many contact requests from this client",
     },
     500: {
       content: { "application/json": { schema: ContactResponseSchema } },

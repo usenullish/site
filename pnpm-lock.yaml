@@ -221,6 +221,9 @@ importers:
       hono:
         specifier: ^4.13.21
         version: 4.13.21
+      hono-rate-limiter:
+        specifier: ^0.5.4
+        version: 0.5.4(hono@4.13.21)(unstorage@1.17.6)
       nodemailer:
         specifier: ^10.6.1
         version: 10.6.1
@@ -1955,6 +1958,15 @@ packages:
 
   hastscript@9.0.3:
     resolution: {integrity: sha512-1ALZXSmCGmW3h8AMz4R4+QKSKFi7sNgXLVwmwB8FYVtl1CwQ3WDkSAEY/d5tp1g/vbQgq2s1WlHgfO3jbw1TsA==}
+
+  hono-rate-limiter@0.5.4:
+    resolution: {integrity: sha512-P3/cscAmz1hA+MuM+Hn9gP/EyO2zWv2aXIFkVYuLZkPzrPa4oaWdVCS94vyDlsNBgeMnE/Hr2+LznIKQxrF0ng==}
+    peerDependencies:
+      hono: ^4.10.8
+      unstorage: ^1.17.3
+    peerDependenciesMeta:
+      unstorage:
+        optional: true
 
   hono@4.13.21:
     resolution: {integrity: sha512-h9UsguqfVk4kjUwLvQpHOmOaJpW10jz9lp8bvKUUa04wJG/fabKFBqXZ06D6LFaeKQZtUZRVeg0gfkTTEsX7Mw==}
@@ -4359,6 +4371,12 @@ snapshots:
       hast-util-parse-selector: 4.0.0
       property-information: 7.2.0
       space-separated-tokens: 2.0.2
+
+  hono-rate-limiter@0.5.4(hono@4.13.21)(unstorage@1.17.6):
+    dependencies:
+      hono: 4.13.21
+    optionalDependencies:
+      unstorage: 1.17.6
 
   hono@4.13.21: {}
 
