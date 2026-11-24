@@ -1,7 +1,8 @@
 {
   "nav": {
-    "docs": "Docs",
-    "pricing": "Tarifs"
+    "features": "Fonctionnalités",
+    "pricing": "Tarifs",
+    "docs": "Docs"
   },
   "hero": {
     "label": "avec un assistant IA",
@@ -37,13 +38,7 @@
       },
       {
         "name": "Comptabilité",
-        "items": [
-          "journal",
-          "TVA, au taux de la dette fiscale nette ou effective",
-          "bilan",
-          "compte de résultat",
-          "bouclement annuel"
-        ]
+        "items": ["journal", "TVA", "bilan", "compte de résultat", "bouclement annuel"]
       },
       {
         "name": "Équipe",
@@ -97,6 +92,117 @@
       "text": "Tes questions ne quittent jamais le pays."
     }
   ],
+  "features": {
+    "groups": [
+      {
+        "name": "Facturation",
+        "items": [
+          {
+            "title": "Clients et contacts",
+            "text": "Garde une trace de qui tu factures et des personnes avec qui tu traites."
+          },
+          {
+            "title": "Factures",
+            "text": "En CHF ou dans n’importe quelle autre devise, du brouillon au paiement."
+          },
+          {
+            "title": "QR-facture suisse",
+            "text": "Imprimée sur tes factures, avec une référence aléatoire qui ne révèle rien."
+          }
+        ]
+      },
+      {
+        "name": "Banque",
+        "items": [
+          {
+            "title": "Import de relevés",
+            "text": "Télécharge et importe tes relevés bancaires, de n’importe quelle banque suisse."
+          },
+          {
+            "title": "Rapprochement",
+            "text": "Les paiements par QR-facture sont automatiquement associés à leur facture."
+          }
+        ]
+      },
+      {
+        "name": "Comptabilité",
+        "items": [
+          {
+            "title": "Journal",
+            "text": "Saisis des écritures à la main, ou duplique celles qui reviennent, comme le loyer."
+          },
+          {
+            "title": "Clôture annuelle",
+            "text": "Clôture l’année, les soldes sont reportés sur la suivante."
+          },
+          {
+            "title": "Rapports",
+            "text": "Bilan, compte de résultat et grand livre."
+          },
+          {
+            "title": "Devises",
+            "text": "Utilise n’importe quelle devise, fiat ou crypto, sans perte de précision."
+          }
+        ]
+      },
+      {
+        "name": "TVA",
+        "items": [
+          {
+            "title": "Méthodes",
+            "text": "Convenue ou encaissée, effective ou taux de la dette fiscale nette."
+          },
+          {
+            "title": "Décompte TVA",
+            "text": "Préparé par période TVA, à partir de tes factures et écritures."
+          }
+        ]
+      },
+      {
+        "name": "Assistant",
+        "items": [
+          {
+            "title": "Demande",
+            "text": "Écris un prompt sur tes factures, tes comptes bancaires ou la TVA, et obtiens des réponses tirées de tes propres chiffres."
+          },
+          {
+            "title": "Lecture ou écriture",
+            "text": "Par défaut, il ne fait que répondre. Passe en écriture quand tu es prêt à le laisser faire des modifications."
+          }
+        ]
+      },
+      {
+        "name": "Personnalisation",
+        "items": [
+          {
+            "title": "Modèles",
+            "text": "Modifie toute la mise en page de tes documents, comme les factures, et adapte-les à ton image de marque."
+          },
+          {
+            "title": "Masquer les montants",
+            "text": "Floute les montants quand quelqu’un lit par-dessus ton épaule."
+          }
+        ]
+      },
+      {
+        "name": "Développeurs",
+        "items": [
+          {
+            "title": "API REST",
+            "text": "Intègre nullish à tes propres outils et processus."
+          },
+          {
+            "title": "Serveur MCP",
+            "text": "Connecte Claude, ChatGPT ou ton propre agent, avec les mêmes outils que l’assistant."
+          },
+          {
+            "title": "Auto-hébergement",
+            "text": "Héberge nullish toi-même. C’est open source."
+          }
+        ]
+      }
+    ]
+  },
   "pricing": {
     "billing": {
       "label": "Facturation",
@@ -148,6 +254,7 @@
   "footer": {
     "product": "Produit",
     "getStarted": "Commencer",
+    "features": "Fonctionnalités",
     "pricing": "Tarifs",
     "becomeTester": "Devenir testeur",
     "data": "Hébergement",
@@ -162,7 +269,11 @@
     "developers": "Développeurs",
     "selfHosting": "Auto-hébergement",
     "resources": "Ressources",
-    "contact": "Contact"
+    "contact": "Contact",
+    "legal": "Juridique",
+    "terms": "Conditions générales",
+    "privacy": "Confidentialité",
+    "impressum": "Mentions légales"
   },
   "structuredData": {
     "keywords": [

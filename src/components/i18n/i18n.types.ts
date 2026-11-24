@@ -3,7 +3,7 @@
  */
 import type { Languages } from "./languages.ts";
 
-export type I18nNav = { docs: string; pricing: string };
+export type I18nNav = { features: string; pricing: string; docs: string };
 
 export type I18nHero = {
   label: string;
@@ -31,6 +31,8 @@ export type I18nLessBoring = {
 
 export type I18nSwiss = { title: string; text: string }[];
 
+export type I18nFeatures = { groups: { name: string; items: { title: string; text: string }[] }[] };
+
 export type I18nPricing = {
   billing: { label: string; year: string; month: string };
   perMonth: string;
@@ -45,6 +47,7 @@ export type I18nPricing = {
 export type I18nFooter = {
   product: string;
   getStarted: string;
+  features: string;
   pricing: string;
   becomeTester: string;
   data: string;
@@ -60,6 +63,10 @@ export type I18nFooter = {
   selfHosting: string;
   resources: string;
   contact: string;
+  legal: string;
+  terms: string;
+  privacy: string;
+  impressum: string;
 };
 
 export type I18nStructuredData = { keywords: string[] };
@@ -72,6 +79,7 @@ export interface I18n {
   boring: I18nBoring;
   lessBoring: I18nLessBoring;
   swiss: I18nSwiss;
+  features: I18nFeatures;
   pricing: I18nPricing;
   footer: I18nFooter;
   structuredData: I18nStructuredData;

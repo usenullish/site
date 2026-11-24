@@ -9,6 +9,9 @@ const { lang, nav } = i18n(Astro.locals.starlightRoute.locale);
 
 {isLanding && (
   <Fragment>
+    <a class="nav" href={`/${lang}/features/`}>
+      {nav.features}
+    </a>
     <a class="nav" href={`/${lang}/pricing/`}>
       {nav.pricing}
     </a>

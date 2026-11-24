@@ -12,6 +12,7 @@ const columns = [
     title: footer.product,
     links: [
       { label: footer.getStarted, href: `/${lang}/getting-started/` },
+      { label: footer.features, href: `/${lang}/features/` },
       { label: footer.pricing, href: `/${lang}/pricing/` },
       { label: footer.becomeTester, href: "https://tally.so/r/BEKO81", external: true },
       { label: footer.data, href: `/${lang}/data/` },
@@ -45,6 +46,12 @@ const columns = [
       { label: "llms.txt", href: "/llms.txt" },
     ],
   },
+];
+
+const legal = [
+  { label: footer.terms, href: `/${lang}/terms/` },
+  { label: footer.privacy, href: `/${lang}/privacy/` },
+  { label: footer.impressum, href: `/${lang}/impressum/` },
 ];
 ---
 
@@ -80,6 +87,12 @@ const columns = [
         d="M100.33 79.58H88.14L111.62 0h12.18zM124.36 79.58h-12.19L135.64 0h12.19z"
       />
     </svg>
+
+    <nav class="legal" aria-label="Legal">
+      {legal.map(({ label, href }) => (
+        <a {href}>{label}</a>
+      ))}
+    </nav>
   </footer>
 ) : (
   <Default />
@@ -155,6 +168,20 @@ const columns = [
     .columns {
       grid-template-columns: repeat(4, 1fr);
     }
+  }
+
+  .legal {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 0.5rem 1.5rem;
+    margin-block-start: 1.5rem;
+    padding-block-start: 1.5rem;
+    font-size: var(--sl-text-xs);
+  }
+
+  .legal a {
+    opacity: 0.7;
   }
 
   .wordmark {
