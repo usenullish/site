@@ -53,11 +53,20 @@ export const contactRoute = createRoute({
 });
 
 const send = async ({ name, email, company, plan, message }: Contact): Promise<void> => {
-  const mailAddress = process.env.NULLISH_SITE_MAIL_ADDRESS;
+  const from = process.env.NULLISH_SITE_MAIL_FROM;
+  const to = process.env.NULLISH_SITE_MAIL_TO;
   const smtpUrl = process.env.NULLISH_SITE_MAIL_SMTP_URL;
 
-  if (mailAddress === undefined || mailAddress === "" || smtpUrl === undefined || smtpUrl === "") {
-    throw new Error("NULLISH_SITE_MAIL_ADDRESS and NULLISH_SITE_MAIL_SMTP_URL must be set.");
+  if (from === undefined || from === "") {
+    throw new Error("NULLISH_SITE_MAIL_FROM must be set.");
+  }
+
+  if (to === undefined || to === "") {
+    throw new Error("NULLISH_SITE_MAIL_TO must be set.");
+  }
+
+  if (smtpUrl === undefined || smtpUrl === "") {
+    throw new Error("NULLISH_SITE_MAIL_SMTP_URL must be set.");
   }
 
   const text = [
@@ -70,8 +79,8 @@ const send = async ({ name, email, company, plan, message }: Contact): Promise<v
   ].join("\n");
 
   await createTransport(smtpUrl).sendMail({
-    from: mailAddress,
-    to: mailAddress,
+    from,
+    to,
     replyTo: email,
     subject: `[nullish] ${plan}: ${name}`,
     text,
