@@ -1,6 +1,7 @@
 {
   "nav": {
     "features": "Fonctionnalités",
+    "pricing": "Tarifs",
     "docs": "Docs"
   },
   "hero": {
@@ -218,10 +219,59 @@
       "limit": "Trop de messages en peu de temps. Réessaie plus tard."
     }
   },
+  "pricing": {
+    "billing": {
+      "label": "Facturation",
+      "year": "Annuel",
+      "month": "Mensuel"
+    },
+    "perMonth": "/ mois",
+    "perMonthBilledYearly": "/ mois, facturé annuellement",
+    "customPricing": "Tarif sur mesure",
+    "vatExcluded": "Prix hors TVA.",
+    "cloud": {
+      "description": "Tout ce qu’il te faut, hébergé par nos soins.",
+      "features": [
+        "Comptabilité",
+        "Factures",
+        "Banque",
+        "TVA",
+        "Assistant IA",
+        "MCP + API",
+        "1 organisation",
+        "3 utilisateurs"
+      ],
+      "action": "Devenir testeur"
+    },
+    "instance": {
+      "description": "Pour plus de souveraineté et de performance.",
+      "features": [
+        "Tout ce qu’offre Cloud",
+        "Ton propre serveur en Suisse",
+        "Domaine personnalisé",
+        "Support prioritaire",
+        "Jusqu’à 10 organisations",
+        "Jusqu’à 100 utilisateurs"
+      ],
+      "action": "Demander mon instance"
+    },
+    "onPrem": {
+      "description": "Pour tenir ta compta en interne.",
+      "features": [
+        "Tout ce qu’offre Cloud",
+        "L’infrastructure de ton entreprise",
+        "Installation et configuration",
+        "Mises à jour et maintenance",
+        "Développements sur mesure"
+      ],
+      "action": "Écris-nous"
+    }
+  },
   "footer": {
     "product": "Produit",
     "getStarted": "Commencer",
     "features": "Fonctionnalités",
+    "pricing": "Tarifs",
     "becomeTester": "Devenir testeur",
     "data": "Hébergement",
     "status": "Statut",

@@ -1,0 +1,14 @@
+{
+  "currency": "CHF",
+  "cloud": {
+    "name": "Cloud",
+    "prices": { "month": 30, "year": 300 }
+  },
+  "instance": {
+    "name": "Instance",
+    "prices": { "month": 200, "year": 1980 }
+  },
+  "onPrem": {
+    "name": "On-Prem"
+  }
+}

@@ -1,6 +1,7 @@
 {
   "nav": {
     "features": "Features",
+    "pricing": "Pricing",
     "docs": "Docs"
   },
   "hero": {
@@ -218,10 +219,59 @@
       "limit": "Too many messages in a short time. Please try again later."
     }
   },
+  "pricing": {
+    "billing": {
+      "label": "Billing",
+      "year": "Yearly",
+      "month": "Monthly"
+    },
+    "perMonth": "/ month",
+    "perMonthBilledYearly": "/ month, billed yearly",
+    "customPricing": "Custom pricing",
+    "vatExcluded": "All prices excluding VAT.",
+    "cloud": {
+      "description": "Everything you need, hosted by us.",
+      "features": [
+        "Accounting",
+        "Invoices",
+        "Banking",
+        "VAT",
+        "AI assistant",
+        "MCP + API",
+        "1 organization",
+        "3 users"
+      ],
+      "action": "Become a tester"
+    },
+    "instance": {
+      "description": "For more sovereignty and performance.",
+      "features": [
+        "Everything in Cloud",
+        "Your own server in Switzerland",
+        "Custom domain",
+        "Priority support",
+        "Up to 10 organizations",
+        "Up to 100 users"
+      ],
+      "action": "Request my instance"
+    },
+    "onPrem": {
+      "description": "For running your accounting in-house.",
+      "features": [
+        "Everything in Cloud",
+        "Your company infrastructure",
+        "Installation and setup",
+        "Updates and maintenance",
+        "Custom development"
+      ],
+      "action": "Get in touch"
+    }
+  },
   "footer": {
     "product": "Product",
     "getStarted": "Get started",
     "features": "Features",
+    "pricing": "Pricing",
     "becomeTester": "Become a tester",
     "data": "Hosting",
     "status": "Status",

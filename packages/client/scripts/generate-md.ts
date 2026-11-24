@@ -12,6 +12,10 @@ const PAGES = [
   "de/features/index",
   "fr/features/index",
   "it/features/index",
+  "en/pricing/index",
+  "de/pricing/index",
+  "fr/pricing/index",
+  "it/pricing/index",
   "404",
 ];
 

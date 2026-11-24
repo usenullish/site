@@ -1,6 +1,7 @@
 {
   "nav": {
     "features": "Funktionen",
+    "pricing": "Preise",
     "docs": "Doku"
   },
   "hero": {
@@ -223,9 +224,58 @@
       "limit": "Zu viele Nachrichten in kurzer Zeit. Versuch es später nochmal."
     }
   },
+  "pricing": {
+    "billing": {
+      "label": "Abrechnung",
+      "year": "Jährlich",
+      "month": "Monatlich"
+    },
+    "perMonth": "/ Monat",
+    "perMonthBilledYearly": "/ Monat, jährlich verrechnet",
+    "customPricing": "Individueller Preis",
+    "vatExcluded": "Alle Preise exkl. MWST.",
+    "cloud": {
+      "description": "Alles, was du brauchst, von uns gehostet.",
+      "features": [
+        "Buchhaltung",
+        "Rechnungen",
+        "Banking",
+        "MWST",
+        "KI-Assistent",
+        "MCP + API",
+        "1 Organisation",
+        "3 Benutzer"
+      ],
+      "action": "Tester werden"
+    },
+    "instance": {
+      "description": "Für mehr Souveränität und Leistung.",
+      "features": [
+        "Alles aus Cloud",
+        "Dein eigener Server in der Schweiz",
+        "Eigene Domain",
+        "Priorisierter Support",
+        "Bis zu 10 Organisationen",
+        "Bis zu 100 Benutzer"
+      ],
+      "action": "Meine Instanz anfragen"
+    },
+    "onPrem": {
+      "description": "Für deine Buchhaltung im eigenen Haus.",
+      "features": [
+        "Alles aus Cloud",
+        "Die Infrastruktur deines Unternehmens",
+        "Installation und Einrichtung",
+        "Updates und Wartung",
+        "Individuelle Entwicklung"
+      ],
+      "action": "Schreib uns"
+    }
+  },
   "footer": {
     "product": "Produkt",
     "getStarted": "Loslegen",
+    "pricing": "Preise",
     "features": "Funktionen",
     "becomeTester": "Tester werden",
     "data": "Hosting",
