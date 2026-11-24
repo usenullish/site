@@ -6,6 +6,7 @@ const ContactRequestSchema = z.strictObject({
   email: z.string().trim().max(320).pipe(z.email()),
   company: z.string().trim().max(200).default(""),
   plan: z.enum(["tester", "instance", "on-prem"]),
+  lang: z.enum(["en", "de", "fr", "it"]),
   message: z.string().trim().max(5000).default(""),
   website: z.string().optional(),
 });
@@ -52,7 +53,7 @@ export const contactRoute = createRoute({
   },
 });
 
-const send = async ({ name, email, company, plan, message }: Contact): Promise<void> => {
+const send = async ({ name, email, company, plan, lang, message }: Contact): Promise<void> => {
   const from = process.env.NULLISH_SITE_MAIL_FROM;
   const to = process.env.NULLISH_SITE_MAIL_TO;
   const smtpUrl = process.env.NULLISH_SITE_MAIL_SMTP_URL;
@@ -71,6 +72,7 @@ const send = async ({ name, email, company, plan, message }: Contact): Promise<v
 
   const text = [
     `Plan: ${plan}`,
+    `Language: ${lang}`,
     `Name: ${name}`,
     `Email: ${email}`,
     `Company: ${company}`,
