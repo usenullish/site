@@ -37,13 +37,7 @@
       },
       {
         "name": "Comptabilité",
-        "items": [
-          "journal",
-          "TVA, au taux de la dette fiscale nette ou effective",
-          "bilan",
-          "compte de résultat",
-          "bouclement annuel"
-        ]
+        "items": ["journal", "TVA", "bilan", "compte de résultat", "bouclement annuel"]
       },
       {
         "name": "Équipe",

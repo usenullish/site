@@ -37,13 +37,7 @@
       },
       {
         "name": "Accounting",
-        "items": [
-          "journal",
-          "VAT, net rate or effective",
-          "balance sheet",
-          "income statement",
-          "year-end closing"
-        ]
+        "items": ["journal", "VAT", "balance sheet", "income statement", "year-end closing"]
       },
       {
         "name": "Team",
