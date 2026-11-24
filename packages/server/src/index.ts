@@ -26,3 +26,4 @@ const hostname = process.env.HOST ?? "127.0.0.1";
 serve({ fetch: app.fetch, port, hostname }, ({ address, port }) => {
   console.log(`Listening on http://${address}:${port}`);
 });
+
