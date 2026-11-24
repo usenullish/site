@@ -1,10 +1,23 @@
 import { serve } from "@hono/node-server";
-import { Hono } from "hono";
+import { OpenAPIHono } from "@hono/zod-openapi";
+import { contactHandler, contactRoute } from "./_contact.ts";
+import pkg from "../package.json" with { type: "json" };
+import rootPkg from "../../../package.json" with { type: "json" };
 
-const app = new Hono();
+const { name: title } = pkg;
+const { version } = rootPkg;
 
-app.get("/", (c) => {
-  return c.text("Hello Hono!");
+const app = new OpenAPIHono();
+
+app.openapi(contactRoute, contactHandler);
+
+app.doc("/api/doc", {
+  openapi: "3.0.0",
+  info: {
+    version,
+    title,
+  },
+  security: [{ ApiKey: [] }],
 });
 
 const port = Number(process.env.PORT ?? 3000);
