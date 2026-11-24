@@ -32,6 +32,13 @@ export default defineConfig({
   site: "https://nullish.ch",
   output: "static",
   outDir: "dist",
+  vite: {
+    server: {
+      proxy: {
+        "/api": "http://localhost:3000",
+      },
+    },
+  },
   redirects: {
     "/": "/en/",
   },
