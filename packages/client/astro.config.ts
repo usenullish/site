@@ -161,7 +161,7 @@ The documentation also exists in German, French and Italian under \`/de/\`, \`/f
           label: "Settings",
           translations: { de: "Einstellungen", fr: "Paramètres", it: "Impostazioni" },
           collapsed: true,
-          items: [{ slug: "organization" }, { slug: "account" }],
+          items: [{ slug: "organization" }, { slug: "subscription" }, { slug: "account" }],
         },
         {
           label: "Templates",
