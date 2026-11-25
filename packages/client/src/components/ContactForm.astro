@@ -8,6 +8,14 @@ interface Props {
 const { plan } = Astro.props;
 
 const { lang, contact } = i18n(Astro.currentLocale);
+
+const IGNORE_PASSWORD_MANAGERS = {
+  "data-1p-ignore": true,
+  "data-bwignore": true,
+  "data-lpignore": "true",
+  "data-form-type": "other",
+  "data-protonpass-ignore": true,
+};
 ---
 
 <form id="contact-form" class="contact not-content" method="post" action="/api/contact">
@@ -17,30 +25,56 @@ const { lang, contact } = i18n(Astro.currentLocale);
   <div class="honeypot" aria-hidden="true">
     <label>
       Website
-      <input type="text" name="website" tabindex="-1" autocomplete="off" />
+      <input
+        type="text"
+        name="website"
+        tabindex="-1"
+        autocomplete="off"
+        {...IGNORE_PASSWORD_MANAGERS}
+      />
     </label>
   </div>
 
   <div class="row">
     <label>
       <span>{contact.label.name}</span>
-      <input type="text" name="name" required maxlength="200" autocomplete="name" />
+      <input
+        type="text"
+        name="name"
+        required
+        maxlength="200"
+        autocomplete="name"
+        {...IGNORE_PASSWORD_MANAGERS}
+      />
     </label>
 
     <label>
       <span>{contact.label.email}</span>
-      <input type="email" name="email" required maxlength="320" autocomplete="email" />
+      <input
+        type="email"
+        name="email"
+        required
+        maxlength="320"
+        autocomplete="email"
+        {...IGNORE_PASSWORD_MANAGERS}
+      />
     </label>
   </div>
 
   <label>
     <span>{contact.label.company}</span>
-    <input type="text" name="company" maxlength="200" autocomplete="organization" />
+    <input
+      type="text"
+      name="company"
+      maxlength="200"
+      autocomplete="organization"
+      {...IGNORE_PASSWORD_MANAGERS}
+    />
   </label>
 
   <label>
     <span>{contact.label.message}</span>
-    <textarea name="message" rows="5" maxlength="5000"></textarea>
+    <textarea name="message" rows="5" maxlength="5000" {...IGNORE_PASSWORD_MANAGERS}></textarea>
   </label>
 
   <div class="status" aria-live="polite">
