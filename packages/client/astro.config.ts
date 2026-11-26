@@ -54,13 +54,13 @@ export default defineConfig({
       head: [
         {
           tag: "meta",
-          attrs: { property: "og:image", content: "https://nullish.ch/social-image.png" },
+          attrs: { property: "og:image", content: "https://nullish.ch/social-image-light.png" },
         },
         { tag: "meta", attrs: { property: "og:type", content: "website" } },
         { tag: "meta", attrs: { name: "twitter:card", content: "summary_large_image" } },
         {
           tag: "meta",
-          attrs: { name: "twitter:image", content: "https://nullish.ch/social-image.png" },
+          attrs: { name: "twitter:image", content: "https://nullish.ch/social-image-light.png" },
         },
         ...(process.env.NODE_ENV === "production"
           ? [
