@@ -128,6 +128,10 @@
         "name": "Contabilità",
         "items": [
           {
+            "title": "Contabilità in partita doppia",
+            "text": "Ogni registrazione in dare e avere. La contabilità completa che una Sagl o una SA deve tenere."
+          },
+          {
             "title": "Giornale",
             "text": "Registra a mano, o duplica le registrazioni ricorrenti come l’affitto."
           },
@@ -168,6 +172,10 @@
           {
             "title": "Lettura o scrittura",
             "text": "Di default risponde soltanto. Passa alla scrittura quando ti senti pronto a lasciargli fare modifiche."
+          },
+          {
+            "title": "Ospitato in Svizzera",
+            "text": "Il modello gira da Infomaniak. Le tue domande e i tuoi dati restano nel Paese e non servono mai ad addestrarlo."
           }
         ]
       },
@@ -194,10 +202,23 @@
           {
             "title": "Server MCP",
             "text": "Collega Claude, ChatGPT o il tuo agente, con gli stessi strumenti dell’assistente."
+          }
+        ]
+      },
+      {
+        "name": "Open source",
+        "items": [
+          {
+            "title": "Licenza MIT",
+            "text": "Libero da usare, modificare e condividere, anche a fini commerciali."
+          },
+          {
+            "title": "Trasparenza",
+            "text": "Ogni riga è su GitHub. Verifica tu stesso come vengono calcolati i tuoi dati."
           },
           {
             "title": "Self-hosting",
-            "text": "Gestisci nullish da solo. È open source."
+            "text": "Fai girare nullish sui tuoi server, da solo o con il nostro aiuto."
           }
         ]
       }

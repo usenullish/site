@@ -128,6 +128,10 @@
         "name": "Comptabilité",
         "items": [
           {
+            "title": "Comptabilité en partie double",
+            "text": "Chaque écriture au débit et au crédit. La comptabilité complète qu’une Sàrl ou une SA doit tenir."
+          },
+          {
             "title": "Journal",
             "text": "Saisis des écritures à la main, ou duplique celles qui reviennent, comme le loyer."
           },
@@ -168,6 +172,10 @@
           {
             "title": "Lecture ou écriture",
             "text": "Par défaut, il ne fait que répondre. Passe en écriture quand tu es prêt à le laisser faire des modifications."
+          },
+          {
+            "title": "Hébergé en Suisse",
+            "text": "Le modèle tourne chez Infomaniak. Tes questions et tes chiffres restent dans le pays et ne servent jamais à l’entraîner."
           }
         ]
       },
@@ -194,10 +202,23 @@
           {
             "title": "Serveur MCP",
             "text": "Connecte Claude, ChatGPT ou ton propre agent, avec les mêmes outils que l’assistant."
+          }
+        ]
+      },
+      {
+        "name": "Open source",
+        "items": [
+          {
+            "title": "Licence MIT",
+            "text": "Libre à utiliser, modifier et partager, même à des fins commerciales."
+          },
+          {
+            "title": "Transparence",
+            "text": "Chaque ligne est sur GitHub. Vérifie toi-même comment tes chiffres sont calculés."
           },
           {
             "title": "Auto-hébergement",
-            "text": "Héberge nullish toi-même. C’est open source."
+            "text": "Fais tourner nullish sur tes propres serveurs, seul ou avec notre aide."
           }
         ]
       }
