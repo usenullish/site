@@ -38,7 +38,14 @@
       },
       {
         "name": "Accounting",
-        "items": ["journal", "VAT", "balance sheet", "income statement", "year-end closing"]
+        "items": [
+          "double-entry",
+          "journal",
+          "VAT",
+          "balance sheet",
+          "income statement",
+          "year-end closing"
+        ]
       },
       {
         "name": "Team",
