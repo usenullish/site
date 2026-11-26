@@ -179,6 +179,16 @@ The documentation also exists in German, French and Italian under \`/de/\`, \`/f
         },
         { slug: "data" },
         {
+          label: "Learn",
+          translations: { de: "Lernen", fr: "Apprendre", it: "Imparare" },
+          collapsed: true,
+          items: [
+            { slug: "learn/double-entry-bookkeeping" },
+            { slug: "learn/year-end-closing" },
+            { slug: "learn/vat-methods" },
+          ],
+        },
+        {
           label: "Developers",
           translations: { de: "Entwickler", fr: "Développeurs", it: "Sviluppatori" },
           collapsed: true,

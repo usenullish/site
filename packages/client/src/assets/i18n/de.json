@@ -148,6 +148,10 @@
             "text": "Buche von Hand oder dupliziere wiederkehrende Buchungen wie die Miete."
           },
           {
+            "title": "Nachvollziehbare Buchungen",
+            "text": "Fortlaufend nummeriert, mit ihrer Rechnung oder Bankbewegung verknüpft und gesperrt, sobald das Jahr abgeschlossen ist."
+          },
+          {
             "title": "Jahresabschluss",
             "text": "Schliesse das Jahr ab, die Saldi werden ins nächste übertragen."
           },

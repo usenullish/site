@@ -143,6 +143,10 @@
             "text": "Book entries by hand, or duplicate recurring ones like the rent."
           },
           {
+            "title": "Traceable entries",
+            "text": "Numbered, linked to their invoice or bank movement, and locked once the year is closed."
+          },
+          {
             "title": "Year-end closing",
             "text": "Close the year, and the balances carry over to the next one."
           },
