@@ -143,6 +143,10 @@
             "text": "Registra a mano, o duplica le registrazioni ricorrenti come l’affitto."
           },
           {
+            "title": "Registrazioni tracciabili",
+            "text": "Numerate, collegate alla loro fattura o al movimento bancario, e bloccate una volta chiuso l’esercizio."
+          },
+          {
             "title": "Chiusura annuale",
             "text": "Chiudi l’anno, i saldi vengono riportati al successivo."
           },

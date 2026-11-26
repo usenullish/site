@@ -143,6 +143,10 @@
             "text": "Saisis des écritures à la main, ou duplique celles qui reviennent, comme le loyer."
           },
           {
+            "title": "Écritures traçables",
+            "text": "Numérotées, liées à leur facture ou à leur mouvement bancaire, et verrouillées une fois l’exercice clôturé."
+          },
+          {
             "title": "Clôture annuelle",
             "text": "Clôture l’année, les soldes sont reportés sur la suivante."
           },
