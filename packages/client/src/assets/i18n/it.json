@@ -38,7 +38,14 @@
       },
       {
         "name": "Contabilità",
-        "items": ["giornale", "IVA", "bilancio", "conto economico", "chiusura annuale"]
+        "items": [
+          "partita doppia",
+          "giornale",
+          "IVA",
+          "bilancio",
+          "conto economico",
+          "chiusura annuale"
+        ]
       },
       {
         "name": "Team",

@@ -38,7 +38,14 @@
       },
       {
         "name": "Comptabilité",
-        "items": ["journal", "TVA", "bilan", "compte de résultat", "bouclement annuel"]
+        "items": [
+          "partie double",
+          "journal",
+          "TVA",
+          "bilan",
+          "compte de résultat",
+          "bouclement annuel"
+        ]
       },
       {
         "name": "Équipe",

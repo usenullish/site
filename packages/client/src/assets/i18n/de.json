@@ -43,7 +43,14 @@
       },
       {
         "name": "Buchhaltung",
-        "items": ["Journal", "MWST", "Bilanz", "Erfolgsrechnung", "Jahresabschluss"]
+        "items": [
+          "Doppelte Buchhaltung",
+          "Journal",
+          "MWST",
+          "Bilanz",
+          "Erfolgsrechnung",
+          "Jahresabschluss"
+        ]
       },
       {
         "name": "Team",
