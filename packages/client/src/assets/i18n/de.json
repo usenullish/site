@@ -133,6 +133,10 @@
         "name": "Buchhaltung",
         "items": [
           {
+            "title": "Doppelte Buchhaltung",
+            "text": "Jede Buchung in Soll und Haben. Die vollständige Buchhaltung, die eine GmbH oder AG führen muss."
+          },
+          {
             "title": "Journal",
             "text": "Buche von Hand oder dupliziere wiederkehrende Buchungen wie die Miete."
           },
@@ -173,6 +177,10 @@
           {
             "title": "Lesen oder schreiben",
             "text": "Standardmässig antwortet er nur. Schalte auf Schreiben, wenn du ihm Änderungen zutraust."
+          },
+          {
+            "title": "In der Schweiz gehostet",
+            "text": "Das Modell läuft bei Infomaniak. Deine Fragen und Zahlen bleiben im Land und werden nie zum Trainieren verwendet."
           }
         ]
       },
@@ -199,10 +207,23 @@
           {
             "title": "MCP-Server",
             "text": "Verbinde Claude, ChatGPT oder deinen eigenen Agenten, mit denselben Werkzeugen wie der Assistent."
+          }
+        ]
+      },
+      {
+        "name": "Open Source",
+        "items": [
+          {
+            "title": "MIT-Lizenz",
+            "text": "Frei nutzen, ändern und weitergeben, auch kommerziell."
+          },
+          {
+            "title": "Transparenz",
+            "text": "Jede Zeile liegt auf GitHub. Prüf selbst, wie deine Zahlen berechnet werden."
           },
           {
             "title": "Self-Hosting",
-            "text": "Betreibe nullish selbst. Es ist Open Source."
+            "text": "Betreibe nullish auf deinen eigenen Servern, selbst oder mit unserer Hilfe."
           }
         ]
       }

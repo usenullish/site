@@ -128,6 +128,10 @@
         "name": "Accounting",
         "items": [
           {
+            "title": "Double-entry bookkeeping",
+            "text": "Every entry in debit and credit. The full bookkeeping a GmbH or AG has to keep."
+          },
+          {
             "title": "Journal",
             "text": "Book entries by hand, or duplicate recurring ones like the rent."
           },
@@ -168,6 +172,10 @@
           {
             "title": "Read or write",
             "text": "By default it only answers. Switch to write when you feel confident letting it make changes."
+          },
+          {
+            "title": "Hosted in Switzerland",
+            "text": "The model runs at Infomaniak. Your questions and figures stay in the country and are never used for training."
           }
         ]
       },
@@ -194,10 +202,23 @@
           {
             "title": "MCP server",
             "text": "Connect Claude, ChatGPT or your own agent, with the same tools as the assistant."
+          }
+        ]
+      },
+      {
+        "name": "Open source",
+        "items": [
+          {
+            "title": "MIT license",
+            "text": "Free to use, change and share, commercially too."
+          },
+          {
+            "title": "Transparency",
+            "text": "Every line is on GitHub. Check for yourself how your figures are calculated."
           },
           {
             "title": "Self-hosting",
-            "text": "Run nullish yourself. It's open source."
+            "text": "Run nullish on your own servers, on your own or with our help."
           }
         ]
       }
