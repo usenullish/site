@@ -1,19 +1,27 @@
 ---
 import Default from "@astrojs/starlight/components/LanguageSelect.astro";
 
-const code = (Astro.locals.starlightRoute.locale ?? "en").toUpperCase();
+interface Props {
+  footer?: boolean;
+}
+
+const { footer = false } = Astro.props;
+
+const isLanding = Astro.locals.starlightRoute.entry.data.hero !== undefined;
 ---
 
-<div class="lang">
-  <span class="code" aria-hidden="true">
-    {code}
-  </span>
+{footer ? (
   <Default />
-</div>
+) : (
+  !isLanding && (
+    <div class="lang">
+      <Default />
+    </div>
+  )
+)}
 
 <style>
   .lang {
-    position: relative;
     display: flex;
     align-items: center;
     color: var(--sl-color-white);
@@ -25,18 +33,6 @@ const code = (Astro.locals.starlightRoute.locale ?? "en").toUpperCase();
 
   .lang :global(label) {
     color: inherit;
-  }
-
-  .code {
-    position: absolute;
-    inset-inline-start: 0;
-    font-size: var(--sl-text-sm);
-    pointer-events: none;
-  }
-
-  .lang :global(select) {
-    width: calc(2ch + var(--sl-caret-size) + var(--sl-inline-padding) * 2 + 0.25rem);
-    color: transparent;
   }
 
   .lang :global(option) {

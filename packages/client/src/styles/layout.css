@@ -24,6 +24,9 @@
     margin: 0 auto;
     border: var(--layout-section-border);
     padding: var(--sl-nav-pad-y) var(--sl-nav-pad-x);
+    min-height: calc(
+      2 * var(--sl-nav-pad-y) + 1.25rem + var(--sl-text-sm) * var(--sl-line-height) + 2px
+    );
   }
 
   :root[data-has-hero] div.page > div.main-frame {

@@ -67,7 +67,7 @@ export type I18nFooter = {
   accounting: string;
   developers: string;
   selfHosting: string;
-  resources: string;
+  about: string;
   contact: string;
   legal: string;
   terms: string;

@@ -16,6 +16,14 @@ header .social-icons::after {
   height: 1rem;
 }
 
+:root[data-has-hero] header .social-icons::after {
+  display: none;
+}
+
+header .right-group nullish-theme-toggle,
+.mobile-preferences nullish-theme-toggle {
+  order: 1;
+}
 @media (max-width: 49.99rem) {
   header .social-icons::after {
     display: none;
