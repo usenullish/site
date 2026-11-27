@@ -104,6 +104,7 @@ The documentation also exists in German, French and Italian under \`/de/\`, \`/f
         light: "./src/assets/logo-text-light.svg",
         dark: "./src/assets/logo-text-dark.svg",
         replacesTitle: true,
+        alt: "nullish",
       },
       lastUpdated: true,
       favicon: "/favicon.svg",
