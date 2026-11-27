@@ -117,6 +117,7 @@ The documentation also exists in German, French and Italian under \`/de/\`, \`/f
         "./src/styles/sidebar.css",
         "./src/styles/button.css",
         "./src/styles/focus.css",
+        "./src/styles/selection.css",
       ],
       social: [{ icon: "github", label: "GitHub", href: "https://github.com/usenullish/nullish" }],
       expressiveCode: {

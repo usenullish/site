@@ -1,0 +1,9 @@
+::selection {
+  background: var(--sl-color-accent);
+  color: oklch(1 0 0);
+}
+
+footer.not-content ::selection {
+  background: oklch(0.145 0 0);
+  color: oklch(1 0 0);
+}
