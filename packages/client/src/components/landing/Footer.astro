@@ -2,6 +2,8 @@
 import Default from "@astrojs/starlight/components/Footer.astro";
 import { Icon } from "@astrojs/starlight/components";
 import { i18n } from "../i18n/i18n.ts";
+import LanguageSelect from "../LanguageSelect.astro";
+import ThemeSelect from "../ThemeSelect.astro";
 
 const isLanding = Astro.locals.starlightRoute.entry.data.hero !== undefined;
 
@@ -35,23 +37,19 @@ const columns = [
       { label: "REST API", href: `/${lang}/developers/api/` },
       { label: "MCP", href: `/${lang}/developers/mcp/` },
       { label: footer.selfHosting, href: `/${lang}/developers/self-hosting/` },
+      { label: "GitHub", href: "https://github.com/usenullish", external: true },
+      { label: footer.status, href: "https://nullishstatus.com/", external: true },
     ],
   },
   {
-    title: footer.resources,
+    title: footer.about,
     links: [
-      { label: "GitHub", href: "https://github.com/usenullish", external: true },
       { label: footer.contact, href: `/${lang}/contact/` },
-      { label: footer.status, href: "https://nullishstatus.com/", external: true },
-      { label: "llms.txt", href: "/llms.txt" },
+      { label: footer.terms, href: `/${lang}/terms/` },
+      { label: footer.privacy, href: `/${lang}/privacy/` },
+      { label: footer.impressum, href: `/${lang}/impressum/` },
     ],
   },
-];
-
-const legal = [
-  { label: footer.terms, href: `/${lang}/terms/` },
-  { label: footer.privacy, href: `/${lang}/privacy/` },
-  { label: footer.impressum, href: `/${lang}/impressum/` },
 ];
 ---
 
@@ -88,11 +86,10 @@ const legal = [
       />
     </svg>
 
-    <nav class="legal" aria-label="Legal">
-      {legal.map(({ label, href }) => (
-        <a {href}>{label}</a>
-      ))}
-    </nav>
+    <div class="bottom">
+      <LanguageSelect footer />
+      <ThemeSelect footer />
+    </div>
   </footer>
 ) : (
   <Default />
@@ -170,18 +167,49 @@ const legal = [
     }
   }
 
-  .legal {
+  .bottom {
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-end;
-    gap: 0.5rem 1.5rem;
+    align-items: center;
+    gap: 1rem 1.5rem;
     margin-block-start: 1.5rem;
     padding-block-start: 1.5rem;
     font-size: var(--sl-text-xs);
   }
 
-  .legal a {
+  .bottom :global(starlight-lang-select label) {
+    --sl-caret-size: 1rem;
+    --sl-inline-padding: 0.5rem;
+  }
+
+  .bottom :global(starlight-lang-select select) {
+    width: auto;
+    margin-inline: 0;
+    padding-block: 0.25rem;
+    padding-inline: var(--sl-inline-padding) calc(var(--sl-caret-size) + 0.5rem);
+    border: 1px solid currentColor;
+    font-size: inherit;
+  }
+
+  :global(:root[data-theme="dark"]) .bottom :global(starlight-lang-select select) {
+    border-color: color-mix(in oklch, currentColor 40%, transparent);
+  }
+
+  .bottom :global(starlight-lang-select .caret) {
+    inset-inline-end: 0.25rem;
+  }
+
+  .bottom :global(label),
+  .bottom :global(button) {
+    color: inherit;
     opacity: 0.7;
+  }
+
+  .bottom :global(label:hover),
+  .bottom :global(button:hover) {
+    color: inherit;
+    opacity: 1;
   }
 
   .wordmark {
