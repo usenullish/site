@@ -13,6 +13,7 @@ const cleanExistingFiles = async () => {
       "src/content/docs/*/terms.mdoc",
       "src/content/docs/*/privacy.mdoc",
       "src/content/docs/*/impressum.mdoc",
+      "src/content/docs/*/learn/**",
     ],
   })) {
     await rm(file);
